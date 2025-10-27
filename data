@@ -1,0 +1,206 @@
+create database QLKhachSan
+use QLKhachSan
+
+-- 1. LOAITAIKHOAN (Role)
+CREATE TABLE LOAITAIKHOAN (
+    IDLoaiTK INT PRIMARY KEY IDENTITY(1,1),
+    TenLoaiTK NVARCHAR(50) NOT NULL,
+    MoTa NVARCHAR(100)
+);
+GO
+
+-- 2. TAIKHOAN (Account)
+CREATE TABLE TAIKHOAN (
+    Username VARCHAR(50) PRIMARY KEY,
+    Password VARCHAR(255) NOT NULL, -- Lưu mã hash (SHA256 hoặc BCrypt)
+    DisplayName NVARCHAR(100) NOT NULL,
+    Email VARCHAR(100),
+    TrangThai BIT NOT NULL DEFAULT 1, -- 1 = Hoạt động, 0 = Khóa
+    IDLoaiTK INT NOT NULL,
+    FOREIGN KEY (IDLoaiTK) REFERENCES LOAITAIKHOAN(IDLoaiTK)
+);
+GO
+
+-- 3. KHACHHANG (Customer)
+CREATE TABLE KHACHHANG (
+    IDKhachHang INT PRIMARY KEY IDENTITY(1,1),
+    HoTen NVARCHAR(100) NOT NULL,
+    CMND VARCHAR(20) UNIQUE,
+    SoDienThoai VARCHAR(15),
+    GioiTinh NVARCHAR(10), -- Vd: 'Nam', 'Nữ', 'Khác'
+    DiaChi NVARCHAR(255),
+);
+GO
+
+-- 4. LOAIPHONG (RoomType)
+CREATE TABLE LOAIPHONG (
+    IDLoaiPhong INT PRIMARY KEY IDENTITY(1,1),
+    TenLoaiPhong NVARCHAR(100) NOT NULL,
+    DonGiaNgay DECIMAL(18, 0) NOT NULL,
+    DonGiaGio DECIMAL(18, 0), -- Giá theo giờ (nếu có)
+    MoTa NVARCHAR(255)
+);
+GO
+
+-- 5. PHONG (Room)
+CREATE TABLE PHONG (
+    IDPhong VARCHAR(10) PRIMARY KEY, -- Vd: 'P101', 'P102'
+    TenPhong NVARCHAR(50) NOT NULL,
+    Tang INT,
+    IDLoaiPhong INT NOT NULL,
+    TrangThai NVARCHAR(50) NOT NULL DEFAULT N'Trống', -- Vd: 'Trống', 'Có khách', 'Dọn dẹp', 'Bảo trì'
+    GhiChu NVARCHAR(255),
+    FOREIGN KEY (IDLoaiPhong) REFERENCES LOAIPHONG(IDLoaiPhong)
+);
+GO
+
+-- 6. DICHVU (Service)
+CREATE TABLE DICHVU (
+    IDDichVu INT PRIMARY KEY IDENTITY(1,1),
+    TenDichVu NVARCHAR(100) NOT NULL,
+    DonViTinh NVARCHAR(20), -- Vd: 'chai', 'kg', 'lần'
+    DonGia DECIMAL(18, 0) NOT NULL,
+    MoTa NVARCHAR(255)
+);
+GO
+
+-- 7. PHIEUTHUE (RentalReceipt)
+CREATE TABLE PHIEUTHUE (
+    IDPhieuThue INT PRIMARY KEY IDENTITY(1,1),
+    IDPhong VARCHAR(10) NOT NULL,
+    IDKhachHang INT NOT NULL,
+    NguoiTao VARCHAR(50) NOT NULL, -- Username của Lễ tân
+    NgayDat DATETIME, -- Ngày khách booking (có thể NULL nếu là khách vãng lai)
+    NgayCheckIn DATETIME NOT NULL,
+    NgayCheckOut DATETIME, -- Sẽ NULL khi chưa trả phòng
+    SoNguoi INT,
+    TienCoc DECIMAL(18, 0) DEFAULT 0,
+    TrangThai NVARCHAR(50) NOT NULL, -- 'Đã đặt', 'Đã check-in', 'Đã check-out'
+    GhiChu NVARCHAR(255),
+    FOREIGN KEY (IDPhong) REFERENCES PHONG(IDPhong),
+    FOREIGN KEY (IDKhachHang) REFERENCES KHACHHANG(IDKhachHang),
+    FOREIGN KEY (NguoiTao) REFERENCES TAIKHOAN(Username)
+);
+GO
+
+-- 8. CHITIET_DICHVU (ServiceDetail)
+CREATE TABLE CHITIET_DICHVU (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    IDPhieuThue INT NOT NULL,
+    IDDichVu INT NOT NULL,
+    SoLuong INT NOT NULL,
+    ThoiGianGoi DATETIME DEFAULT GETDATE(), -- Thời điểm khách gọi dịch vụ
+    ThanhTien DECIMAL(18, 0) NOT NULL, -- = SoLuong * DonGia (lưu lại giá trị)
+    FOREIGN KEY (IDPhieuThue) REFERENCES PHIEUTHUE(IDPhieuThue),
+    FOREIGN KEY (IDDichVu) REFERENCES DICHVU(IDDichVu)
+);
+GO
+
+-- 9. HOADON (Bill)
+CREATE TABLE HOADON (
+    IDHoaDon INT PRIMARY KEY IDENTITY(1,1),
+    IDPhieuThue INT NOT NULL UNIQUE, -- 1 Phiếu thuê chỉ có 1 Hóa đơn
+    NguoiLap VARCHAR(50) NOT NULL, -- Username Lễ tân lập hóa đơn
+    NgayThanhToan DATETIME NOT NULL,
+    TongTienPhong DECIMAL(18, 0) NOT NULL,
+    TongTienDichVu DECIMAL(18, 0) NOT NULL,
+    GiamGiaTien DECIMAL(18, 0) DEFAULT 0,
+    PhuongThucThanhToan NVARCHAR(50), -- 'Tiền mặt', 'Chuyển khoản', 'Thẻ'
+    TongTien DECIMAL(18, 0) NOT NULL, -- = (TongTienPhong + TongTienDichVu) - GiamGiaTien
+    GhiChu NVARCHAR(255),
+    FOREIGN KEY (IDPhieuThue) REFERENCES PHIEUTHUE(IDPhieuThue),
+    FOREIGN KEY (NguoiLap) REFERENCES TAIKHOAN(Username)
+);
+GO
+
+-- Vô hiệu hóa kiểm tra khóa ngoại để chèn dữ liệu
+EXEC sp_MSforeachtable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL'
+GO
+
+-- 1. LOAITAIKHOAN (Các vai trò)
+SET IDENTITY_INSERT LOAITAIKHOAN ON;
+INSERT INTO LOAITAIKHOAN (IDLoaiTK, TenLoaiTK, MoTa) VALUES
+(1, N'Admin', N'Quản trị viên, có toàn quyền hệ thống'),
+(2, N'Lễ tân', N'Nhân viên lễ tân, xử lý nghiệp vụ chính');
+SET IDENTITY_INSERT LOAITAIKHOAN OFF;
+GO
+
+-- 2. TAIKHOAN (Các nhân viên/tài khoản)
+-- Mật khẩu ở đây là '123' (ví dụ), trong thực tế bạn phải HASH
+INSERT INTO TAIKHOAN (Username, Password, DisplayName, Email, TrangThai, IDLoaiTK) VALUES
+('admin', '123', N'Nguyễn Văn An', 'admin@email.com', 1, 1),
+('letan01', '123', N'Trần Thị Bích', 'letan1@email.com', 1, 2),
+('letan02', '123', N'Lê Minh Hùng', 'letan2@email.com', 0, 2); -- Tài khoản bị khóa
+GO
+
+-- 3. KHACHHANG (Vài khách hàng mẫu)
+SET IDENTITY_INSERT KHACHHANG ON;
+INSERT INTO KHACHHANG (IDKhachHang, HoTen, CMND, SoDienThoai, GioiTinh, DiaChi) VALUES
+(1, N'Nguyễn Văn Dũng', '001234567890', '0901234567', N'Nam', N'Hà Nội'),
+(2, N'Trần Thị Lan', '001234567891', '0901234568', N'Nữ', N'TP. Hồ Chí Minh'),
+(3, N'Phạm Văn Tài', '001234567892', '0901234569', N'Nam', N'Đà Nẵng');
+SET IDENTITY_INSERT KHACHHANG OFF;
+GO
+
+-- 4. LOAIPHONG (Các loại phòng và giá)
+SET IDENTITY_INSERT LOAIPHONG ON;
+INSERT INTO LOAIPHONG (IDLoaiPhong, TenLoaiPhong, DonGiaNgay, DonGiaGio, MoTa) VALUES
+(1, N'Standard', 500000, 100000, N'Phòng tiêu chuẩn, 1 giường đôi'),
+(2, N'Deluxe', 800000, 150000, N'Phòng cao cấp, 2 giường, view đẹp'),
+(3, N'Suite', 1500000, NULL, N'Phòng VIP, có phòng khách riêng');
+SET IDENTITY_INSERT LOAIPHONG OFF;
+GO
+
+-- 5. PHONG (Các phòng cụ thể)
+-- Giả sử hôm nay là 27/10/2025
+INSERT INTO PHONG (IDPhong, TenPhong, Tang, IDLoaiPhong, TrangThai, GhiChu) VALUES
+('P101', N'Phòng 101', 1, 1, N'Trống', NULL),
+('P102', N'Phòng 102', 1, 1, N'Có khách', NULL),  -- Sẽ có Phiếu thuê đang Check-in
+('P201', N'Phòng 201', 2, 2, N'Dọn dẹp', NULL), -- Sẽ có Hóa đơn vừa Check-out
+('P202', N'Phòng 202', 2, 2, N'Bảo trì', N'Hỏng điều hòa'),
+('P301', N'Phòng 301', 3, 3, N'Trống', NULL);   -- Sẽ có Phiếu thuê Đã đặt
+GO
+
+-- 6. DICHVU (Các dịch vụ)
+SET IDENTITY_INSERT DICHVU ON;
+INSERT INTO DICHVU (IDDichVu, TenDichVu, DonViTinh, DonGia, MoTa) VALUES
+(1, N'Nước suối', N'chai', 10000, N'Lavie 500ml'),
+(2, N'Coca-Cola', N'lon', 15000, N'Lon 330ml'),
+(3, N'Giặt ủi', N'kg', 50000, N'Giặt sấy 1kg quần áo');
+SET IDENTITY_INSERT DICHVU OFF;
+GO
+
+-- 7. PHIEUTHUE (Các nghiệp vụ thuê)
+SET IDENTITY_INSERT PHIEUTHUE ON;
+INSERT INTO PHIEUTHUE (IDPhieuThue, IDPhong, IDKhachHang, NguoiTao, NgayDat, NgayCheckIn, NgayCheckOut, SoNguoi, TienCoc, TrangThai, GhiChu) VALUES
+-- 1: Khách đang ở phòng P102 (IDKhachHang=1, NguoiTao='letan01')
+(1, 'P102', 1, 'letan01', NULL, '2025-10-26 14:00:00', NULL, 2, 500000, N'Đã check-in', NULL),
+-- 2: Khách vừa trả phòng P201 (IDKhachHang=2, NguoiTao='letan01')
+(2, 'P201', 2, 'letan01', '2025-10-20 09:30:00', '2025-10-25 15:00:00', '2025-10-26 12:00:00', 1, 0, N'Đã check-out', NULL),
+-- 3: Khách đặt trước phòng P301 (IDKhachHang=3, NguoiTao='admin')
+(3, 'P301', 3, 'admin', '2025-10-27 10:00:00', '2025-10-28 14:00:00', NULL, 2, 1000000, N'Đã đặt', N'Khách VIP');
+SET IDENTITY_INSERT PHIEUTHUE OFF;
+GO
+
+-- 8. CHITIET_DICHVU (Khách dùng dịch vụ)
+SET IDENTITY_INSERT CHITIET_DICHVU ON;
+INSERT INTO CHITIET_DICHVU (ID, IDPhieuThue, IDDichVu, SoLuong, ThoiGianGoi, ThanhTien) VALUES
+-- Khách ở Phiếu 1 (P102) gọi 2 nước suối, 4 Coca
+(1, 1, 1, 2, '2025-10-26 18:00:00', 20000),
+(2, 1, 2, 4, '2025-10-26 18:00:00', 60000),
+-- Khách ở Phiếu 2 (P201) gọi 2kg giặt ủi
+(3, 2, 3, 2, '2025-10-25 16:00:00', 100000);
+SET IDENTITY_INSERT CHITIET_DICHVU OFF;
+GO
+
+-- 9. HOADON (Hóa đơn cho phiếu đã check-out)
+SET IDENTITY_INSERT HOADON ON;
+INSERT INTO HOADON (IDHoaDon, IDPhieuThue, NguoiLap, NgayThanhToan, TongTienPhong, TongTienDichVu, GiamGiaTien, PhuongThucThanhToan, TongTien, GhiChu) VALUES
+-- Hóa đơn cho Phiếu 2 (P201), ở 1 ngày (800k) + Dịch vụ 100k = 900k
+(1, 2, 'letan01', '2025-10-26 12:05:00', 800000, 100000, 0, N'Tiền mặt', 900000, N'Khách thanh toán đủ');
+SET IDENTITY_INSERT HOADON OFF;
+GO
+
+-- Kích hoạt lại toàn bộ khóa ngoại
+EXEC sp_MSforeachtable 'ALTER TABLE ? WITH CHECK CHECK CONSTRAINT ALL'
+GO
