@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formBac\frmBillManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formBac\frmBillManagement.Designer.cs">
+      <DependentUpon>frmBillManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formBac\frmBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formBac\frmBooking.Designer.cs">
+      <DependentUpon>frmBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formBac\frmOrderService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formBac\frmOrderService.Designer.cs">
+      <DependentUpon>frmOrderService.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
