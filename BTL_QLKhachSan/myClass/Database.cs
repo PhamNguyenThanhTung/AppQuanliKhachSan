@@ -41,5 +41,32 @@ namespace BTL_QLKhachSan.myClass
             }
             return dt;
         }
+        public void ExecuteNonQuery(string sqlQuery, List<SqlParameter> parameters = null)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
+                    {
+                        // Thêm các tham số (parameters) nếu có
+                        if (parameters != null)
+                        {
+                            cmd.Parameters.AddRange(parameters.ToArray());
+                        }
+
+                        cmd.ExecuteNonQuery(); // Thực thi lệnh
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi (ví dụ: ghi log, hiển thị thông báo)
+                Console.WriteLine("Lỗi khi thực thi CSDL: " + ex.Message);
+                // Bạn có thể ném lại lỗi để lớp gọi xử lý
+                throw new Exception("Lỗi khi thực thi CSDL: " + ex.Message);
+            }
+        }
     }
 }

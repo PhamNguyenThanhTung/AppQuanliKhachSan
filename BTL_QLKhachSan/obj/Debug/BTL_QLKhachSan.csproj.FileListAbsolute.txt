@@ -10,3 +10,17 @@ C:\Users\ad\source\repos\console\231230746_DOAN\BTL_QLKhachSan\obj\Debug\BTL_QLK
 C:\Users\ad\source\repos\console\231230746_DOAN\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.pdb
 C:\Users\ad\source\repos\console\231230746_DOAN\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.exe.config
 C:\Users\ad\source\repos\console\231230746_DOAN\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.frmLogin.resources
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\BTL_QLKhachSan.exe.config
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\BTL_QLKhachSan.exe
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\BTL_QLKhachSan.pdb
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.csproj.AssemblyReference.cache
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.exe.config
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.frmMain.resources
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.frmLogin.resources
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.Properties.Resources.resources
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.csproj.GenerateResource.cache
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.csproj.CoreCompileInputs.cache
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.exe
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.pdb
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_KhachHang.resources
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_BaoCaoDoanhThu.resources

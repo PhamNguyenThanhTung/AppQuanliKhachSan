@@ -91,13 +91,52 @@ namespace BTL_QLKhachSan
 
         private void button_daskboard_Click(object sender, EventArgs e)
         {
-
+            movePanel(button_daskboard);
+            uC_KhachHang1.Hide();
+            
         }
+
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             label_datetime.Text = DateTime.Now.ToString("dd-MMM-yyyy HH:mm:ss tt");
             label_userName.Text = username;
+        }
+
+        private void button_khachhang_Click(object sender, EventArgs e)
+        {
+            movePanel(button_khachhang);
+            uC_KhachHang1.Show();
+            uC_KhachHang1.ClearAndRefreshData();
+            uC_BaoCaoDoanhThu1.Hide();
+        }
+
+        private void button_nhanvien_Click(object sender, EventArgs e)
+        {
+            movePanel(button_nhanvien);
+            uC_KhachHang1.Hide();
+            uC_BaoCaoDoanhThu1.Hide();
+        }
+
+        private void button_phong_Click(object sender, EventArgs e)
+        {
+            movePanel(button_phong);
+            uC_KhachHang1.Hide();
+            uC_BaoCaoDoanhThu1.Hide();
+        }
+
+        private void button_hoadon_Click(object sender, EventArgs e)
+        {
+            movePanel(button_hoadon);
+            uC_KhachHang1.Hide();
+            uC_BaoCaoDoanhThu1.Hide();
+        }
+
+        private void button_doanhthu_Click(object sender, EventArgs e)
+        {
+            movePanel(button_doanhthu);
+            uC_BaoCaoDoanhThu1.Show();
         }
     }
 }
