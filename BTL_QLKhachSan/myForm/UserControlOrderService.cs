@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BTL_QLKhachSan.formBac
+namespace BTL_QLKhachSan.myForm
 {
-    public partial class frmBillManagement : Form
+    public partial class UserControlOrderService : UserControl
     {
-        public frmBillManagement()
+        public UserControlOrderService()
         {
             InitializeComponent();
         }
