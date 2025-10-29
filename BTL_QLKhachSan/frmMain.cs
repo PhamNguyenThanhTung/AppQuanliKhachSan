@@ -16,6 +16,7 @@ namespace BTL_QLKhachSan
     {
         public String username;
         private int LoaiTk;
+
         public frmMain()
         {
             InitializeComponent();

@@ -51,7 +51,6 @@ namespace BTL_QLKhachSan.myForm
                     int idLoaiTK = Convert.ToInt32(row["IDLoaiTK"]);
 
                     // Đăng nhập thành công
-                    // (Chúng ta sẽ cần sửa frmMain để nó nhận thông tin này)
                     frmMain main = new frmMain(displayName, idLoaiTK);
 
                     main.FormClosed += (s, args) => Application.Exit();
