@@ -32,9 +32,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BTL_QLKhachSan.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,6 +86,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="myForm\UC_BaoCaoDoanhThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myForm\UC_BaoCaoDoanhThu.Designer.cs">
+      <DependentUpon>UC_BaoCaoDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myForm\UC_KhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myForm\UC_KhachHang.Designer.cs">
+      <DependentUpon>UC_KhachHang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +122,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="myForm\UC_BaoCaoDoanhThu.resx">
+      <DependentUpon>UC_BaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myForm\UC_KhachHang.resx">
+      <DependentUpon>UC_KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
