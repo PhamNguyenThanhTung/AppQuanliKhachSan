@@ -1,11 +1,16 @@
-# Visual Studio
+# Build folders
+[Bb]in/
+[Oo]bj/
 .vs/
-bin/
-obj/
+*.user
+*.suo
 *.exe
 *.pdb
 *.cache
-*.user
-*.suo
 *.db
+*.bak
 *.log
+
+# Other temp files
+Thumbs.db
+Desktop.ini
