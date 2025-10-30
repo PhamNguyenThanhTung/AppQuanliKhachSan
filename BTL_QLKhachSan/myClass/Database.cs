@@ -8,7 +8,7 @@ namespace BTL_QLKhachSan.myClass
     class Database
     {
         // !!! THAY THẾ DÒNG NÀY BẰNG CHUỖI KẾT NỐI CỦA BẠN !!!
-        private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=QLKhachSan_btl;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        private string connectionString = "Data Source=LOMG\\SQLEXPRESS;Initial Catalog=QLKhachSan;Integrated Security=True";
 
         // Hàm dùng để thực thi các câu lệnh SELECT và trả về một DataTable
         public DataTable GetData(string sqlQuery, List<SqlParameter> parameters = null)
