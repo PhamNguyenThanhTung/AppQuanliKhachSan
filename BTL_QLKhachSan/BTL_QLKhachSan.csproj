@@ -129,6 +129,9 @@
     <EmbeddedResource Include="QuanLy\UC_KhachHang.resx">
       <DependentUpon>UC_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\UC_NhanVien.resx">
+      <DependentUpon>UC_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

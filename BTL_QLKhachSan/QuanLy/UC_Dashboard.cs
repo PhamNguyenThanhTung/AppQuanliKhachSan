@@ -20,7 +20,7 @@ namespace BTL_QLKhachSan.QuanLy
             label_adminCount.Text = DemSoTaiKhoanTheoLoai(1).ToString(); // 1 = Admin
             label_letanCount.Text = DemSoTaiKhoanTheoLoai(2).ToString(); // 2 = Lễ tân
 
-            // 🏨 Đếm số phòng
+            // Đếm số phòng
             label_phongCount.Text = DemSoPhong().ToString();
         }
 

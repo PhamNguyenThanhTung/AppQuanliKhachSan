@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel_logOut = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label_datetime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel_main = new System.Windows.Forms.Panel();
             this.gradientPanel3 = new BTL_QLKhachSan.myClass.GradientPanel();
@@ -42,19 +40,20 @@
             this.label_userName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel4 = new BTL_QLKhachSan.myClass.GradientPanel();
+            this.label_datetime = new System.Windows.Forms.Label();
             this.gradientPanel1 = new BTL_QLKhachSan.myClass.GradientPanel();
+            this.gradientPanel2 = new BTL_QLKhachSan.myClass.GradientPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel_slide = new System.Windows.Forms.Panel();
             this.button_hoadon = new System.Windows.Forms.Button();
             this.button_phong = new System.Windows.Forms.Button();
             this.button_nhanvien = new System.Windows.Forms.Button();
             this.button_khachhang = new System.Windows.Forms.Button();
             this.button_dashboard = new System.Windows.Forms.Button();
-            this.gradientPanel2 = new BTL_QLKhachSan.myClass.GradientPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gradientPanel3.SuspendLayout();
+            this.gradientPanel4.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             this.gradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -64,7 +63,6 @@
             // 
             this.panel2.Controls.Add(this.gradientPanel4);
             this.panel2.Controls.Add(this.linkLabel_logOut);
-            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(192, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -85,28 +83,6 @@
             this.linkLabel_logOut.TabStop = true;
             this.linkLabel_logOut.Text = "LogOut";
             this.linkLabel_logOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_logOut_LinkClicked);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(526, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label_datetime
-            // 
-            this.label_datetime.AutoSize = true;
-            this.label_datetime.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_datetime.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label_datetime.Location = new System.Drawing.Point(376, 21);
-            this.label_datetime.Name = "label_datetime";
-            this.label_datetime.Size = new System.Drawing.Size(18, 24);
-            this.label_datetime.TabIndex = 2;
-            this.label_datetime.Text = "?";
             // 
             // timer1
             // 
@@ -191,25 +167,38 @@
             // 
             this.gradientPanel4.Color1 = System.Drawing.Color.DeepSkyBlue;
             this.gradientPanel4.Color2 = System.Drawing.Color.RoyalBlue;
+            this.gradientPanel4.Controls.Add(this.label_datetime);
             this.gradientPanel4.EnableDynamicGradient = false;
             this.gradientPanel4.GradientAngle = 0F;
             this.gradientPanel4.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gradientPanel4.Name = "gradientPanel4";
-            this.gradientPanel4.Size = new System.Drawing.Size(160, 80);
+            this.gradientPanel4.Size = new System.Drawing.Size(317, 80);
             this.gradientPanel4.TabIndex = 3;
+            // 
+            // label_datetime
+            // 
+            this.label_datetime.AutoSize = true;
+            this.label_datetime.BackColor = System.Drawing.Color.Transparent;
+            this.label_datetime.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_datetime.ForeColor = System.Drawing.Color.Black;
+            this.label_datetime.Location = new System.Drawing.Point(6, 21);
+            this.label_datetime.Name = "label_datetime";
+            this.label_datetime.Size = new System.Drawing.Size(18, 24);
+            this.label_datetime.TabIndex = 2;
+            this.label_datetime.Text = "?";
             // 
             // gradientPanel1
             // 
             this.gradientPanel1.Color1 = System.Drawing.Color.DeepSkyBlue;
             this.gradientPanel1.Color2 = System.Drawing.Color.RoyalBlue;
+            this.gradientPanel1.Controls.Add(this.gradientPanel2);
             this.gradientPanel1.Controls.Add(this.panel_slide);
             this.gradientPanel1.Controls.Add(this.button_hoadon);
             this.gradientPanel1.Controls.Add(this.button_phong);
             this.gradientPanel1.Controls.Add(this.button_nhanvien);
             this.gradientPanel1.Controls.Add(this.button_khachhang);
             this.gradientPanel1.Controls.Add(this.button_dashboard);
-            this.gradientPanel1.Controls.Add(this.gradientPanel2);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.gradientPanel1.EnableDynamicGradient = true;
             this.gradientPanel1.GradientAngle = 0F;
@@ -218,6 +207,45 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(192, 531);
             this.gradientPanel1.TabIndex = 0;
+            // 
+            // gradientPanel2
+            // 
+            this.gradientPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.gradientPanel2.Color1 = System.Drawing.Color.DeepSkyBlue;
+            this.gradientPanel2.Color2 = System.Drawing.Color.RoyalBlue;
+            this.gradientPanel2.Controls.Add(this.label1);
+            this.gradientPanel2.Controls.Add(this.pictureBox2);
+            this.gradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gradientPanel2.EnableDynamicGradient = true;
+            this.gradientPanel2.GradientAngle = 0F;
+            this.gradientPanel2.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gradientPanel2.Name = "gradientPanel2";
+            this.gradientPanel2.Size = new System.Drawing.Size(192, 87);
+            this.gradientPanel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(2, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Quản lý khách sạn";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(52, 10);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // panel_slide
             // 
@@ -317,44 +345,6 @@
             this.button_dashboard.UseVisualStyleBackColor = false;
             this.button_dashboard.Click += new System.EventHandler(this.button_dashboard_Click);
             // 
-            // gradientPanel2
-            // 
-            this.gradientPanel2.Color1 = System.Drawing.Color.DeepSkyBlue;
-            this.gradientPanel2.Color2 = System.Drawing.Color.RoyalBlue;
-            this.gradientPanel2.Controls.Add(this.label1);
-            this.gradientPanel2.Controls.Add(this.pictureBox2);
-            this.gradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gradientPanel2.EnableDynamicGradient = true;
-            this.gradientPanel2.GradientAngle = 0F;
-            this.gradientPanel2.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gradientPanel2.Name = "gradientPanel2";
-            this.gradientPanel2.Size = new System.Drawing.Size(192, 87);
-            this.gradientPanel2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Quản lý khách sạn";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(52, 10);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -363,7 +353,6 @@
             this.ClientSize = new System.Drawing.Size(875, 531);
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.gradientPanel3);
-            this.Controls.Add(this.label_datetime);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.gradientPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -374,15 +363,15 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gradientPanel3.ResumeLayout(false);
             this.gradientPanel3.PerformLayout();
+            this.gradientPanel4.ResumeLayout(false);
+            this.gradientPanel4.PerformLayout();
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel2.ResumeLayout(false);
             this.gradientPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -392,7 +381,6 @@
         private myClass.GradientPanel gradientPanel2;
         private System.Windows.Forms.Panel panel2;
         private myClass.GradientPanel gradientPanel3;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel linkLabel_logOut;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
