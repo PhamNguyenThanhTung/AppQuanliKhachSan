@@ -42,9 +42,9 @@ namespace BTL_QLKhachSan
         }
 
         // Constructor mới để nhận dữ liệu từ frmLogin
-        public frmMain(string displayName, int accountType) : this() // : this() sẽ gọi constructor mặc định ở trên
+        public frmMain(string Username, int accountType) : this() // : this() sẽ gọi constructor mặc định ở trên
         {
-            this.username = displayName;
+            this.username = Username;
             this.LoaiTk = accountType;
         }
 
@@ -169,7 +169,7 @@ namespace BTL_QLKhachSan
         private void button_nhanvien_Click(object sender, EventArgs e)
         {
             movePanel(button_nhanvien);
-            loadUserControl(new UC_NhanVien());
+            loadUserControl(new UC_NhanVien(LoaiTk, username));
         }
 
         private void button_phong_Click(object sender, EventArgs e)
@@ -208,6 +208,16 @@ namespace BTL_QLKhachSan
         }
 
         private void panel_Dashboard_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label_LoaiTaiKhoan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_userName_Click(object sender, EventArgs e)
         {
 
         }

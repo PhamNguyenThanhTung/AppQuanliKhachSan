@@ -125,6 +125,7 @@
             this.label_LoaiTaiKhoan.Size = new System.Drawing.Size(111, 19);
             this.label_LoaiTaiKhoan.TabIndex = 6;
             this.label_LoaiTaiKhoan.Text = "loại tài khoản";
+            this.label_LoaiTaiKhoan.Click += new System.EventHandler(this.label_LoaiTaiKhoan_Click);
             // 
             // label3
             // 
@@ -149,6 +150,7 @@
             this.label_userName.Size = new System.Drawing.Size(16, 19);
             this.label_userName.TabIndex = 4;
             this.label_userName.Text = "?";
+            this.label_userName.Click += new System.EventHandler(this.label_userName_Click);
             // 
             // label2
             // 

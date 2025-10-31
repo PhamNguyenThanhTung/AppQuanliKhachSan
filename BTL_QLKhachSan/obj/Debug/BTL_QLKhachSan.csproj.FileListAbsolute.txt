@@ -21,7 +21,7 @@ C:\Users\Long Vu\Downloads\BTL_QLKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSa
 C:\Users\Long Vu\Downloads\BTL_QLKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.csproj.CoreCompileInputs.cache
 C:\Users\Long Vu\Downloads\BTL_QLKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.exe
 C:\Users\Long Vu\Downloads\BTL_QLKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.pdb
-C:\Users\Long Vu\Downloads\BTL_QLKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.frmEmployeeManagement.resources
 C:\Users\Long Vu\Downloads\BTL_QLKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.QuanLy.UC_Dashboard.resources
 C:\Users\Long Vu\Downloads\BTL_QLKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.exe.config
 C:\Users\Long Vu\Downloads\BTL_QLKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.QuanLy.UC_KhachHang.resources
+C:\Users\Long Vu\Downloads\BTL_QLKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.QuanLy.UC_NhanVien.resources

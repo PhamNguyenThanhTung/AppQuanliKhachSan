@@ -3,48 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\quanly\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:quanly\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\quanly\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:quanly\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\long vu\\downloads\\btl_qlkhachsan\\btl_qlkhachsan\\quanly\\uc_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:quanly\\uc_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\quanly\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:quanly\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\quanly\\uc_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:quanly\\uc_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\quanly\\uc_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:quanly\\uc_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\quanly\\uc_phong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:quanly\\uc_phong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\quanly\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:quanly\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\myform\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\long vu\\downloads\\btl_qlkhachsan\\btl_qlkhachsan\\myform\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\myclass\\gradientpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myclass\\gradientpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\long vu\\downloads\\btl_qlkhachsan\\btl_qlkhachsan\\myform\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\long vu\\downloads\\btl_qlkhachsan\\btl_qlkhachsan\\quanly\\uc_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:quanly\\uc_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\long vu\\downloads\\btl_qlkhachsan\\btl_qlkhachsan\\quanly\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:quanly\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,40 +58,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UC_KhachHang.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_KhachHang.cs",
-              "RelativeDocumentMoniker": "QuanLy\\UC_KhachHang.cs",
-              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_KhachHang.cs [Design]",
-              "RelativeToolTip": "QuanLy\\UC_KhachHang.cs [Design]",
+              "DocumentIndex": 4,
+              "Title": "frmLogin.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.cs",
+              "RelativeDocumentMoniker": "myForm\\frmLogin.cs",
+              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.cs [Design]",
+              "RelativeToolTip": "myForm\\frmLogin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T13:49:05.114Z",
+              "WhenOpened": "2025-10-31T11:38:49.557Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UC_Dashboard.cs",
-              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_Dashboard.cs",
-              "RelativeDocumentMoniker": "QuanLy\\UC_Dashboard.cs",
-              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_Dashboard.cs",
-              "RelativeToolTip": "QuanLy\\UC_Dashboard.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "UC_KhachHang.cs",
+              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_KhachHang.cs",
+              "RelativeDocumentMoniker": "QuanLy\\UC_KhachHang.cs",
+              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_KhachHang.cs",
+              "RelativeToolTip": "QuanLy\\UC_KhachHang.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAB1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T12:40:36.337Z",
+              "WhenOpened": "2025-10-31T11:21:45.38Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UC_Dashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_Dashboard.cs",
-              "RelativeDocumentMoniker": "QuanLy\\UC_Dashboard.cs",
-              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_Dashboard.cs [Design]",
-              "RelativeToolTip": "QuanLy\\UC_Dashboard.cs [Design]",
+              "Title": "UC_NhanVien.cs",
+              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_NhanVien.cs",
+              "RelativeDocumentMoniker": "QuanLy\\UC_NhanVien.cs",
+              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_NhanVien.cs",
+              "RelativeToolTip": "QuanLy\\UC_NhanVien.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T12:39:10.886Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-30T15:46:20.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\frmMain.cs",
+              "RelativeToolTip": "frmMain.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAkwBQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T16:41:43.207Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -123,86 +121,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmMain.cs",
-              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\frmMain.cs",
-              "RelativeDocumentMoniker": "frmMain.cs",
-              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\frmMain.cs",
-              "RelativeToolTip": "frmMain.cs",
-              "ViewState": "AgIAAJ0AAAAAAAAAAAAowLAAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.cs",
+              "RelativeDocumentMoniker": "myForm\\frmLogin.cs",
+              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.cs",
+              "RelativeToolTip": "myForm\\frmLogin.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwA0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T16:41:43.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UC_KhachHang.cs",
-              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_KhachHang.cs",
-              "RelativeDocumentMoniker": "QuanLy\\UC_KhachHang.cs",
-              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_KhachHang.cs",
-              "RelativeToolTip": "QuanLy\\UC_KhachHang.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAADwv1gAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T13:49:45.744Z",
+              "WhenOpened": "2025-10-31T11:38:53.694Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "UC_HoaDon.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_HoaDon.cs",
-              "RelativeDocumentMoniker": "QuanLy\\UC_HoaDon.cs",
-              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_HoaDon.cs [Design]",
-              "RelativeToolTip": "QuanLy\\UC_HoaDon.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T12:27:48.602Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UC_Phong.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_Phong.cs",
-              "RelativeDocumentMoniker": "QuanLy\\UC_Phong.cs",
-              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_Phong.cs [Design]",
-              "RelativeToolTip": "QuanLy\\UC_Phong.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T12:27:32.216Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "UC_NhanVien.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_NhanVien.cs",
               "RelativeDocumentMoniker": "QuanLy\\UC_NhanVien.cs",
               "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_NhanVien.cs [Design]",
               "RelativeToolTip": "QuanLy\\UC_NhanVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T12:27:11.929Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "frmLogin.cs",
-              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.cs",
-              "RelativeDocumentMoniker": "myForm\\frmLogin.cs",
-              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.cs",
-              "RelativeToolTip": "myForm\\frmLogin.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T09:44:55.155Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GradientPanel.cs",
-              "DocumentMoniker": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\myClass\\GradientPanel.cs",
-              "RelativeDocumentMoniker": "myClass\\GradientPanel.cs",
-              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\myClass\\GradientPanel.cs",
-              "RelativeToolTip": "myClass\\GradientPanel.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAkwEcAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T08:06:18.569Z"
+              "WhenOpened": "2025-10-30T12:27:11.929Z",
+              "EditorCaption": " [Design]"
             }
           ]
         },
