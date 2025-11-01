@@ -31,27 +31,34 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gradientPanel4 = new BTL_QLKhachSan.myClass.GradientPanel();
             this.label_datetime = new System.Windows.Forms.Label();
             this.linkLabel_logOut = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.uC_BaoCaoDoanhThu1 = new BTL_QLKhachSan.myForm.UC_BaoCaoDoanhThu();
             this.uC_KhachHang1 = new BTL_QLKhachSan.myForm.UC_KhachHang();
             this.gradientPanel3 = new BTL_QLKhachSan.myClass.GradientPanel();
             this.label_userName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.gradientPanel4 = new BTL_QLKhachSan.myClass.GradientPanel();
             this.gradientPanel1 = new BTL_QLKhachSan.myClass.GradientPanel();
+            this.button_datPhong = new System.Windows.Forms.Button();
             this.button_doanhthu = new System.Windows.Forms.Button();
             this.panel_slide = new System.Windows.Forms.Panel();
             this.button_hoadon = new System.Windows.Forms.Button();
-            this.button_phong = new System.Windows.Forms.Button();
             this.button_nhanvien = new System.Windows.Forms.Button();
             this.button_khachhang = new System.Windows.Forms.Button();
             this.button_daskboard = new System.Windows.Forms.Button();
             this.gradientPanel2 = new BTL_QLKhachSan.myClass.GradientPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.uC_BaoCaoDoanhThu1 = new BTL_QLKhachSan.myForm.UC_BaoCaoDoanhThu();
+            this.uC_NhanVien1 = new BTL_QLKhachSan.myForm.UC_NhanVien();
+            this.uC_BookingManagemen1 = new BTL_QLKhachSan.myForm.UC_BookingManagemen();
+            this.button_booking = new System.Windows.Forms.Button();
+            this.userControlBooking1 = new BTL_QLKhachSan.myForm.UserControlBooking();
+            this.userControlOrderService1 = new BTL_QLKhachSan.myForm.UserControlOrderService();
+            this.button_dichvu = new System.Windows.Forms.Button();
+            this.userControlBillManagement1 = new BTL_QLKhachSan.myForm.UserControlBillManagement();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gradientPanel3.SuspendLayout();
@@ -71,6 +78,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(949, 81);
             this.panel2.TabIndex = 3;
+            // 
+            // gradientPanel4
+            // 
+            this.gradientPanel4.Color1 = System.Drawing.Color.DeepSkyBlue;
+            this.gradientPanel4.Color2 = System.Drawing.Color.RoyalBlue;
+            this.gradientPanel4.EnableDynamicGradient = false;
+            this.gradientPanel4.GradientAngle = 0F;
+            this.gradientPanel4.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel4.Name = "gradientPanel4";
+            this.gradientPanel4.Size = new System.Drawing.Size(200, 100);
+            this.gradientPanel4.TabIndex = 3;
             // 
             // label_datetime
             // 
@@ -110,6 +128,17 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // uC_BaoCaoDoanhThu1
+            // 
+            this.uC_BaoCaoDoanhThu1.AutoScroll = true;
+            this.uC_BaoCaoDoanhThu1.BackColor = System.Drawing.Color.White;
+            this.uC_BaoCaoDoanhThu1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_BaoCaoDoanhThu1.Location = new System.Drawing.Point(233, 125);
+            this.uC_BaoCaoDoanhThu1.Name = "uC_BaoCaoDoanhThu1";
+            this.uC_BaoCaoDoanhThu1.Size = new System.Drawing.Size(949, 565);
+            this.uC_BaoCaoDoanhThu1.TabIndex = 6;
+            this.uC_BaoCaoDoanhThu1.Visible = false;
             // 
             // uC_KhachHang1
             // 
@@ -160,25 +189,16 @@
             this.label2.Text = "Xin chào :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // gradientPanel4
-            // 
-            this.gradientPanel4.Color1 = System.Drawing.Color.DeepSkyBlue;
-            this.gradientPanel4.Color2 = System.Drawing.Color.RoyalBlue;
-            this.gradientPanel4.EnableDynamicGradient = false;
-            this.gradientPanel4.GradientAngle = 0F;
-            this.gradientPanel4.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel4.Name = "gradientPanel4";
-            this.gradientPanel4.Size = new System.Drawing.Size(200, 100);
-            this.gradientPanel4.TabIndex = 3;
-            // 
             // gradientPanel1
             // 
             this.gradientPanel1.Color1 = System.Drawing.Color.DeepSkyBlue;
             this.gradientPanel1.Color2 = System.Drawing.Color.RoyalBlue;
+            this.gradientPanel1.Controls.Add(this.button_dichvu);
+            this.gradientPanel1.Controls.Add(this.button_booking);
+            this.gradientPanel1.Controls.Add(this.button_datPhong);
             this.gradientPanel1.Controls.Add(this.button_doanhthu);
             this.gradientPanel1.Controls.Add(this.panel_slide);
             this.gradientPanel1.Controls.Add(this.button_hoadon);
-            this.gradientPanel1.Controls.Add(this.button_phong);
             this.gradientPanel1.Controls.Add(this.button_nhanvien);
             this.gradientPanel1.Controls.Add(this.button_khachhang);
             this.gradientPanel1.Controls.Add(this.button_daskboard);
@@ -191,6 +211,23 @@
             this.gradientPanel1.Size = new System.Drawing.Size(233, 690);
             this.gradientPanel1.TabIndex = 0;
             // 
+            // button_datPhong
+            // 
+            this.button_datPhong.BackColor = System.Drawing.Color.Transparent;
+            this.button_datPhong.FlatAppearance.BorderSize = 0;
+            this.button_datPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_datPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_datPhong.ForeColor = System.Drawing.Color.White;
+            this.button_datPhong.Image = ((System.Drawing.Image)(resources.GetObject("button_datPhong.Image")));
+            this.button_datPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_datPhong.Location = new System.Drawing.Point(31, 385);
+            this.button_datPhong.Name = "button_datPhong";
+            this.button_datPhong.Size = new System.Drawing.Size(185, 58);
+            this.button_datPhong.TabIndex = 8;
+            this.button_datPhong.Text = "Quản Lý Đặt phòng";
+            this.button_datPhong.UseVisualStyleBackColor = false;
+            this.button_datPhong.Click += new System.EventHandler(this.button_datPhong_Click);
+            // 
             // button_doanhthu
             // 
             this.button_doanhthu.BackColor = System.Drawing.Color.Transparent;
@@ -200,7 +237,7 @@
             this.button_doanhthu.ForeColor = System.Drawing.Color.White;
             this.button_doanhthu.Image = ((System.Drawing.Image)(resources.GetObject("button_doanhthu.Image")));
             this.button_doanhthu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_doanhthu.Location = new System.Drawing.Point(31, 449);
+            this.button_doanhthu.Location = new System.Drawing.Point(28, 193);
             this.button_doanhthu.Name = "button_doanhthu";
             this.button_doanhthu.Size = new System.Drawing.Size(182, 58);
             this.button_doanhthu.TabIndex = 7;
@@ -224,30 +261,13 @@
             this.button_hoadon.ForeColor = System.Drawing.Color.White;
             this.button_hoadon.Image = ((System.Drawing.Image)(resources.GetObject("button_hoadon.Image")));
             this.button_hoadon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_hoadon.Location = new System.Drawing.Point(31, 385);
+            this.button_hoadon.Location = new System.Drawing.Point(25, 577);
             this.button_hoadon.Name = "button_hoadon";
             this.button_hoadon.Size = new System.Drawing.Size(185, 58);
             this.button_hoadon.TabIndex = 5;
             this.button_hoadon.Text = "    Hóa đơn";
             this.button_hoadon.UseVisualStyleBackColor = false;
             this.button_hoadon.Click += new System.EventHandler(this.button_hoadon_Click);
-            // 
-            // button_phong
-            // 
-            this.button_phong.BackColor = System.Drawing.Color.Transparent;
-            this.button_phong.FlatAppearance.BorderSize = 0;
-            this.button_phong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_phong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_phong.ForeColor = System.Drawing.Color.White;
-            this.button_phong.Image = ((System.Drawing.Image)(resources.GetObject("button_phong.Image")));
-            this.button_phong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_phong.Location = new System.Drawing.Point(31, 321);
-            this.button_phong.Name = "button_phong";
-            this.button_phong.Size = new System.Drawing.Size(185, 58);
-            this.button_phong.TabIndex = 4;
-            this.button_phong.Text = "    Phòng";
-            this.button_phong.UseVisualStyleBackColor = false;
-            this.button_phong.Click += new System.EventHandler(this.button_phong_Click);
             // 
             // button_nhanvien
             // 
@@ -258,7 +278,7 @@
             this.button_nhanvien.ForeColor = System.Drawing.Color.White;
             this.button_nhanvien.Image = ((System.Drawing.Image)(resources.GetObject("button_nhanvien.Image")));
             this.button_nhanvien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_nhanvien.Location = new System.Drawing.Point(31, 257);
+            this.button_nhanvien.Location = new System.Drawing.Point(25, 449);
             this.button_nhanvien.Name = "button_nhanvien";
             this.button_nhanvien.Size = new System.Drawing.Size(185, 58);
             this.button_nhanvien.TabIndex = 3;
@@ -275,7 +295,7 @@
             this.button_khachhang.ForeColor = System.Drawing.Color.White;
             this.button_khachhang.Image = ((System.Drawing.Image)(resources.GetObject("button_khachhang.Image")));
             this.button_khachhang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_khachhang.Location = new System.Drawing.Point(31, 193);
+            this.button_khachhang.Location = new System.Drawing.Point(25, 513);
             this.button_khachhang.Name = "button_khachhang";
             this.button_khachhang.Size = new System.Drawing.Size(185, 58);
             this.button_khachhang.TabIndex = 2;
@@ -336,16 +356,87 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // uC_BaoCaoDoanhThu1
+            // uC_NhanVien1
             // 
-            this.uC_BaoCaoDoanhThu1.AutoScroll = true;
-            this.uC_BaoCaoDoanhThu1.BackColor = System.Drawing.Color.White;
-            this.uC_BaoCaoDoanhThu1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_BaoCaoDoanhThu1.Location = new System.Drawing.Point(233, 125);
-            this.uC_BaoCaoDoanhThu1.Name = "uC_BaoCaoDoanhThu1";
-            this.uC_BaoCaoDoanhThu1.Size = new System.Drawing.Size(949, 565);
-            this.uC_BaoCaoDoanhThu1.TabIndex = 6;
-            this.uC_BaoCaoDoanhThu1.Visible = false;
+            this.uC_NhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_NhanVien1.Location = new System.Drawing.Point(233, 125);
+            this.uC_NhanVien1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.uC_NhanVien1.Name = "uC_NhanVien1";
+            this.uC_NhanVien1.Size = new System.Drawing.Size(949, 565);
+            this.uC_NhanVien1.TabIndex = 7;
+            this.uC_NhanVien1.Visible = false;
+            // 
+            // uC_BookingManagemen1
+            // 
+            this.uC_BookingManagemen1.BackColor = System.Drawing.Color.White;
+            this.uC_BookingManagemen1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_BookingManagemen1.Location = new System.Drawing.Point(233, 125);
+            this.uC_BookingManagemen1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uC_BookingManagemen1.Name = "uC_BookingManagemen1";
+            this.uC_BookingManagemen1.Size = new System.Drawing.Size(949, 565);
+            this.uC_BookingManagemen1.TabIndex = 8;
+            this.uC_BookingManagemen1.Visible = false;
+            // 
+            // button_booking
+            // 
+            this.button_booking.BackColor = System.Drawing.Color.Transparent;
+            this.button_booking.FlatAppearance.BorderSize = 0;
+            this.button_booking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_booking.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_booking.ForeColor = System.Drawing.Color.White;
+            this.button_booking.Image = ((System.Drawing.Image)(resources.GetObject("button_booking.Image")));
+            this.button_booking.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_booking.Location = new System.Drawing.Point(31, 257);
+            this.button_booking.Name = "button_booking";
+            this.button_booking.Size = new System.Drawing.Size(185, 58);
+            this.button_booking.TabIndex = 9;
+            this.button_booking.Text = "Đặt phòng";
+            this.button_booking.UseVisualStyleBackColor = false;
+            this.button_booking.Click += new System.EventHandler(this.button_booking_Click);
+            // 
+            // userControlBooking1
+            // 
+            this.userControlBooking1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlBooking1.Location = new System.Drawing.Point(233, 125);
+            this.userControlBooking1.Name = "userControlBooking1";
+            this.userControlBooking1.Size = new System.Drawing.Size(949, 565);
+            this.userControlBooking1.TabIndex = 9;
+            this.userControlBooking1.Visible = false;
+            // 
+            // userControlOrderService1
+            // 
+            this.userControlOrderService1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlOrderService1.Location = new System.Drawing.Point(233, 125);
+            this.userControlOrderService1.Name = "userControlOrderService1";
+            this.userControlOrderService1.Size = new System.Drawing.Size(949, 565);
+            this.userControlOrderService1.TabIndex = 10;
+            this.userControlOrderService1.Visible = false;
+            // 
+            // button_dichvu
+            // 
+            this.button_dichvu.BackColor = System.Drawing.Color.Transparent;
+            this.button_dichvu.FlatAppearance.BorderSize = 0;
+            this.button_dichvu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_dichvu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_dichvu.ForeColor = System.Drawing.Color.White;
+            this.button_dichvu.Image = ((System.Drawing.Image)(resources.GetObject("button_dichvu.Image")));
+            this.button_dichvu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_dichvu.Location = new System.Drawing.Point(25, 321);
+            this.button_dichvu.Name = "button_dichvu";
+            this.button_dichvu.Size = new System.Drawing.Size(185, 58);
+            this.button_dichvu.TabIndex = 10;
+            this.button_dichvu.Text = "Thêm dịch vụ";
+            this.button_dichvu.UseVisualStyleBackColor = false;
+            this.button_dichvu.Click += new System.EventHandler(this.button_dichvu_Click);
+            // 
+            // userControlBillManagement1
+            // 
+            this.userControlBillManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlBillManagement1.Location = new System.Drawing.Point(233, 125);
+            this.userControlBillManagement1.Name = "userControlBillManagement1";
+            this.userControlBillManagement1.Size = new System.Drawing.Size(949, 565);
+            this.userControlBillManagement1.TabIndex = 11;
+            this.userControlBillManagement1.Visible = false;
             // 
             // frmMain
             // 
@@ -353,6 +444,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1182, 690);
+            this.Controls.Add(this.userControlBillManagement1);
+            this.Controls.Add(this.userControlOrderService1);
+            this.Controls.Add(this.userControlBooking1);
+            this.Controls.Add(this.uC_BookingManagemen1);
+            this.Controls.Add(this.uC_NhanVien1);
             this.Controls.Add(this.uC_BaoCaoDoanhThu1);
             this.Controls.Add(this.uC_KhachHang1);
             this.Controls.Add(this.gradientPanel3);
@@ -391,7 +487,6 @@
         private System.Windows.Forms.Label label_userName;
         private System.Windows.Forms.Button button_daskboard;
         private System.Windows.Forms.Button button_hoadon;
-        private System.Windows.Forms.Button button_phong;
         private System.Windows.Forms.Button button_nhanvien;
         private System.Windows.Forms.Button button_khachhang;
         private myClass.GradientPanel gradientPanel4;
@@ -400,6 +495,14 @@
         private myForm.UC_KhachHang uC_KhachHang1;
         private System.Windows.Forms.Button button_doanhthu;
         private myForm.UC_BaoCaoDoanhThu uC_BaoCaoDoanhThu1;
+        private myForm.UC_NhanVien uC_NhanVien1;
+        private System.Windows.Forms.Button button_datPhong;
+        private myForm.UC_BookingManagemen uC_BookingManagemen1;
+        private System.Windows.Forms.Button button_booking;
+        private myForm.UserControlBooking userControlBooking1;
+        private System.Windows.Forms.Button button_dichvu;
+        private myForm.UserControlOrderService userControlOrderService1;
+        private myForm.UserControlBillManagement userControlBillManagement1;
     }
 }
 

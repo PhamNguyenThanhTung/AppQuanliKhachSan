@@ -23,4 +23,5 @@ D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.exe
 D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.pdb
 D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_KhachHang.resources
 D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_BaoCaoDoanhThu.resources
+D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_NhanVien.resources
 D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.exe.config
