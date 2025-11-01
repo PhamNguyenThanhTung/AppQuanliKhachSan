@@ -58,6 +58,18 @@
     <Compile Include="myClass\GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="myForm\FrmCheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myForm\FrmCheckIn.Designer.cs">
+      <DependentUpon>FrmCheckIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myForm\frmCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myForm\frmCheckOut.Designer.cs">
+      <DependentUpon>frmCheckOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="myForm\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +81,12 @@
     </Compile>
     <Compile Include="myForm\UC_BaoCaoDoanhThu.Designer.cs">
       <DependentUpon>UC_BaoCaoDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myForm\UC_BookingManagemen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myForm\UC_BookingManagemen.Designer.cs">
+      <DependentUpon>UC_BookingManagemen.cs</DependentUpon>
     </Compile>
     <Compile Include="myForm\UC_KhachHang.cs">
       <SubType>UserControl</SubType>
@@ -86,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="myForm\UC_BaoCaoDoanhThu.resx">
       <DependentUpon>UC_BaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myForm\UC_BookingManagemen.resx">
+      <DependentUpon>UC_BookingManagemen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myForm\UC_KhachHang.resx">
       <DependentUpon>UC_KhachHang.cs</DependentUpon>

@@ -194,6 +194,15 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="button_booking.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAMNJREFUWEft
+        lrENAjEMRbPszcAGlFBT3wYMQMtWBKWIZL2LEzvKEYo86TWx9f2lay6ERQjhvsU4w6nHs6vAKnB6gQzf
+        s6cWkHCWdRdIPC7Hd2o5nnQVkOzX47y0xxk1FyhRKiHhrKSpAEMlsoSEGZrNAlqoJJWQMKNmtUArtAR3
+        WqoFrKHWPc1mAb6PVi3wK1eBVWDqfyH+jW28nzHW5P5weJByfzg8SLk/BH47q8zpgqFemeeGgV6Z18Vt
+        +7x6ZM5f8gUeJ0qgDm8CsAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="button_doanhthu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAMNJREFUWEft
@@ -295,4 +304,7 @@
         gReaQk9w+gXHP93l2pRrqzdRKBQKhUKhUCgUCoVCGm8AEBj1S1lf/bQAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
 </root>

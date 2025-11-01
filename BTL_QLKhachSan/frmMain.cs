@@ -139,5 +139,18 @@ namespace BTL_QLKhachSan
             movePanel(button_doanhthu);
             uC_BaoCaoDoanhThu1.Show();
         }
+
+        private void button_booking_Click(object sender, EventArgs e)
+        {
+            movePanel(button_booking);
+
+            // Fix: Use the instance of UC_BookingManagemen, not the type name.
+            uC_BookingManagemen1.Show();
+
+            uC_KhachHang1.Hide();
+            uC_BaoCaoDoanhThu1.Hide();
+        
+        }
     }
 }
+       

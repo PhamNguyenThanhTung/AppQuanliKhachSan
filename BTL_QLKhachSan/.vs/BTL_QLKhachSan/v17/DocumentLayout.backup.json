@@ -1,26 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\",
+  "WorkspaceRootPath": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|d:\\btl_app\\appquanlikhachsan\\btl_qlkhachsan\\myform\\uc_baocaodoanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_baocaodoanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\pc\\source\\repos\\appquanlikhachsan\\btl_qlkhachsan\\myform\\frmcheckin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmcheckin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|d:\\btl_app\\appquanlikhachsan\\btl_qlkhachsan\\myform\\uc_baocaodoanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_baocaodoanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\pc\\source\\repos\\appquanlikhachsan\\btl_qlkhachsan\\myform\\frmcheckin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmcheckin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|d:\\btl_app\\appquanlikhachsan\\btl_qlkhachsan\\myform\\uc_baocaodoanhthu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_baocaodoanhthu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\pc\\source\\repos\\appquanlikhachsan\\btl_qlkhachsan\\myform\\frmcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|d:\\btl_app\\appquanlikhachsan\\btl_qlkhachsan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\pc\\source\\repos\\appquanlikhachsan\\btl_qlkhachsan\\myform\\frmcheckout.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmcheckout.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\pc\\source\\repos\\appquanlikhachsan\\btl_qlkhachsan\\myform\\frmcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\pc\\source\\repos\\appquanlikhachsan\\btl_qlkhachsan\\myform\\frmlogin.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmlogin.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_bookingmanagemen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_bookingmanagemen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_bookingmanagemen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_bookingmanagemen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\pc\\source\\repos\\appquanlikhachsan\\btl_qlkhachsan\\myform\\uc_bookingmanagemen.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_bookingmanagemen.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\pc\\source\\repos\\appquanlikhachsan\\btl_qlkhachsan\\myform\\frmcheckin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmcheckin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myclass\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myclass\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|c:\\users\\pc\\source\\repos\\appquanlikhachsan\\btl_qlkhachsan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|d:\\btl_app\\appquanlikhachsan\\btl_qlkhachsan\\myform\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,15 +66,7 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{7513ff4e-9271-4984-bbcd-46ff9e185399}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
             },
             {
               "$type": "Bookmark",
@@ -53,67 +77,176 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UC_BaoCaoDoanhThu.Designer.cs",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BaoCaoDoanhThu.Designer.cs",
-              "RelativeDocumentMoniker": "myForm\\UC_BaoCaoDoanhThu.Designer.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BaoCaoDoanhThu.Designer.cs",
-              "RelativeToolTip": "myForm\\UC_BaoCaoDoanhThu.Designer.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAkwGYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T14:55:02.361Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{7513ff4e-9271-4984-bbcd-46ff9e185399}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UC_BaoCaoDoanhThu.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BaoCaoDoanhThu.cs",
-              "RelativeDocumentMoniker": "myForm\\UC_BaoCaoDoanhThu.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BaoCaoDoanhThu.cs [Design]",
-              "RelativeToolTip": "myForm\\UC_BaoCaoDoanhThu.cs [Design]",
+              "Title": "FrmCheckIn.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\FrmCheckIn.Designer.cs",
+              "RelativeDocumentMoniker": "myForm\\FrmCheckIn.Designer.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\FrmCheckIn.Designer.cs",
+              "RelativeToolTip": "myForm\\FrmCheckIn.Designer.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAmwJcAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T16:50:01.032Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-01T14:21:21.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UC_BookingManagemen.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BookingManagemen.cs",
+              "RelativeDocumentMoniker": "myForm\\UC_BookingManagemen.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BookingManagemen.cs",
+              "RelativeToolTip": "myForm\\UC_BookingManagemen.cs",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAowAMBAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T09:46:25.376Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UC_BaoCaoDoanhThu.cs",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BaoCaoDoanhThu.cs",
-              "RelativeDocumentMoniker": "myForm\\UC_BaoCaoDoanhThu.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BaoCaoDoanhThu.cs",
-              "RelativeToolTip": "myForm\\UC_BaoCaoDoanhThu.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAAwG0AAAAMAAAAAAAAAA==",
+              "Title": "FrmCheckIn.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\FrmCheckIn.cs",
+              "RelativeDocumentMoniker": "myForm\\FrmCheckIn.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\FrmCheckIn.cs*",
+              "RelativeToolTip": "myForm\\FrmCheckIn.cs*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T13:57:26.522Z",
+              "WhenOpened": "2025-11-01T13:55:03.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UC_BookingManagemen.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BookingManagemen.Designer.cs",
+              "RelativeDocumentMoniker": "myForm\\UC_BookingManagemen.Designer.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BookingManagemen.Designer.cs",
+              "RelativeToolTip": "myForm\\UC_BookingManagemen.Designer.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAnwFMAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T14:05:50.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UC_BookingManagemen.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BookingManagemen.cs",
+              "RelativeDocumentMoniker": "myForm\\UC_BookingManagemen.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BookingManagemen.cs [Design]",
+              "RelativeToolTip": "myForm\\UC_BookingManagemen.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T08:05:14.151Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmLogin.resx",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.resx",
+              "RelativeDocumentMoniker": "myForm\\frmLogin.resx",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.resx",
+              "RelativeToolTip": "myForm\\frmLogin.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-11-01T14:06:05.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmCheckOut.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.cs",
+              "RelativeDocumentMoniker": "myForm\\frmCheckOut.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.cs",
+              "RelativeToolTip": "myForm\\frmCheckOut.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAcwKcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T13:59:13.803Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "frmMain.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs",
-              "RelativeDocumentMoniker": "frmMain.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs [Design]",
-              "RelativeToolTip": "frmMain.cs [Design]",
+              "Title": "frmCheckOut.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.Designer.cs",
+              "RelativeDocumentMoniker": "myForm\\frmCheckOut.Designer.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.Designer.cs",
+              "RelativeToolTip": "myForm\\frmCheckOut.Designer.cs",
+              "ViewState": "AgIAAAUBAAAAAAAAAAAnwB0BAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T13:55:06.569Z",
+              "WhenOpened": "2025-11-01T13:58:44.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmCheckOut.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.cs",
+              "RelativeDocumentMoniker": "myForm\\frmCheckOut.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.cs [Design]",
+              "RelativeToolTip": "myForm\\frmCheckOut.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T13:58:39.318Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmLogin.cs",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.cs",
-              "RelativeDocumentMoniker": "myForm\\frmLogin.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.cs",
-              "RelativeToolTip": "myForm\\frmLogin.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAIwDUAAABGAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "FrmCheckIn.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\FrmCheckIn.cs",
+              "RelativeDocumentMoniker": "myForm\\FrmCheckIn.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\FrmCheckIn.cs [Design]*",
+              "RelativeToolTip": "myForm\\FrmCheckIn.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T14:17:28.338Z",
+              "WhenOpened": "2025-11-01T13:49:42.223Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs",
+              "RelativeToolTip": "frmMain.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAqwJMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T07:08:18.354Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Database.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myClass\\Database.cs",
+              "RelativeDocumentMoniker": "myClass\\Database.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\myClass\\Database.cs",
+              "RelativeToolTip": "myClass\\Database.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAowGIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T15:31:08.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "C:\\Users\\PC\\source\\repos\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs [Design]",
+              "RelativeToolTip": "frmMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T13:55:06.569Z",
+              "EditorCaption": " [Design]"
             }
           ]
         },
