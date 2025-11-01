@@ -1,206 +1,295 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using BTL_QLKhachSan.myClass; // Đảm bảo bạn đã thêm dòng này
+using System.Data.SqlClient; // Thêm thư viện này để dùng SqlParameter
 
-namespace BTL_QLKhachSan.QuanLy
+namespace BTL_QLKhachSan.myForm
 {
     public partial class UC_KhachHang : UserControl
     {
-        string connectionString = "Data Source=LOMG\\SQLEXPRESS;Initial Catalog=QLKhachSan;Integrated Security=True";
-        int selectedID = -1; // ID khách hàng đang chọn
+        // Khởi tạo đối tượng Database để tương tác
+        Database db = new Database();
+
+        // Biến tạm để lưu IDKhachHang khi chọn từ GridView (dùng cho Sửa/Xóa)
+        private string selectedID = null;
 
         public UC_KhachHang()
         {
             InitializeComponent();
-            cboGioiTinh.Items.AddRange(new string[] { "Nam", "Nữ", "Khác" });
-            LoadDanhSachKhachHang();
         }
 
-        //Hiển thị danh sách khách hàng
-        private void LoadDanhSachKhachHang()
+        // Sự kiện khi UserControl được tải
+        private void UC_KhachHang_Load(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            // Tải dữ liệu lên DataGridView khi form được mở
+            LoadData();
+            // (Tùy chọn) Đặt giá trị mặc định cho ComboBox
+            if (cboGioiTinh.Items.Count > 0)
             {
-                string query = "SELECT IDKhachHang, HoTen, CMND, SoDienThoai, GioiTinh, DiaChi FROM KHACHHANG";
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dgvKhachHang.DataSource = dt;
+                cboGioiTinh.SelectedIndex = 0;
             }
         }
 
-        //Làm trống form nhập liệu
-        private void ClearForm()
+        // --- HÀM XỬ LÝ CHÍNH ---
+
+        // Hàm tải dữ liệu (chính hoặc tìm kiếm)
+        private void LoadData(string searchTerm = "")
+        {
+            string query = "";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                // Câu lệnh SQL để lấy tất cả khách hàng
+                query = "SELECT IDKhachHang, HoTen, CMND, SoDienThoai, GioiTinh, DiaChi FROM KHACHHANG";
+            }
+            else
+            {
+                // Câu lệnh SQL để tìm kiếm an toàn (theo Tên hoặc CMND)
+                query = "SELECT IDKhachHang, HoTen, CMND, SoDienThoai, GioiTinh, DiaChi FROM KHACHHANG " +
+                          "WHERE HoTen LIKE @searchTerm OR CMND LIKE @searchTerm";
+                // Dùng N'%' để hỗ trợ tìm kiếm tiếng Việt và ký tự đặc biệt
+                parameters.Add(new SqlParameter("@searchTerm", "%" + searchTerm + "%"));
+            }
+            
+            try
+            {
+                // Lấy dữ liệu bằng phương thức GetData từ lớp Database
+                DataTable dt = db.GetData(query, parameters); 
+                dgvKhachHang.DataSource = dt;
+
+                // (Tùy chọn) Đặt lại tên cột cho đẹp hơn
+                dgvKhachHang.Columns["IDKhachHang"].HeaderText = "ID";
+                dgvKhachHang.Columns["HoTen"].HeaderText = "Họ Tên";
+                dgvKhachHang.Columns["CMND"].HeaderText = "Số CMND";
+                dgvKhachHang.Columns["SoDienThoai"].HeaderText = "Điện Thoại";
+                dgvKhachHang.Columns["GioiTinh"].HeaderText = "Giới Tính";
+                dgvKhachHang.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Hàm xóa trắng các ô nhập liệu
+        private void ClearFields()
         {
             txtHoTen.Clear();
             txtCMND.Clear();
             txtSoDienThoai.Clear();
             txtDiaChi.Clear();
-            cboGioiTinh.SelectedIndex = -1;
-            selectedID = -1;
+            if (cboGioiTinh.Items.Count > 0)
+            {
+                cboGioiTinh.SelectedIndex = 0;
+            }
+            txtTimKiem.Clear();
+            selectedID = null; // Quan trọng: Đặt lại ID đã chọn
+            dgvKhachHang.ClearSelection(); // Bỏ chọn trên lưới
         }
 
-        //Thêm khách hàng
+        // Hàm kiểm tra dữ liệu đầu vào
+        private bool ValidateInput()
+        {
+            if (string.IsNullOrWhiteSpace(txtHoTen.Text))
+            {
+                MessageBox.Show("Vui lòng nhập Họ Tên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtHoTen.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtCMND.Text))
+            {
+                MessageBox.Show("Vui lòng nhập Số CMND.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCMND.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        // --- CÁC SỰ KIỆN CLICK NÚT ---
+
+        // Sự kiện click nút Thêm
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtHoTen.Text == "" || txtCMND.Text == "" || cboGioiTinh.Text == "")
+            if (!ValidateInput()) return; // Kiểm tra đầu vào
+
+            string query = "INSERT INTO KHACHHANG (HoTen, CMND, SoDienThoai, GioiTinh, DiaChi) " +
+                           "VALUES (@HoTen, @CMND, @SoDienThoai, @GioiTinh, @DiaChi)";
+
+            List<SqlParameter> parameters = new List<SqlParameter>
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin bắt buộc!");
-                return;
-            }
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = "INSERT INTO KHACHHANG (HoTen, CMND, SoDienThoai, GioiTinh, DiaChi) VALUES (@ten, @cmnd, @sdt, @gt, @dc)";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@ten", txtHoTen.Text);
-                cmd.Parameters.AddWithValue("@cmnd", txtCMND.Text);
-                cmd.Parameters.AddWithValue("@sdt", txtSoDienThoai.Text);
-                cmd.Parameters.AddWithValue("@gt", cboGioiTinh.Text);
-                cmd.Parameters.AddWithValue("@dc", txtDiaChi.Text);
-
-                conn.Open();
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Thêm khách hàng thành công!");
-                    LoadDanhSachKhachHang();
-                    ClearForm();
-                }
-                catch (SqlException ex)
-                {
-                    if (ex.Number == 2627)
-                        MessageBox.Show("CMND đã tồn tại!");
-                    else
-                        MessageBox.Show("Lỗi SQL: " + ex.Message);
-                }
-            }
-        }
-
-        //Khi chọn 1 hàng trong DataGridView
-        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvKhachHang.Rows[e.RowIndex];
-                selectedID = Convert.ToInt32(row.Cells["IDKhachHang"].Value);
-                txtHoTen.Text = row.Cells["HoTen"].Value.ToString();
-                txtCMND.Text = row.Cells["CMND"].Value.ToString();
-                txtSoDienThoai.Text = row.Cells["SoDienThoai"].Value.ToString();
-                cboGioiTinh.Text = row.Cells["GioiTinh"].Value.ToString();
-                txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
-            }
-        }
-
-        //Sửa khách hàng
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            if (selectedID == -1)
-            {
-                MessageBox.Show("Vui lòng chọn khách hàng cần sửa!");
-                return;
-            }
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = "UPDATE KHACHHANG SET HoTen=@ten, CMND=@cmnd, SoDienThoai=@sdt, GioiTinh=@gt, DiaChi=@dc WHERE IDKhachHang=@id";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@ten", txtHoTen.Text);
-                cmd.Parameters.AddWithValue("@cmnd", txtCMND.Text);
-                cmd.Parameters.AddWithValue("@sdt", txtSoDienThoai.Text);
-                cmd.Parameters.AddWithValue("@gt", cboGioiTinh.Text);
-                cmd.Parameters.AddWithValue("@dc", txtDiaChi.Text);
-                cmd.Parameters.AddWithValue("@id", selectedID);
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-
-                MessageBox.Show("Cập nhật thành công!");
-                LoadDanhSachKhachHang();
-                ClearForm();
-            }
-        }
-
-        //Xóa khách hàng
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (selectedID == -1)
-            {
-                MessageBox.Show("Vui lòng chọn khách hàng cần xóa!");
-                return;
-            }
-
-            DialogResult dr = MessageBox.Show("Bạn có chắc muốn xóa khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dr == DialogResult.No) return;
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = "DELETE FROM KHACHHANG WHERE IDKhachHang=@id";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id", selectedID);
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-            }
-
-            MessageBox.Show("Đã xóa khách hàng!");
-            LoadDanhSachKhachHang();
-            ClearForm();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-        //Hàm tìm kiếm khách hàng theo tên hoặc số điện thoại
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            string keyword = txtTimKiem.Text.Trim();
-
-            if (keyword == "")
-            {
-                MessageBox.Show("Vui lòng nhập tên hoặc số điện thoại để tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                new SqlParameter("@HoTen", txtHoTen.Text),
+                new SqlParameter("@CMND", txtCMND.Text),
+                new SqlParameter("@SoDienThoai", txtSoDienThoai.Text),
+                new SqlParameter("@GioiTinh", cboGioiTinh.Text),
+                new SqlParameter("@DiaChi", txtDiaChi.Text)
+            };
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    string query = @"SELECT IDKhachHang, HoTen, CMND, SoDienThoai, GioiTinh, DiaChi 
-                             FROM KHACHHANG
-                             WHERE HoTen LIKE @kw OR SoDienThoai LIKE @kw";
-
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@kw", "%" + keyword + "%");
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    if (dt.Rows.Count == 0)
-                    {
-                        MessageBox.Show("Không tìm thấy khách hàng phù hợp!", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                    dgvKhachHang.DataSource = dt;
-                }
+                db.ExecuteNonQuery(query, parameters); // Dùng hàm mới
+                MessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData(); // Tải lại dữ liệu
+                ClearFields(); // Xóa các ô nhập
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tìm kiếm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Xử lý lỗi trùng lặp CMND (nếu có cài đặt UNIQUE trong CSDL)
+                if (ex.Message.Contains("UNIQUE constraint"))
+                {
+                     MessageBox.Show("Số CMND này đã tồn tại. Vui lòng kiểm tra lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi thêm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
-        //út hiển thị lại toàn bộ danh sách
-        private void btnLamMoi_Click(object sender, EventArgs e)
+        // Sự kiện click nút Sửa
+        private void btnSua_Click(object sender, EventArgs e)
         {
-            txtTimKiem.Clear();
-            LoadDanhSachKhachHang();
+            if (selectedID == null)
+            {
+                MessageBox.Show("Vui lòng chọn một khách hàng từ danh sách để sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!ValidateInput()) return; // Kiểm tra đầu vào
+
+            string query = "UPDATE KHACHHANG SET HoTen = @HoTen, CMND = @CMND, SoDienThoai = @SoDienThoai, " +
+                           "GioiTinh = @GioiTinh, DiaChi = @DiaChi WHERE IDKhachHang = @ID";
+
+            List<SqlParameter> parameters = new List<SqlParameter>
+            {
+                new SqlParameter("@HoTen", txtHoTen.Text),
+                new SqlParameter("@CMND", txtCMND.Text),
+                new SqlParameter("@SoDienThoai", txtSoDienThoai.Text),
+                new SqlParameter("@GioiTinh", cboGioiTinh.Text),
+                new SqlParameter("@DiaChi", txtDiaChi.Text),
+                new SqlParameter("@ID", Convert.ToInt32(selectedID)) // ID của khách hàng cần sửa
+            };
+
+            try
+            {
+                db.ExecuteNonQuery(query, parameters);
+                MessageBox.Show("Cập nhật khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData();
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        // Sự kiện click nút Xóa
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (selectedID == null)
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Xác nhận trước khi xóa
+            DialogResult confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            if (confirm == DialogResult.Yes)
+            {
+                // Cần kiểm tra xem khách hàng này có đang thuê phòng không (liên quan đến bảng PHIEUTHUE)
+                string checkQuery = "SELECT COUNT(*) FROM PHIEUTHUE WHERE IDKhachHang = @ID AND TrangThai = N'Chưa thanh toán'"; // Giả sử trạng thái là 'Chưa thanh toán'
+                List<SqlParameter> checkParams = new List<SqlParameter> { new SqlParameter("@ID", Convert.ToInt32(selectedID)) };
+                
+                // (Giả định hàm GetData trả về DataTable)
+                DataTable dt = db.GetData(checkQuery, checkParams);
+                int count = Convert.ToInt32(dt.Rows[0][0]);
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Không thể xóa. Khách hàng này đang có phiếu thuê chưa thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Nếu không vướng bận, tiến hành xóa
+                string deleteQuery = "DELETE FROM KHACHHANG WHERE IDKhachHang = @ID";
+                List<SqlParameter> deleteParams = new List<SqlParameter> { new SqlParameter("@ID", Convert.ToInt32(selectedID)) };
+
+                try
+                {
+                    db.ExecuteNonQuery(deleteQuery, deleteParams);
+                    MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
+                    ClearFields();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        // Sự kiện click nút Làm Mới
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+            LoadData(); // Tải lại toàn bộ danh sách
+        }
+
+        // Sự kiện click nút Tìm Kiếm
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtTimKiem.Text.Trim();
+            LoadData(searchTerm);
+        }
+
+        // Sự kiện click vào một ô trong DataGridView
+        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Đảm bảo người dùng không click vào tiêu đề cột
+            if (e.RowIndex >= 0)
+            {
+                try
+                {
+                    // Lấy dòng hiện tại
+                    DataGridViewRow row = dgvKhachHang.Rows[e.RowIndex];
+
+                    // Lưu ID đã chọn vào biến tạm
+                    selectedID = row.Cells["IDKhachHang"].Value.ToString();
+
+                    // Hiển thị dữ liệu lên các ô nhập
+                    txtHoTen.Text = row.Cells["HoTen"].Value.ToString();
+                    txtCMND.Text = row.Cells["CMND"].Value.ToString();
+                    txtSoDienThoai.Text = row.Cells["SoDienThoai"].Value.ToString();
+                    cboGioiTinh.Text = row.Cells["GioiTinh"].Value.ToString();
+                    txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi chọn dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        // Thêm phương thức này vào UC_KhachHang.cs
+        public void ClearAndRefreshData()
+        {
+            ClearFields(); // Xóa các trường nhập liệu
+            LoadData();    // Tải lại dữ liệu cho DataGridView
+        }
+
+        private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Bỏ qua ký tự này
+            }
+        }
     }
 }

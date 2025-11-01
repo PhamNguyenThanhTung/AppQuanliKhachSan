@@ -121,6 +121,15 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button_DoanhThu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAADDSURBVFhH7ZaxDQIxDEWz7M3ABpRQU98GDEDLVgSliGS9ixM7yhGKPOk1sfX9pWsuhEUI4b7F
+        OMOpx7OrwCpweoEM37OnFpBwlnUXSDwux3dqOZ50FZDs1+O8tMcZNRcoUSoh4aykqQBDJbKEhBmazQJa
+        qCSVkDCjZrVAK7QEd1qqBayh1j3NZgG+j1Yt8CtXgVVg6n8h/o1tvJ8x1uT+cHiQcn84PEi5PwR+O6vM
+        6YKhXpnnhoFemdfFbfu8emTOX/IFHidKoA5vArAAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
@@ -177,7 +186,7 @@
         GcIKmAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button_phong.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="button_Booking.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAPNJREFUWEdj
         YBgFo4BCcMPT7L+qoWUTujjdAMgBakZm59DFaQpUDc1/qxqZLVEzNi9WNbA4rG1pKaRmZPEfXR1NAD6L

@@ -172,12 +172,16 @@ namespace BTL_QLKhachSan
             loadUserControl(new UC_NhanVien(LoaiTk, username));
         }
 
-        private void button_phong_Click(object sender, EventArgs e)
+        private void button_Booking_Click(object sender, EventArgs e)
         {
-            movePanel(button_phong);
-            loadUserControl(new UC_Phong());
+            movePanel(button_Booking);
+            loadUserControl(new UC_BookingManagemen());
         }
-
+        private void button_DoanhThu_Click(object sender, EventArgs e)
+        {
+            movePanel(button_DoanhThu);
+            loadUserControl(new UC_BaoCaoDoanhThu());
+        }
         private void button_hoadon_Click(object sender, EventArgs e)
         {
             movePanel(button_hoadon);
@@ -221,5 +225,7 @@ namespace BTL_QLKhachSan
         {
 
         }
+
+       
     }
 }

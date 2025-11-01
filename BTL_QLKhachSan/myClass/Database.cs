@@ -7,39 +7,105 @@ namespace BTL_QLKhachSan.myClass
 {
     class Database
     {
-        // !!! THAY THẾ DÒNG NÀY BẰNG CHUỖI KẾT NỐI CỦA BẠN !!!
-        private string connectionString = "Data Source=LOMG\\SQLEXPRESS;Initial Catalog=QLKhachSan;Integrated Security=True";
+        // 🔹 Chuỗi kết nối (chỉnh theo máy bạn)
+        private readonly string connectionString = @"Data Source=LOMG\SQLEXPRESS;Initial Catalog=QLKhachSan;Integrated Security=True";
 
-        // Hàm dùng để thực thi các câu lệnh SELECT và trả về một DataTable
+        /// <summary>
+        /// Hàm thực thi câu lệnh SELECT và trả về DataTable
+        /// </summary>
         public DataTable GetData(string sqlQuery, List<SqlParameter> parameters = null)
         {
             DataTable dt = new DataTable();
+
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
                 {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
+                    // ✅ Luôn tạo bản sao tham số để tránh lỗi "already contained"
+                    if (parameters != null)
                     {
-                        // Thêm các tham số (parameters) nếu có
-                        if (parameters != null)
+                        foreach (SqlParameter p in parameters)
                         {
-                            cmd.Parameters.AddRange(parameters.ToArray());
+                            cmd.Parameters.Add(new SqlParameter(p.ParameterName, p.Value));
                         }
+                    }
 
-                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                        {
-                            da.Fill(dt); // Đổ dữ liệu vào DataTable
-                        }
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Xử lý lỗi (ví dụ: ghi log, hiển thị thông báo)
                 Console.WriteLine("Lỗi khi truy vấn CSDL: " + ex.Message);
+                throw new Exception("Lỗi khi tải dữ liệu: " + ex.Message);
             }
+
             return dt;
+        }
+
+        /// <summary>
+        /// Hàm thực thi câu lệnh INSERT / UPDATE / DELETE
+        /// </summary>
+        public void ExecuteNonQuery(string sqlQuery, List<SqlParameter> parameters = null)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
+                {
+                    if (parameters != null)
+                    {
+                        foreach (SqlParameter p in parameters)
+                        {
+                            cmd.Parameters.Add(new SqlParameter(p.ParameterName, p.Value));
+                        }
+                    }
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi thực thi CSDL: " + ex.Message);
+                throw new Exception("Lỗi khi thực thi CSDL: " + ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Hàm thực thi câu lệnh trả về 1 giá trị duy nhất (VD: COUNT, SUM, MAX, ...)
+        /// </summary>
+        public object GetScalar(string sqlQuery, List<SqlParameter> parameters = null)
+        {
+            object result = null;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
+                {
+                    if (parameters != null)
+                    {
+                        foreach (SqlParameter p in parameters)
+                        {
+                            cmd.Parameters.Add(new SqlParameter(p.ParameterName, p.Value));
+                        }
+                    }
+
+                    con.Open();
+                    result = cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi thực thi Scalar: " + ex.Message);
+                throw new Exception("Lỗi khi thực thi Scalar: " + ex.Message);
+            }
+
+            return result;
         }
     }
 }

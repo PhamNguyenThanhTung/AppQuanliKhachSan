@@ -2,159 +2,125 @@
 {
     partial class UC_Dashboard
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
+            if (disposing && (components != null)) components.Dispose();
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
-
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.label_adminCount = new System.Windows.Forms.Label();
-            this.label_letanCount = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanelRooms = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel_room = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label_phongCount = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.actionButton = new System.Windows.Forms.Button();
+            this.label_Status = new System.Windows.Forms.Label();
+            this.label_RoomType = new System.Windows.Forms.Label();
+            this.label_RoomName = new System.Windows.Forms.Label();
+            this.flowLayoutPanelRooms.SuspendLayout();
+            this.panel_room.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label_adminCount
+            // flowLayoutPanelRooms
             // 
-            this.label_adminCount.AutoSize = true;
-            this.label_adminCount.Location = new System.Drawing.Point(28, 69);
-            this.label_adminCount.Name = "label_adminCount";
-            this.label_adminCount.Size = new System.Drawing.Size(65, 16);
-            this.label_adminCount.TabIndex = 6;
-            this.label_adminCount.Text = "Số Admin";
+            this.flowLayoutPanelRooms.Controls.Add(this.panel_room);
+            this.flowLayoutPanelRooms.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelRooms.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelRooms.Name = "flowLayoutPanelRooms";
+            this.flowLayoutPanelRooms.Size = new System.Drawing.Size(900, 600);
+            this.flowLayoutPanelRooms.TabIndex = 0;
             // 
-            // label_letanCount
+            // panel_room
             // 
-            this.label_letanCount.AutoSize = true;
-            this.label_letanCount.Location = new System.Drawing.Point(30, 69);
-            this.label_letanCount.Name = "label_letanCount";
-            this.label_letanCount.Size = new System.Drawing.Size(59, 16);
-            this.label_letanCount.TabIndex = 7;
-            this.label_letanCount.Text = "Số lễ tân";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Số Admin:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.panel_room.Controls.Add(this.label2);
+            this.panel_room.Controls.Add(this.label1);
+            this.panel_room.Controls.Add(this.actionButton);
+            this.panel_room.Controls.Add(this.label_Status);
+            this.panel_room.Controls.Add(this.label_RoomType);
+            this.panel_room.Controls.Add(this.label_RoomName);
+            this.panel_room.Location = new System.Drawing.Point(3, 3);
+            this.panel_room.Name = "panel_room";
+            this.panel_room.Size = new System.Drawing.Size(199, 174);
+            this.panel_room.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 26);
+            this.label2.Location = new System.Drawing.Point(24, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Số lễ tân:";
+            this.label2.Size = new System.Drawing.Size(70, 16);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Trạng thái:";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 16);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Số phòng:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 16);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Loại phòng:";
             // 
-            // label_phongCount
+            // actionButton
             // 
-            this.label_phongCount.AutoSize = true;
-            this.label_phongCount.Location = new System.Drawing.Point(29, 69);
-            this.label_phongCount.Name = "label_phongCount";
-            this.label_phongCount.Size = new System.Drawing.Size(65, 16);
-            this.label_phongCount.TabIndex = 11;
-            this.label_phongCount.Text = "Số phòng";
+            this.actionButton.Location = new System.Drawing.Point(58, 133);
+            this.actionButton.Name = "actionButton";
+            this.actionButton.Size = new System.Drawing.Size(86, 23);
+            this.actionButton.TabIndex = 3;
+            this.actionButton.Text = "Check Out";
+            this.actionButton.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // label_Status
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label_adminCount);
-            this.panel1.Location = new System.Drawing.Point(57, 60);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(122, 114);
-            this.panel1.TabIndex = 12;
+            this.label_Status.AutoSize = true;
+            this.label_Status.Location = new System.Drawing.Point(97, 87);
+            this.label_Status.Name = "label_Status";
+            this.label_Status.Size = new System.Drawing.Size(67, 16);
+            this.label_Status.TabIndex = 2;
+            this.label_Status.Text = "Trạng thái";
             // 
-            // panel2
+            // label_RoomType
             // 
-            this.panel2.Controls.Add(this.label_letanCount);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(283, 60);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(122, 114);
-            this.panel2.TabIndex = 13;
+            this.label_RoomType.AutoSize = true;
+            this.label_RoomType.Location = new System.Drawing.Point(97, 53);
+            this.label_RoomType.Name = "label_RoomType";
+            this.label_RoomType.Size = new System.Drawing.Size(74, 16);
+            this.label_RoomType.TabIndex = 1;
+            this.label_RoomType.Text = "Loại phòng";
             // 
-            // panel3
+            // label_RoomName
             // 
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label_phongCount);
-            this.panel3.Location = new System.Drawing.Point(503, 60);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(122, 114);
-            this.panel3.TabIndex = 14;
+            this.label_RoomName.AutoSize = true;
+            this.label_RoomName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_RoomName.Location = new System.Drawing.Point(55, 21);
+            this.label_RoomName.Name = "label_RoomName";
+            this.label_RoomName.Size = new System.Drawing.Size(81, 16);
+            this.label_RoomName.TabIndex = 0;
+            this.label_RoomName.Text = "Tên phòng";
             // 
             // UC_Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.flowLayoutPanelRooms);
             this.Name = "UC_Dashboard";
-            this.Size = new System.Drawing.Size(683, 431);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.Size = new System.Drawing.Size(900, 600);
+            this.Load += new System.EventHandler(this.UC_Dashboard_Load);
+            this.flowLayoutPanelRooms.ResumeLayout(false);
+            this.panel_room.ResumeLayout(false);
+            this.panel_room.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
-        #endregion
-
-        private System.Windows.Forms.Label label_adminCount;
-        private System.Windows.Forms.Label label_letanCount;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelRooms;
+        private System.Windows.Forms.Panel panel_room;
+        private System.Windows.Forms.Label label_RoomName;
+        private System.Windows.Forms.Button actionButton;
+        private System.Windows.Forms.Label label_Status;
+        private System.Windows.Forms.Label label_RoomType;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label_phongCount;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
     }
 }

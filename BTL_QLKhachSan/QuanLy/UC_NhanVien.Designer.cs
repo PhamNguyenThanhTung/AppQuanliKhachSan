@@ -57,6 +57,7 @@
             // 
             this.dgvNhanVien.AllowUserToAddRows = false;
             this.dgvNhanVien.AllowUserToDeleteRows = false;
+            this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Location = new System.Drawing.Point(25, 44);
             this.dgvNhanVien.Name = "dgvNhanVien";
@@ -81,21 +82,21 @@
             // 
             this.txtTenHienThi.Location = new System.Drawing.Point(130, 219);
             this.txtTenHienThi.Name = "txtTenHienThi";
-            this.txtTenHienThi.Size = new System.Drawing.Size(121, 22);
+            this.txtTenHienThi.Size = new System.Drawing.Size(146, 22);
             this.txtTenHienThi.TabIndex = 2;
             // 
             // txtTenDangNhap
             // 
             this.txtTenDangNhap.Location = new System.Drawing.Point(129, 247);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(122, 22);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(147, 22);
             this.txtTenDangNhap.TabIndex = 3;
             // 
             // txtMatKhau
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(129, 279);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(122, 22);
+            this.txtMatKhau.Size = new System.Drawing.Size(147, 22);
             this.txtMatKhau.TabIndex = 4;
             // 
             // cboLoaiTK
@@ -239,7 +240,7 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(130, 306);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(122, 22);
+            this.txtEmail.Size = new System.Drawing.Size(146, 22);
             this.txtEmail.TabIndex = 20;
             // 
             // btnKhoa
