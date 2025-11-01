@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|d:\\lttrucquan\\nvbac\\appquanlikhachsan\\btl_qlkhachsan\\quanly\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:quanly\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_KhachHang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:QuanLy\\UC_KhachHang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:frmMain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myForm\\frmLogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\quanly\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:quanly\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{7513ff4e-9271-4984-bbcd-46ff9e185399}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmLogin.cs [Design]",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.cs",
+              "RelativeDocumentMoniker": "myForm\\frmLogin.cs",
+              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T11:38:49.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UC_KhachHang.cs",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_KhachHang.cs",
+              "RelativeDocumentMoniker": "QuanLy\\UC_KhachHang.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_KhachHang.cs",
+              "RelativeToolTip": "QuanLy\\UC_KhachHang.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T11:21:45.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UC_NhanVien.cs",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_NhanVien.cs",
+              "RelativeDocumentMoniker": "QuanLy\\UC_NhanVien.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_NhanVien.cs",
+              "RelativeToolTip": "QuanLy\\UC_NhanVien.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAFcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T15:46:20.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs",
+              "RelativeToolTip": "frmMain.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAkwBQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T16:41:43.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs [Design]",
+              "RelativeToolTip": "frmMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T16:41:37.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.cs",
+              "RelativeDocumentMoniker": "myForm\\frmLogin.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmLogin.cs",
+              "RelativeToolTip": "myForm\\frmLogin.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwA0AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T11:38:53.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UC_NhanVien.cs [Design]",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\AppQuanliKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_NhanVien.cs",
+              "RelativeDocumentMoniker": "QuanLy\\UC_NhanVien.cs",
+              "ToolTip": "C:\\Users\\Long Vu\\Downloads\\BTL_QLKhachSan\\BTL_QLKhachSan\\QuanLy\\UC_NhanVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T12:27:11.929Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1217,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

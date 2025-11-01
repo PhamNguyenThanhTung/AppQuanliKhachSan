@@ -106,7 +106,7 @@
             this.linkForgot.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.linkForgot.Location = new System.Drawing.Point(312, 311);
             this.linkForgot.Name = "linkForgot";
-            this.linkForgot.Size = new System.Drawing.Size(167, 28);
+            this.linkForgot.Size = new System.Drawing.Size(143, 23);
             this.linkForgot.TabIndex = 5;
             this.linkForgot.TabStop = true;
             this.linkForgot.Text = "Forgot Password?";
@@ -119,7 +119,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtPassword.Location = new System.Drawing.Point(28, 248);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(394, 45);
+            this.txtPassword.Size = new System.Drawing.Size(394, 39);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -130,7 +130,7 @@
             this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblPassword.Location = new System.Drawing.Point(24, 214);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(115, 31);
+            this.lblPassword.Size = new System.Drawing.Size(95, 25);
             this.lblPassword.TabIndex = 0;
             this.lblPassword.Text = "Mật khẩu:";
             // 
@@ -141,7 +141,7 @@
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtUsername.Location = new System.Drawing.Point(28, 160);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(394, 45);
+            this.txtUsername.Size = new System.Drawing.Size(394, 39);
             this.txtUsername.TabIndex = 1;
             // 
             // lblUsername
@@ -151,7 +151,7 @@
             this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblUsername.Location = new System.Drawing.Point(25, 126);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(171, 31);
+            this.lblUsername.Size = new System.Drawing.Size(141, 25);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Tên đăng nhập:";
             // 
@@ -162,7 +162,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblTitle.Location = new System.Drawing.Point(23, 62);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(184, 45);
+            this.lblTitle.Size = new System.Drawing.Size(156, 37);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Đăng nhập";
             // 
@@ -172,9 +172,9 @@
             this.lblAppName.AutoSize = true;
             this.lblAppName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblAppName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            this.lblAppName.Location = new System.Drawing.Point(161, 352);
+            this.lblAppName.Location = new System.Drawing.Point(102, 350);
             this.lblAppName.Name = "lblAppName";
-            this.lblAppName.Size = new System.Drawing.Size(614, 45);
+            this.lblAppName.Size = new System.Drawing.Size(519, 37);
             this.lblAppName.TabIndex = 1;
             this.lblAppName.Text = "Ứng dụng quản lý khách sạn siu vip pro";
             this.lblAppName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -195,7 +195,7 @@
             // frmLogin
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 556);
             this.Controls.Add(this.splitContainer1);
