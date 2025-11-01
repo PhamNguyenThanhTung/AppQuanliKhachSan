@@ -43,6 +43,13 @@ namespace BTL_QLKhachSan
             //     // this.btnQuanLyNhanVien.Visible = false;
             //     // this.btnDoanhThu.Visible = false;
             // }
+            uC_BaoCaoDoanhThu1.Hide();
+            uC_KhachHang1.Hide();
+            userControlBooking1.Hide();
+            userControlBillManagement1.Hide();
+            userControlOrderService1.Hide();
+            movePanel(button_daskboard);
+
         }
 
         public void DrawGradient(Control control, Color color1, Color color2, LinearGradientMode mode)
@@ -92,6 +99,10 @@ namespace BTL_QLKhachSan
         private void button_daskboard_Click(object sender, EventArgs e)
         {
             movePanel(button_daskboard);
+            userControlOrderService1.Hide();
+            userControlBooking1.Hide();
+            userControlBillManagement1.Hide();
+            uC_BaoCaoDoanhThu1.Hide();
             uC_KhachHang1.Hide();
             
         }
@@ -131,6 +142,7 @@ namespace BTL_QLKhachSan
             movePanel(button_hoadon);
             uC_KhachHang1.Hide();
             uC_BaoCaoDoanhThu1.Hide();
+            userControlBillManagement1.Show();
         }
 
         private void button_doanhthu_Click(object sender, EventArgs e)
@@ -142,7 +154,20 @@ namespace BTL_QLKhachSan
         private void btnbooking_Click(object sender, EventArgs e)
         {
             movePanel(btnbooking);
+            uC_KhachHang1.Hide();
+            uC_BaoCaoDoanhThu1.Hide();
+            userControlBillManagement1.Hide();
+            userControlOrderService1.Hide();
+
             userControlBooking1.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            movePanel(button1);
+            userControlBooking1.Hide();
+            userControlBillManagement1.Hide();
+            userControlOrderService1.Show();
         }
     }
 }

@@ -209,7 +209,7 @@ namespace BTL_QLKhachSan.myForm
                     txttenkh.Text = row["HoTen"].ToString();
                     txtsodt.Text = row["SoDienThoai"].ToString();
                     txtcccd.Text = row["CMND"].ToString();
-                    txtnvlap.Text = row["NguoiLap"].ToString();
+                    txtnvlap.Text = row["NguoiTao"].ToString();
                     dtpngaylap.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
                     txttiendichvu.Text = ((decimal)row["TongTienDichVu"]).ToString("N0");
 

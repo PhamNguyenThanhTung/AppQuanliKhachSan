@@ -31,18 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.gradientPanel4 = new BTL_QLKhachSan.myClass.GradientPanel();
             this.label_datetime = new System.Windows.Forms.Label();
             this.linkLabel_logOut = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.userControlBillManagement1 = new BTL_QLKhachSan.myForm.UserControlBillManagement();
+            this.userControlOrderService1 = new BTL_QLKhachSan.myForm.UserControlOrderService();
             this.userControlBooking1 = new BTL_QLKhachSan.myForm.UserControlBooking();
             this.uC_BaoCaoDoanhThu1 = new BTL_QLKhachSan.myForm.UC_BaoCaoDoanhThu();
             this.uC_KhachHang1 = new BTL_QLKhachSan.myForm.UC_KhachHang();
             this.gradientPanel3 = new BTL_QLKhachSan.myClass.GradientPanel();
             this.label_userName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.gradientPanel4 = new BTL_QLKhachSan.myClass.GradientPanel();
             this.gradientPanel1 = new BTL_QLKhachSan.myClass.GradientPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnbooking = new System.Windows.Forms.Button();
             this.button_doanhthu = new System.Windows.Forms.Button();
             this.panel_slide = new System.Windows.Forms.Panel();
@@ -54,8 +57,6 @@
             this.gradientPanel2 = new BTL_QLKhachSan.myClass.GradientPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.userControlOrderService1 = new BTL_QLKhachSan.myForm.UserControlOrderService();
-            this.userControlBillManagement1 = new BTL_QLKhachSan.myForm.UserControlBillManagement();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gradientPanel3.SuspendLayout();
@@ -75,17 +76,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1213, 81);
             this.panel2.TabIndex = 3;
-            // 
-            // gradientPanel4
-            // 
-            this.gradientPanel4.Color1 = System.Drawing.Color.DeepSkyBlue;
-            this.gradientPanel4.Color2 = System.Drawing.Color.RoyalBlue;
-            this.gradientPanel4.EnableDynamicGradient = false;
-            this.gradientPanel4.GradientAngle = 0F;
-            this.gradientPanel4.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel4.Name = "gradientPanel4";
-            this.gradientPanel4.Size = new System.Drawing.Size(200, 100);
-            this.gradientPanel4.TabIndex = 3;
             // 
             // label_datetime
             // 
@@ -125,6 +115,22 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // userControlBillManagement1
+            // 
+            this.userControlBillManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlBillManagement1.Location = new System.Drawing.Point(239, 125);
+            this.userControlBillManagement1.Name = "userControlBillManagement1";
+            this.userControlBillManagement1.Size = new System.Drawing.Size(1213, 539);
+            this.userControlBillManagement1.TabIndex = 9;
+            // 
+            // userControlOrderService1
+            // 
+            this.userControlOrderService1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlOrderService1.Location = new System.Drawing.Point(239, 125);
+            this.userControlOrderService1.Name = "userControlOrderService1";
+            this.userControlOrderService1.Size = new System.Drawing.Size(1213, 539);
+            this.userControlOrderService1.TabIndex = 8;
             // 
             // userControlBooking1
             // 
@@ -193,10 +199,22 @@
             this.label2.Text = "Xin chào :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // gradientPanel4
+            // 
+            this.gradientPanel4.Color1 = System.Drawing.Color.DeepSkyBlue;
+            this.gradientPanel4.Color2 = System.Drawing.Color.RoyalBlue;
+            this.gradientPanel4.EnableDynamicGradient = false;
+            this.gradientPanel4.GradientAngle = 0F;
+            this.gradientPanel4.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel4.Name = "gradientPanel4";
+            this.gradientPanel4.Size = new System.Drawing.Size(200, 100);
+            this.gradientPanel4.TabIndex = 3;
+            // 
             // gradientPanel1
             // 
             this.gradientPanel1.Color1 = System.Drawing.Color.DeepSkyBlue;
             this.gradientPanel1.Color2 = System.Drawing.Color.RoyalBlue;
+            this.gradientPanel1.Controls.Add(this.button1);
             this.gradientPanel1.Controls.Add(this.btnbooking);
             this.gradientPanel1.Controls.Add(this.button_doanhthu);
             this.gradientPanel1.Controls.Add(this.panel_slide);
@@ -213,6 +231,23 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(239, 664);
             this.gradientPanel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(15, 587);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(182, 58);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "order";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnbooking
             // 
@@ -233,7 +268,7 @@
             this.button_doanhthu.ForeColor = System.Drawing.Color.White;
             this.button_doanhthu.Image = ((System.Drawing.Image)(resources.GetObject("button_doanhthu.Image")));
             this.button_doanhthu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_doanhthu.Location = new System.Drawing.Point(31, 449);
+            this.button_doanhthu.Location = new System.Drawing.Point(15, 449);
             this.button_doanhthu.Name = "button_doanhthu";
             this.button_doanhthu.Size = new System.Drawing.Size(182, 58);
             this.button_doanhthu.TabIndex = 7;
@@ -369,22 +404,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // userControlOrderService1
-            // 
-            this.userControlOrderService1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlOrderService1.Location = new System.Drawing.Point(239, 125);
-            this.userControlOrderService1.Name = "userControlOrderService1";
-            this.userControlOrderService1.Size = new System.Drawing.Size(1213, 539);
-            this.userControlOrderService1.TabIndex = 8;
-            // 
-            // userControlBillManagement1
-            // 
-            this.userControlBillManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlBillManagement1.Location = new System.Drawing.Point(239, 125);
-            this.userControlBillManagement1.Name = "userControlBillManagement1";
-            this.userControlBillManagement1.Size = new System.Drawing.Size(1213, 539);
-            this.userControlBillManagement1.TabIndex = 9;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -445,6 +464,7 @@
         private myForm.UserControlBooking userControlBooking1;
         private myForm.UserControlOrderService userControlOrderService1;
         private myForm.UserControlBillManagement userControlBillManagement1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
