@@ -152,5 +152,10 @@ namespace BTL_QLKhachSan.myForm
             chartDoanhThu.ChartAreas[0].AxisX.LabelStyle.Format = (denNgay - tuNgay).TotalDays > 30 ? "MM/yyyy" : "dd/MM";
             chartDoanhThu.ChartAreas[0].AxisX.IntervalType = (denNgay - tuNgay).TotalDays > 30 ? DateTimeIntervalType.Months : DateTimeIntervalType.Auto;
         }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

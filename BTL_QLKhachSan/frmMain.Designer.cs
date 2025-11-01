@@ -35,10 +35,15 @@
             this.label_datetime = new System.Windows.Forms.Label();
             this.linkLabel_logOut = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.userControlBooking1 = new BTL_QLKhachSan.myForm.UserControlBooking();
+            this.uC_BaoCaoDoanhThu1 = new BTL_QLKhachSan.myForm.UC_BaoCaoDoanhThu();
+            this.uC_KhachHang1 = new BTL_QLKhachSan.myForm.UC_KhachHang();
             this.gradientPanel3 = new BTL_QLKhachSan.myClass.GradientPanel();
             this.label_userName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel1 = new BTL_QLKhachSan.myClass.GradientPanel();
+            this.btnbooking = new System.Windows.Forms.Button();
             this.button_doanhthu = new System.Windows.Forms.Button();
             this.panel_slide = new System.Windows.Forms.Panel();
             this.button_hoadon = new System.Windows.Forms.Button();
@@ -49,9 +54,8 @@
             this.gradientPanel2 = new BTL_QLKhachSan.myClass.GradientPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.uC_KhachHang1 = new BTL_QLKhachSan.myForm.UC_KhachHang();
-            this.uC_BaoCaoDoanhThu1 = new BTL_QLKhachSan.myForm.UC_BaoCaoDoanhThu();
+            this.userControlOrderService1 = new BTL_QLKhachSan.myForm.UserControlOrderService();
+            this.userControlBillManagement1 = new BTL_QLKhachSan.myForm.UserControlBillManagement();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gradientPanel3.SuspendLayout();
@@ -118,6 +122,38 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // userControlBooking1
+            // 
+            this.userControlBooking1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlBooking1.Location = new System.Drawing.Point(239, 125);
+            this.userControlBooking1.Name = "userControlBooking1";
+            this.userControlBooking1.Size = new System.Drawing.Size(1213, 539);
+            this.userControlBooking1.TabIndex = 7;
+            // 
+            // uC_BaoCaoDoanhThu1
+            // 
+            this.uC_BaoCaoDoanhThu1.BackColor = System.Drawing.Color.White;
+            this.uC_BaoCaoDoanhThu1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_BaoCaoDoanhThu1.Location = new System.Drawing.Point(239, 125);
+            this.uC_BaoCaoDoanhThu1.Name = "uC_BaoCaoDoanhThu1";
+            this.uC_BaoCaoDoanhThu1.Size = new System.Drawing.Size(1213, 539);
+            this.uC_BaoCaoDoanhThu1.TabIndex = 6;
+            this.uC_BaoCaoDoanhThu1.Visible = false;
+            // 
+            // uC_KhachHang1
+            // 
+            this.uC_KhachHang1.BackColor = System.Drawing.Color.White;
+            this.uC_KhachHang1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC_KhachHang1.Location = new System.Drawing.Point(239, 125);
+            this.uC_KhachHang1.Name = "uC_KhachHang1";
+            this.uC_KhachHang1.Size = new System.Drawing.Size(1213, 539);
+            this.uC_KhachHang1.TabIndex = 5;
+            this.uC_KhachHang1.Visible = false;
+            // 
             // gradientPanel3
             // 
             this.gradientPanel3.Color1 = System.Drawing.Color.DeepSkyBlue;
@@ -161,6 +197,7 @@
             // 
             this.gradientPanel1.Color1 = System.Drawing.Color.DeepSkyBlue;
             this.gradientPanel1.Color2 = System.Drawing.Color.RoyalBlue;
+            this.gradientPanel1.Controls.Add(this.btnbooking);
             this.gradientPanel1.Controls.Add(this.button_doanhthu);
             this.gradientPanel1.Controls.Add(this.panel_slide);
             this.gradientPanel1.Controls.Add(this.button_hoadon);
@@ -176,6 +213,16 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(239, 664);
             this.gradientPanel1.TabIndex = 0;
+            // 
+            // btnbooking
+            // 
+            this.btnbooking.Location = new System.Drawing.Point(31, 527);
+            this.btnbooking.Name = "btnbooking";
+            this.btnbooking.Size = new System.Drawing.Size(163, 54);
+            this.btnbooking.TabIndex = 8;
+            this.btnbooking.Text = "Booking";
+            this.btnbooking.UseVisualStyleBackColor = true;
+            this.btnbooking.Click += new System.EventHandler(this.btnbooking_Click);
             // 
             // button_doanhthu
             // 
@@ -322,29 +369,21 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // timer1
+            // userControlOrderService1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.userControlOrderService1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlOrderService1.Location = new System.Drawing.Point(239, 125);
+            this.userControlOrderService1.Name = "userControlOrderService1";
+            this.userControlOrderService1.Size = new System.Drawing.Size(1213, 539);
+            this.userControlOrderService1.TabIndex = 8;
             // 
-            // uC_KhachHang1
+            // userControlBillManagement1
             // 
-            this.uC_KhachHang1.BackColor = System.Drawing.Color.White;
-            this.uC_KhachHang1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_KhachHang1.Location = new System.Drawing.Point(239, 125);
-            this.uC_KhachHang1.Name = "uC_KhachHang1";
-            this.uC_KhachHang1.Size = new System.Drawing.Size(1213, 539);
-            this.uC_KhachHang1.TabIndex = 5;
-            this.uC_KhachHang1.Visible = false;
-            // 
-            // uC_BaoCaoDoanhThu1
-            // 
-            this.uC_BaoCaoDoanhThu1.BackColor = System.Drawing.Color.White;
-            this.uC_BaoCaoDoanhThu1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC_BaoCaoDoanhThu1.Location = new System.Drawing.Point(239, 125);
-            this.uC_BaoCaoDoanhThu1.Name = "uC_BaoCaoDoanhThu1";
-            this.uC_BaoCaoDoanhThu1.Size = new System.Drawing.Size(1213, 539);
-            this.uC_BaoCaoDoanhThu1.TabIndex = 6;
-            this.uC_BaoCaoDoanhThu1.Visible = false;
+            this.userControlBillManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlBillManagement1.Location = new System.Drawing.Point(239, 125);
+            this.userControlBillManagement1.Name = "userControlBillManagement1";
+            this.userControlBillManagement1.Size = new System.Drawing.Size(1213, 539);
+            this.userControlBillManagement1.TabIndex = 9;
             // 
             // frmMain
             // 
@@ -352,6 +391,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1452, 664);
+            this.Controls.Add(this.userControlBillManagement1);
+            this.Controls.Add(this.userControlOrderService1);
+            this.Controls.Add(this.userControlBooking1);
             this.Controls.Add(this.uC_BaoCaoDoanhThu1);
             this.Controls.Add(this.uC_KhachHang1);
             this.Controls.Add(this.gradientPanel3);
@@ -399,6 +441,10 @@
         private myForm.UC_KhachHang uC_KhachHang1;
         private System.Windows.Forms.Button button_doanhthu;
         private myForm.UC_BaoCaoDoanhThu uC_BaoCaoDoanhThu1;
+        private System.Windows.Forms.Button btnbooking;
+        private myForm.UserControlBooking userControlBooking1;
+        private myForm.UserControlOrderService userControlOrderService1;
+        private myForm.UserControlBillManagement userControlBillManagement1;
     }
 }
 

@@ -56,6 +56,7 @@
             this.lblTitle.Size = new System.Drawing.Size(382, 37);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "BÁO CÁO DOANH THU";
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // dtpTuNgay
             // 

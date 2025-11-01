@@ -138,5 +138,11 @@ namespace BTL_QLKhachSan
             movePanel(button_doanhthu);
             uC_BaoCaoDoanhThu1.Show();
         }
+
+        private void btnbooking_Click(object sender, EventArgs e)
+        {
+            movePanel(btnbooking);
+            userControlBooking1.Show();
+        }
     }
 }
