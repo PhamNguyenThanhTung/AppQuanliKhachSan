@@ -295,6 +295,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_NhanVien";
             this.Size = new System.Drawing.Size(767, 556);
+            this.Load += new System.EventHandler(this.UC_NhanVien_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

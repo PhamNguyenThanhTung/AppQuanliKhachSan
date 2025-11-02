@@ -9,7 +9,7 @@ namespace BTL_QLKhachSan.myForm
 {
     public partial class UC_Dashboard : UserControl
     {
-        private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=QLKhachSan_btl;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        private string connectionString = "Data Source=HAHAHA\\SQLEXPRESS;Initial Catalog=QLKhachSanBTL;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public UC_Dashboard()
         {
@@ -21,7 +21,7 @@ namespace BTL_QLKhachSan.myForm
             LoadRooms();
         }
 
-        private void LoadRooms()
+        public void LoadRooms()
         {
             flowLayoutPanelRooms.Controls.Clear();
 
@@ -205,6 +205,9 @@ namespace BTL_QLKhachSan.myForm
             }
         }
 
-        
+        private void flowLayoutPanelRooms_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

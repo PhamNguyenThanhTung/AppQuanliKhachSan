@@ -47,6 +47,8 @@
             this.txtccdd = new System.Windows.Forms.TextBox();
             this.txttenkh = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbphong = new System.Windows.Forms.ComboBox();
+            this.txtghichu = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cbloaiphong = new System.Windows.Forms.ComboBox();
             this.txtsonguoi = new System.Windows.Forms.TextBox();
@@ -55,11 +57,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txttimkiem = new System.Windows.Forms.TextBox();
             this.btntimkiem = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.txtghichu = new System.Windows.Forms.TextBox();
-            this.cbphong = new System.Windows.Forms.ComboBox();
+            this.cbtimkiem = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbooking)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -260,6 +260,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin đặt phòng: ";
             // 
+            // cbphong
+            // 
+            this.cbphong.FormattingEnabled = true;
+            this.cbphong.Location = new System.Drawing.Point(154, 62);
+            this.cbphong.Name = "cbphong";
+            this.cbphong.Size = new System.Drawing.Size(194, 28);
+            this.cbphong.TabIndex = 18;
+            // 
+            // txtghichu
+            // 
+            this.txtghichu.Location = new System.Drawing.Point(154, 262);
+            this.txtghichu.Name = "txtghichu";
+            this.txtghichu.Size = new System.Drawing.Size(194, 26);
+            this.txtghichu.TabIndex = 17;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -328,13 +343,6 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "số người";
             // 
-            // txttimkiem
-            // 
-            this.txttimkiem.Location = new System.Drawing.Point(60, 375);
-            this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(151, 26);
-            this.txttimkiem.TabIndex = 17;
-            // 
             // btntimkiem
             // 
             this.btntimkiem.Location = new System.Drawing.Point(251, 364);
@@ -345,27 +353,20 @@
             this.btntimkiem.UseVisualStyleBackColor = true;
             this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
-            // txtghichu
+            // cbtimkiem
             // 
-            this.txtghichu.Location = new System.Drawing.Point(154, 262);
-            this.txtghichu.Name = "txtghichu";
-            this.txtghichu.Size = new System.Drawing.Size(194, 26);
-            this.txtghichu.TabIndex = 17;
-            // 
-            // cbphong
-            // 
-            this.cbphong.FormattingEnabled = true;
-            this.cbphong.Location = new System.Drawing.Point(154, 62);
-            this.cbphong.Name = "cbphong";
-            this.cbphong.Size = new System.Drawing.Size(194, 28);
-            this.cbphong.TabIndex = 18;
+            this.cbtimkiem.FormattingEnabled = true;
+            this.cbtimkiem.Location = new System.Drawing.Point(81, 364);
+            this.cbtimkiem.Name = "cbtimkiem";
+            this.cbtimkiem.Size = new System.Drawing.Size(121, 28);
+            this.cbtimkiem.TabIndex = 19;
             // 
             // UserControlBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbtimkiem);
             this.Controls.Add(this.btntimkiem);
-            this.Controls.Add(this.txttimkiem);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnxoa);
@@ -413,12 +414,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txttimkiem;
         private System.Windows.Forms.Button btntimkiem;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ComboBox cbloaiphong;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtghichu;
         private System.Windows.Forms.ComboBox cbphong;
+        private System.Windows.Forms.ComboBox cbtimkiem;
     }
 }

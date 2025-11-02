@@ -33,9 +33,10 @@ namespace BTL_QLKhachSan
             timer1.Start();
             uC_NhanVien1.SetLoginInfo(this.LoaiTk, this.username);
 
-            
+            button_daskboard_Click(sender, e);
             if (LoaiTk == 2) // Nếu là Lễ tân
             {
+
                  this.button_doanhthu.Enabled = false;
                  this.button_nhanvien.Enabled = false;
                 
@@ -88,6 +89,7 @@ namespace BTL_QLKhachSan
 
         private void button_daskboard_Click(object sender, EventArgs e)
         {
+           
             movePanel(button_daskboard);
             uC_KhachHang1.Hide();
             uC_BaoCaoDoanhThu1.Hide();
@@ -97,6 +99,7 @@ namespace BTL_QLKhachSan
             userControlBillManagement1.Hide();
             userControlOrderService1.Hide();
             uC_Dashboard1.Show();
+            uC_Dashboard1.LoadRooms();
 
         }
 

@@ -32,6 +32,7 @@ namespace BTL_QLKhachSan.myForm
             LoadBills();
             LoadRooms();
             LoadPaymentMethods();
+            LoadPhieuThueToComboBox();
         }
         private void LoadPhieuThue(int idPhieuThue)
         {
@@ -166,9 +167,41 @@ namespace BTL_QLKhachSan.myForm
         }
 
         // =================== TÌM KIẾM PHIẾU THUÊ ===================
+        private void LoadPhieuThueToComboBox()
+        {
+            try
+            {
+                string sql = @"
+            SELECT IDPhieuThue
+            FROM PHIEUTHUE
+            WHERE TrangThai IN (N'Đã check-in', N'Đã check-out')
+            ORDER BY IDPhieuThue DESC";
+
+                DataTable dt = db.GetData(sql);
+
+                cbtimkiem.Items.Clear();
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        cbtimkiem.Items.Add(r["IDPhieuThue"].ToString());
+                    }
+
+                    // Gợi ý: có thể để auto complete
+                    cbtimkiem.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    cbtimkiem.AutoCompleteSource = AutoCompleteSource.ListItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách phiếu thuê: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btntimkiem_Click_1(object sender, EventArgs e)
         {
-            if (!int.TryParse(txttimkkiem.Text, out int idPhieuThue))
+            if (!int.TryParse(cbtimkiem.Text, out int idPhieuThue))
             {
                 MessageBox.Show("Mã Phiếu Thuê không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -322,7 +355,7 @@ namespace BTL_QLKhachSan.myForm
         // =================== XÓA FORM ===================
         private void ClearForm()
         {
-            txttimkkiem.Text = "";
+            cbtimkiem.Text = "";
             txtmakh.Text = txttenkh.Text = txtsodt.Text = txtcccd.Text = "";
 
             for (int i = 0; i < checklistboxphong.Items.Count; i++)

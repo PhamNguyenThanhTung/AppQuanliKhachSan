@@ -477,7 +477,7 @@ namespace BTL_QLKhachSan.myForm
             isEditing = false;
 
             // 🔥 Thêm dòng này để khi quay lại giao diện hiển thị đúng nút
-            btnluu.Visible = false;
+            btnluu.Visible = true;
             btnEdit.Visible = true;
             btnfind.Visible = true;
             btnDelete.Visible = true;

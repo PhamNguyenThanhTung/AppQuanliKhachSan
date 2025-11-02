@@ -32,6 +32,7 @@
             this.flowLayoutPanelRooms.Name = "flowLayoutPanelRooms";
             this.flowLayoutPanelRooms.Size = new System.Drawing.Size(900, 600);
             this.flowLayoutPanelRooms.TabIndex = 0;
+            this.flowLayoutPanelRooms.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelRooms_Paint);
             // 
             // panel_room
             // 

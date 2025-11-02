@@ -9,7 +9,7 @@ namespace BTL_QLKhachSan.myForm
     {
         private int loaiTaiKhoanDangNhap;
         private string tenDangNhapDangNhap;
-        private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=QLKhachSan_btl;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        private string connectionString = "Data Source=HAHAHA\\SQLEXPRESS;Initial Catalog=QLKhachSanBTL;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         private bool isAdding = false;
         private bool isEditing = false;
@@ -394,6 +394,11 @@ namespace BTL_QLKhachSan.myForm
         {
             if (e.RowIndex >= 0)
                 HienThiChiTietTuDong(e.RowIndex);
+        }
+
+        private void UC_NhanVien_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -21,6 +21,7 @@ namespace BTL_QLKhachSan.myForm
             LoadComboBoxDichVu();
             LoadComboBoxSoLuong();
             KhoiTaoDGV();
+            LoadPhieuThueToComboBox();
         }
 
         // 📌 1. Khởi tạo DataGridView khi load form
@@ -109,10 +110,42 @@ namespace BTL_QLKhachSan.myForm
         }
 
         // 📌 7. Khi bấm tìm kiếm khách hàng
+        private void LoadPhieuThueToComboBox()
+        {
+            try
+            {
+                string sql = @"
+            SELECT PT.IDPhieuThue
+            FROM PHIEUTHUE PT
+            WHERE PT.TrangThai IN (N'Đã check-in', N'Đã check-out')
+            ORDER BY PT.IDPhieuThue DESC";
+
+                DataTable dt = db.GetData(sql);
+
+                cbtimkiem.Items.Clear();
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        // ✅ Chỉ hiển thị số ID thôi
+                        cbtimkiem.Items.Add(r["IDPhieuThue"].ToString());
+                    }
+
+                    cbtimkiem.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    cbtimkiem.AutoCompleteSource = AutoCompleteSource.ListItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách phiếu thuê: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btntimkiem_Click(object sender, EventArgs e)
         {
             dgvdichvu.Columns.Clear();
-            if (!int.TryParse(txttimkiem.Text.Trim(), out int idPhieuThue))
+            if (!int.TryParse(cbtimkiem.Text.Trim(), out int idPhieuThue))
             {
                 MessageBox.Show("Vui lòng nhập ID phiếu thuê hợp lệ (số nguyên)!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

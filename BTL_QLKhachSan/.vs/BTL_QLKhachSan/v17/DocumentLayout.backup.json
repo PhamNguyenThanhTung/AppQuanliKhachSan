@@ -1,78 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\",
+  "WorkspaceRootPath": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|d:\\btl_app\\appquanlikhachsan\\btl_qlkhachsan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|d:\\lttrucquan\\nvbac\\b\u00E0i long\\appquanlikhachsan\\btl_qlkhachsan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_nhanvien.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_nhanvien.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\usercontrolbillmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\usercontrolbillmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:frmmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|d:\\btl_app\\appquanlikhachsan\\btl_qlkhachsan\\myform\\frmcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\frmcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myclass\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myclass\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\frmcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|d:\\btl_app\\appquanlikhachsan\\btl_qlkhachsan\\myform\\frmcheckout.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\frmcheckout.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|d:\\btl_app\\appquanlikhachsan\\btl_qlkhachsan\\myform\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|d:\\btl_app\\appquanlikhachsan\\btl_qlkhachsan\\myform\\uc_dashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_dashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|d:\\btl_app\\appquanlikhachsan\\btl_qlkhachsan\\myform\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\usercontrolorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\usercontrolorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_bookingmanagemen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_bookingmanagemen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_khachhang2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_khachhang2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_bookingmanagemen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_bookingmanagemen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_bookingmanagemen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\usercontrolbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\usercontrolbooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\usercontrolbillmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\usercontrolbillmanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myform\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myform\\uc_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myclass\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EF09CC0-AC76-4D13-B029-23D493BD9171}|BTL_QLKhachSan.csproj|solutionrelative:myclass\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,36 +58,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{7513ff4e-9271-4984-bbcd-46ff9e185399}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmMain.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs",
-              "RelativeDocumentMoniker": "frmMain.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs [Design]*",
-              "RelativeToolTip": "frmMain.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T13:55:06.569Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Bookmark",
@@ -122,211 +73,148 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{7513ff4e-9271-4984-bbcd-46ff9e185399}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UC_NhanVien.cs",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_NhanVien.cs",
-              "RelativeDocumentMoniker": "myForm\\UC_NhanVien.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_NhanVien.cs",
-              "RelativeToolTip": "myForm\\UC_NhanVien.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwCkAAAAAAAAAAAAAAA==",
+              "Title": "UserControlBillManagement.cs",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UserControlBillManagement.cs",
+              "RelativeDocumentMoniker": "myForm\\UserControlBillManagement.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UserControlBillManagement.cs",
+              "RelativeToolTip": "myForm\\UserControlBillManagement.cs",
+              "ViewState": "AgIAAPcAAAAAAAAAAADwvxcBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T16:31:23.681Z",
+              "WhenOpened": "2025-11-02T10:56:41.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmCheckOut.cs",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.cs",
+              "RelativeDocumentMoniker": "myForm\\frmCheckOut.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.cs",
+              "RelativeToolTip": "myForm\\frmCheckOut.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAYwHYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T10:52:31.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmCheckOut.cs [Design]",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.cs",
+              "RelativeDocumentMoniker": "myForm\\frmCheckOut.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.cs [Design]",
+              "RelativeToolTip": "myForm\\frmCheckOut.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T10:52:23.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmMain.cs",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs",
+              "RelativeDocumentMoniker": "frmMain.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs",
+              "RelativeToolTip": "frmMain.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwD4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T10:48:46.215Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmMain.cs",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs",
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs",
               "RelativeDocumentMoniker": "frmMain.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs*",
-              "RelativeToolTip": "frmMain.cs*",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACgAAAAQAAAAAAAAAA==",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.cs [Design]",
+              "RelativeToolTip": "frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T16:06:13.461Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UC_NhanVien.Designer.cs",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_NhanVien.Designer.cs",
-              "RelativeDocumentMoniker": "myForm\\UC_NhanVien.Designer.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_NhanVien.Designer.cs",
-              "RelativeToolTip": "myForm\\UC_NhanVien.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T16:31:57.257Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmMain.Designer.cs",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.Designer.cs",
-              "RelativeDocumentMoniker": "frmMain.Designer.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\frmMain.Designer.cs",
-              "RelativeToolTip": "frmMain.Designer.cs",
-              "ViewState": "AgIAAO0BAAAAAAAAAAAAAPwBAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T16:53:06.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UC_NhanVien.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_NhanVien.cs",
-              "RelativeDocumentMoniker": "myForm\\UC_NhanVien.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_NhanVien.cs [Design]",
-              "RelativeToolTip": "myForm\\UC_NhanVien.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T16:31:20.43Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmCheckOut.cs",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.cs",
-              "RelativeDocumentMoniker": "myForm\\frmCheckOut.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.cs",
-              "RelativeToolTip": "myForm\\frmCheckOut.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAADwv7cAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T03:19:04.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "frmCheckOut.Designer.cs",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.Designer.cs",
-              "RelativeDocumentMoniker": "myForm\\frmCheckOut.Designer.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\frmCheckOut.Designer.cs",
-              "RelativeToolTip": "myForm\\frmCheckOut.Designer.cs",
-              "ViewState": "AgIAAP4AAAAAAAAAAAAIwB0BAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T03:18:45.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-02T10:48:38.826Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Database.cs",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myClass\\Database.cs",
-              "RelativeDocumentMoniker": "myClass\\Database.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myClass\\Database.cs",
-              "RelativeToolTip": "myClass\\Database.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAowGQAAAABAAAAAAAAAA==",
+              "Title": "UC_BookingManagemen.cs",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BookingManagemen.cs",
+              "RelativeDocumentMoniker": "myForm\\UC_BookingManagemen.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BookingManagemen.cs",
+              "RelativeToolTip": "myForm\\UC_BookingManagemen.cs",
+              "ViewState": "AgIAAMEBAAAAAAAAAAAuwN8BAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T16:42:18.765Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-02T10:18:10.056Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UC_Dashboard.Designer.cs",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_Dashboard.Designer.cs",
-              "RelativeDocumentMoniker": "myForm\\UC_Dashboard.Designer.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_Dashboard.Designer.cs",
-              "RelativeToolTip": "myForm\\UC_Dashboard.Designer.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAIwH0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T03:11:40.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UC_Dashboard.cs",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_Dashboard.cs",
+              "DocumentIndex": 6,
+              "Title": "UC_Dashboard.cs [Design]",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_Dashboard.cs",
               "RelativeDocumentMoniker": "myForm\\UC_Dashboard.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_Dashboard.cs",
-              "RelativeToolTip": "myForm\\UC_Dashboard.cs",
-              "ViewState": "AgIAALMAAAAAAAAAAADwv9EAAAABAAAAAAAAAA==",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_Dashboard.cs [Design]",
+              "RelativeToolTip": "myForm\\UC_Dashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T02:52:10.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-02T10:00:35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UC_Dashboard.cs",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_Dashboard.cs",
+              "RelativeDocumentMoniker": "myForm\\UC_Dashboard.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_Dashboard.cs",
+              "RelativeToolTip": "myForm\\UC_Dashboard.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA+wBcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T10:00:40.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UC_BookingManagemen.cs [Design]",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BookingManagemen.cs",
+              "RelativeDocumentMoniker": "myForm\\UC_BookingManagemen.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BookingManagemen.cs [Design]",
+              "RelativeToolTip": "myForm\\UC_BookingManagemen.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T10:17:52.93Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "UC_Dashboard.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_Dashboard.cs",
-              "RelativeDocumentMoniker": "myForm\\UC_Dashboard.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_Dashboard.cs [Design]",
-              "RelativeToolTip": "myForm\\UC_Dashboard.cs [Design]",
+              "Title": "Database.cs",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myClass\\Database.cs",
+              "RelativeDocumentMoniker": "myClass\\Database.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myClass\\Database.cs",
+              "RelativeToolTip": "myClass\\Database.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T02:51:50.878Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-02T09:59:05.847Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UserControlOrderService.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UserControlOrderService.cs",
-              "RelativeDocumentMoniker": "myForm\\UserControlOrderService.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UserControlOrderService.cs [Design]",
-              "RelativeToolTip": "myForm\\UserControlOrderService.cs [Design]",
+              "DocumentIndex": 9,
+              "Title": "UC_NhanVien.cs",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_NhanVien.cs",
+              "RelativeDocumentMoniker": "myForm\\UC_NhanVien.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_NhanVien.cs",
+              "RelativeToolTip": "myForm\\UC_NhanVien.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T17:08:06.869Z"
+              "WhenOpened": "2025-11-02T09:58:52.871Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UC_KhachHang2.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_KhachHang2.cs",
-              "RelativeDocumentMoniker": "myForm\\UC_KhachHang2.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_KhachHang2.cs [Design]",
-              "RelativeToolTip": "myForm\\UC_KhachHang2.cs [Design]",
+              "DocumentIndex": 10,
+              "Title": "UC_NhanVien.cs [Design]",
+              "DocumentMoniker": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_NhanVien.cs",
+              "RelativeDocumentMoniker": "myForm\\UC_NhanVien.cs",
+              "ToolTip": "D:\\LTtrucquan\\NVbac\\b\u00E0i long\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_NhanVien.cs [Design]",
+              "RelativeToolTip": "myForm\\UC_NhanVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T17:06:18.174Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UC_KhachHang.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_KhachHang.cs",
-              "RelativeDocumentMoniker": "myForm\\UC_KhachHang.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_KhachHang.cs [Design]",
-              "RelativeToolTip": "myForm\\UC_KhachHang.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T17:06:23.169Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "UC_BookingManagemen.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BookingManagemen.cs",
-              "RelativeDocumentMoniker": "myForm\\UC_BookingManagemen.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UC_BookingManagemen.cs [Design]",
-              "RelativeToolTip": "myForm\\UC_BookingManagemen.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T16:50:41.749Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "UserControlBooking.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UserControlBooking.cs",
-              "RelativeDocumentMoniker": "myForm\\UserControlBooking.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UserControlBooking.cs [Design]",
-              "RelativeToolTip": "myForm\\UserControlBooking.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T16:54:34.324Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UserControlBillManagement.cs [Design]",
-              "DocumentMoniker": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UserControlBillManagement.cs",
-              "RelativeDocumentMoniker": "myForm\\UserControlBillManagement.cs",
-              "ToolTip": "D:\\BTL_app\\AppQuanliKhachSan\\BTL_QLKhachSan\\myForm\\UserControlBillManagement.cs [Design]",
-              "RelativeToolTip": "myForm\\UserControlBillManagement.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T16:54:28.933Z"
+              "WhenOpened": "2025-11-02T09:58:49.262Z"
             }
           ]
         },

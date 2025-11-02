@@ -154,6 +154,15 @@
     <EmbeddedResource Include="myForm\UC_NhanVien.resx">
       <DependentUpon>UC_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="myForm\UserControlBillManagement.resx">
+      <DependentUpon>UserControlBillManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myForm\UserControlBooking.resx">
+      <DependentUpon>UserControlBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myForm\UserControlOrderService.resx">
+      <DependentUpon>UserControlOrderService.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

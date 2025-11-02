@@ -26,3 +26,22 @@ D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_B
 D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_NhanVien.resources
 D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_Dashboard.resources
 D:\BTL_app\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.exe.config
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\BTL_QLKhachSan.exe.config
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\BTL_QLKhachSan.exe
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\BTL_QLKhachSan.pdb
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.csproj.AssemblyReference.cache
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.exe.config
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.frmMain.resources
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.frmLogin.resources
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_BaoCaoDoanhThu.resources
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_Dashboard.resources
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_KhachHang.resources
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_NhanVien.resources
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.Properties.Resources.resources
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.csproj.GenerateResource.cache
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.csproj.CoreCompileInputs.cache
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.exe
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.pdb
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UserControlBillManagement.resources
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UserControlBooking.resources
+D:\LTtrucquan\NVbac\bài long\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UserControlOrderService.resources

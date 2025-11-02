@@ -75,6 +75,7 @@ namespace BTL_QLKhachSan.myForm
             dgvbooking.Columns.Add("GhiChu", "Ghi chú");
 
             dgvbooking.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            LoadSoDienThoaiToComboBox();
         }
         private void OnlyDigits_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -94,11 +95,41 @@ namespace BTL_QLKhachSan.myForm
             cbloaiphong.ValueMember = "IDLoaiPhong";
             cbloaiphong.SelectedIndex = -1;
         }
+        private void LoadSoDienThoaiToComboBox()
+        {
+            try
+            {
+                string sql = @"
+            SELECT DISTINCT SoDienThoai 
+            FROM KHACHHANG kh
+            JOIN PHIEUTHUE pt ON kh.IDKhachHang = pt.IDKhachHang
+            ORDER BY SoDienThoai";
+
+                DataTable dt = db.GetData(sql);
+
+                cbtimkiem.Items.Clear();
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        cbtimkiem.Items.Add(r["SoDienThoai"].ToString());
+                    }
+
+                    cbtimkiem.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    cbtimkiem.AutoCompleteSource = AutoCompleteSource.ListItems;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách số điện thoại: " + ex.Message,
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void btntimkiem_Click(object sender, EventArgs e)
         {
             dgvbooking.Columns.Clear();
-            string sdt = txttimkiem.Text.Trim();
+            string sdt = cbtimkiem.Text.Trim();
 
             if (string.IsNullOrEmpty(sdt))
             {

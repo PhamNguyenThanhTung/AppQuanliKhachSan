@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtmaphieu = new System.Windows.Forms.TextBox();
+            this.label = new System.Windows.Forms.Label();
             this.txtsophong = new System.Windows.Forms.TextBox();
             this.txttenkh = new System.Windows.Forms.TextBox();
             this.txtmakh = new System.Windows.Forms.TextBox();
@@ -44,16 +46,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvdichvu = new System.Windows.Forms.DataGridView();
             this.btnthem = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
-            this.txttimkiem = new System.Windows.Forms.TextBox();
             this.btntimkiem = new System.Windows.Forms.Button();
-            this.label = new System.Windows.Forms.Label();
-            this.txtmaphieu = new System.Windows.Forms.TextBox();
+            this.cbtimkiem = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdichvu)).BeginInit();
@@ -75,6 +74,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "thông tin khách hàng:";
+            // 
+            // txtmaphieu
+            // 
+            this.txtmaphieu.Location = new System.Drawing.Point(170, 114);
+            this.txtmaphieu.Name = "txtmaphieu";
+            this.txtmaphieu.Size = new System.Drawing.Size(169, 26);
+            this.txtmaphieu.TabIndex = 7;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(10, 117);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(74, 20);
+            this.label.TabIndex = 6;
+            this.label.Text = "mã phiếu";
             // 
             // txtsophong
             // 
@@ -263,13 +278,6 @@
             this.btnxoa.UseVisualStyleBackColor = true;
             this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
-            // txttimkiem
-            // 
-            this.txttimkiem.Location = new System.Drawing.Point(98, 342);
-            this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(134, 26);
-            this.txttimkiem.TabIndex = 7;
-            // 
             // btntimkiem
             // 
             this.btntimkiem.Location = new System.Drawing.Point(285, 335);
@@ -280,28 +288,20 @@
             this.btntimkiem.UseVisualStyleBackColor = true;
             this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
-            // label
+            // cbtimkiem
             // 
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(10, 117);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(74, 20);
-            this.label.TabIndex = 6;
-            this.label.Text = "mã phiếu";
-            // 
-            // txtmaphieu
-            // 
-            this.txtmaphieu.Location = new System.Drawing.Point(170, 114);
-            this.txtmaphieu.Name = "txtmaphieu";
-            this.txtmaphieu.Size = new System.Drawing.Size(169, 26);
-            this.txtmaphieu.TabIndex = 7;
+            this.cbtimkiem.FormattingEnabled = true;
+            this.cbtimkiem.Location = new System.Drawing.Point(98, 340);
+            this.cbtimkiem.Name = "cbtimkiem";
+            this.cbtimkiem.Size = new System.Drawing.Size(121, 28);
+            this.cbtimkiem.TabIndex = 9;
             // 
             // UserControlOrderService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbtimkiem);
             this.Controls.Add(this.btntimkiem);
-            this.Controls.Add(this.txttimkiem);
             this.Controls.Add(this.btnxoa);
             this.Controls.Add(this.btnsua);
             this.Controls.Add(this.btnthem);
@@ -326,7 +326,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvdichvu;
         private System.Windows.Forms.Label label4;
@@ -346,9 +345,9 @@
         private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.Button btnsua;
         private System.Windows.Forms.Button btnxoa;
-        private System.Windows.Forms.TextBox txttimkiem;
         private System.Windows.Forms.Button btntimkiem;
         private System.Windows.Forms.TextBox txtmaphieu;
         private System.Windows.Forms.Label label;
+        private System.Windows.Forms.ComboBox cbtimkiem;
     }
 }

@@ -67,9 +67,9 @@
             this.btnthem = new System.Windows.Forms.Button();
             this.btsua = new System.Windows.Forms.Button();
             this.btninhoadon = new System.Windows.Forms.Button();
-            this.txttimkkiem = new System.Windows.Forms.TextBox();
             this.btntimkiem = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
+            this.cbtimkiem = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhoadonthanhtoan)).BeginInit();
@@ -438,13 +438,6 @@
             this.btninhoadon.UseVisualStyleBackColor = true;
             this.btninhoadon.Click += new System.EventHandler(this.btninhoadon_Click);
             // 
-            // txttimkkiem
-            // 
-            this.txttimkkiem.Location = new System.Drawing.Point(80, 259);
-            this.txttimkkiem.Name = "txttimkkiem";
-            this.txttimkkiem.Size = new System.Drawing.Size(124, 26);
-            this.txttimkkiem.TabIndex = 9;
-            // 
             // btntimkiem
             // 
             this.btntimkiem.Location = new System.Drawing.Point(252, 261);
@@ -464,13 +457,21 @@
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = true;
             // 
+            // cbtimkiem
+            // 
+            this.cbtimkiem.FormattingEnabled = true;
+            this.cbtimkiem.Location = new System.Drawing.Point(83, 261);
+            this.cbtimkiem.Name = "cbtimkiem";
+            this.cbtimkiem.Size = new System.Drawing.Size(121, 28);
+            this.cbtimkiem.TabIndex = 12;
+            // 
             // UserControlBillManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbtimkiem);
             this.Controls.Add(this.btnxoa);
             this.Controls.Add(this.btntimkiem);
-            this.Controls.Add(this.txttimkkiem);
             this.Controls.Add(this.btninhoadon);
             this.Controls.Add(this.btsua);
             this.Controls.Add(this.btnthem);
@@ -538,8 +539,8 @@
         private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.Button btsua;
         private System.Windows.Forms.Button btninhoadon;
-        private System.Windows.Forms.TextBox txttimkkiem;
         private System.Windows.Forms.Button btntimkiem;
         private System.Windows.Forms.Button btnxoa;
+        private System.Windows.Forms.ComboBox cbtimkiem;
     }
 }
