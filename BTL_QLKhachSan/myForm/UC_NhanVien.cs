@@ -379,10 +379,5 @@ namespace BTL_QLKhachSan.QuanLy
             if (e.RowIndex >= 0)
                 HienThiChiTietTuDong(e.RowIndex);
         }
-
-        private void labeltitle_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

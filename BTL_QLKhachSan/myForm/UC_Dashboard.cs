@@ -60,10 +60,5 @@ namespace BTL_QLKhachSan.QuanLy
         {
 
         }
-
-        private void UC_Dashboard_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

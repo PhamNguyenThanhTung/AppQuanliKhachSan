@@ -258,7 +258,6 @@
         OKi5Nc8toVC4gyTJu3w+P5W79hcGRSE1MCGQSgAAAABJRU5ErkJggg==
 </value>
   </data>
-<<<<<<< HEAD
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
@@ -283,6 +282,4 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
-=======
->>>>>>> bai_long_lam
 </root>

@@ -197,6 +197,9 @@
     <EmbeddedResource Include="QuanLy\UC_Dashboard.resx">
       <DependentUpon>UC_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLy\UC_HoaDon.resx">
+      <DependentUpon>UC_HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLy\UC_KhachHang.resx">
       <DependentUpon>UC_KhachHang.cs</DependentUpon>
     </EmbeddedResource>

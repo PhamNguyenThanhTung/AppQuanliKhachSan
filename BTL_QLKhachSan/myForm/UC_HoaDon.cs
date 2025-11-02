@@ -16,10 +16,5 @@ namespace BTL_QLKhachSan.QuanLy
         {
             InitializeComponent();
         }
-
-        private void UC_HoaDon_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

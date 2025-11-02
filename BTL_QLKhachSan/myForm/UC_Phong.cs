@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace BTL_QLKhachSan.QuanLy
 {
-    public partial class UC_HoaDon : UserControl
+    public partial class UC_Phong : UserControl
     {
-        public UC_HoaDon()
+        public UC_Phong()
         {
             InitializeComponent();
-        }
-
-        private void UC_HoaDon_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

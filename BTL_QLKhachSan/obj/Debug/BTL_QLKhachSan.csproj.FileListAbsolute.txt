@@ -25,3 +25,38 @@ C:\Users\Long Vu\Downloads\BTL_QLKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSa
 C:\Users\Long Vu\Downloads\BTL_QLKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.exe.config
 C:\Users\Long Vu\Downloads\BTL_QLKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.QuanLy.UC_KhachHang.resources
 C:\Users\Long Vu\Downloads\BTL_QLKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.QuanLy.UC_NhanVien.resources
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\BTL_QLKhachSan.exe.config
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\BTL_QLKhachSan.exe
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\BTL_QLKhachSan.pdb
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\System.Buffers.dll
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\System.ComponentModel.Annotations.dll
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\System.Memory.dll
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\System.Numerics.Vectors.dll
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\System.Security.Cryptography.Xml.dll
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\System.Buffers.xml
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\System.Memory.xml
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\System.Numerics.Vectors.xml
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\bin\Debug\System.Security.Cryptography.Xml.xml
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.csproj.AssemblyReference.cache
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.frmMain.resources
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.frmLogin.resources
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UserControlBillManagement.resources
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UserControlBooking.resources
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UserControlOrderService.resources
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.Properties.Resources.resources
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_BaoCaoDoanhThu.resources
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.myForm.UC_KhachHang.resources
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.QuanLy.UC_Dashboard.resources
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.QuanLy.UC_HoaDon.resources
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.QuanLy.UC_KhachHang.resources
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.QuanLy.UC_NhanVien.resources
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.csproj.GenerateResource.cache
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.csproj.CoreCompileInputs.cache
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKh.80525B57.Up2Date
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.exe
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.pdb
+D:\LTtrucquan\NVbac\AppQuanliKhachSan\BTL_QLKhachSan\obj\Debug\BTL_QLKhachSan.exe.config
