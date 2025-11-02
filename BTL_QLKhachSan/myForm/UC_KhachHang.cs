@@ -193,46 +193,61 @@ namespace BTL_QLKhachSan.myForm
         // Sự kiện click nút Xóa
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (selectedID == null)
+            if (string.IsNullOrWhiteSpace(selectedID))
             {
                 MessageBox.Show("Vui lòng chọn khách hàng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Xác nhận trước khi xóa
-            DialogResult confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            
-            if (confirm == DialogResult.Yes)
+            int id;
+            if (!int.TryParse(selectedID, out id))
             {
-                // Cần kiểm tra xem khách hàng này có đang thuê phòng không (liên quan đến bảng PHIEUTHUE)
-                string checkQuery = "SELECT COUNT(*) FROM PHIEUTHUE WHERE IDKhachHang = @ID AND TrangThai = N'Chưa thanh toán'"; // Giả sử trạng thái là 'Chưa thanh toán'
-                List<SqlParameter> checkParams = new List<SqlParameter> { new SqlParameter("@ID", Convert.ToInt32(selectedID)) };
-                
-                // (Giả định hàm GetData trả về DataTable)
-                DataTable dt = db.GetData(checkQuery, checkParams);
-                int count = Convert.ToInt32(dt.Rows[0][0]);
+                MessageBox.Show("ID khách hàng không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-                if (count > 0)
+            DialogResult confirm = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này? Hành động không thể hoàn tác.", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm != DialogResult.Yes) return;
+
+            try
+            {
+                // Check for any related bookings (PHIEUTHUE). If any exist, prevent deletion.
+                object scalar = db.GetScalar("SELECT COUNT(*) FROM PHIEUTHUE WHERE IDKhachHang = @ID", new List<SqlParameter> { new SqlParameter("@ID", id) });
+                int bookingCount = Convert.ToInt32(scalar ?? 0);
+
+                if (bookingCount > 0)
                 {
-                    MessageBox.Show("Không thể xóa. Khách hàng này đang có phiếu thuê chưa thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Không thể xóa khách hàng này vì còn phiếu thuê liên quan. Vui lòng xóa hoặc chuyển các phiếu thuê trước.", "Không thể xóa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Nếu không vướng bận, tiến hành xóa
+                // Safe to delete
                 string deleteQuery = "DELETE FROM KHACHHANG WHERE IDKhachHang = @ID";
-                List<SqlParameter> deleteParams = new List<SqlParameter> { new SqlParameter("@ID", Convert.ToInt32(selectedID)) };
+                List<SqlParameter> deleteParams = new List<SqlParameter> { new SqlParameter("@ID", id) };
+                db.ExecuteNonQuery(deleteQuery, deleteParams);
 
-                try
+                MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Refresh UI
+                ClearFields();
+                LoadData();
+            }
+            catch (SqlException sqlex)
+            {
+                // Provide a clearer message for FK constraint errors
+                if (sqlex.Message.IndexOf("REFERENCE", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    sqlex.Message.IndexOf("FOREIGN KEY", StringComparison.OrdinalIgnoreCase) >= 0)
                 {
-                    db.ExecuteNonQuery(deleteQuery, deleteParams);
-                    MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData();
-                    ClearFields();
+                    MessageBox.Show("Không thể xóa khách hàng do ràng buộc khoá ngoại. Hãy xóa hoặc di chuyển các bản ghi liên quan trước.", "Lỗi ràng buộc", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Lỗi khi xóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi khi xóa (SQL): " + sqlex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

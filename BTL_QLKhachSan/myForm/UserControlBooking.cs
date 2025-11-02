@@ -20,14 +20,26 @@ namespace BTL_QLKhachSan.myForm
         {
             InitializeComponent();
         }
+
         private int selectedPhieuThueID = -1;
+        // New: track current customer when selecting CCCD
+        private int currentIDKhachHang = -1;
+
         private void ClearForm()
         {
             // 🔹 Thông tin khách hàng
             txttenkh.Clear();
             txtsodt.Clear();
-            txtccdd.Clear();
+            // ComboBox does not have Clear(); reset selection and text instead
+            if (cbcccd != null)
+            {
+                cbcccd.SelectedIndex = -1;
+                cbcccd.Text = string.Empty;
+            }
             txtdiachi.Clear();
+
+            // reset tracked customer
+            currentIDKhachHang = -1;
 
             // 🔹 Thông tin đặt phòng
             cbloaiphong.SelectedIndex = -1;
@@ -53,14 +65,21 @@ namespace BTL_QLKhachSan.myForm
 
 
 
+
         private void UserControlBooking_Load(object sender, EventArgs e)
         {
             txtsodt.KeyPress += OnlyDigits_KeyPress;
-            txtccdd.KeyPress += OnlyDigits_KeyPress;
+            cbcccd.KeyPress += OnlyDigits_KeyPress;
             txttiencoc.KeyPress += OnlyDigits_KeyPress;
             dgvbooking.CellClick += dgvbooking_CellClick;
 
             LoadLoaiPhong();
+            LoadCCCDs(); // <- load CCCD values into ComboBox on form load
+
+            // subscribe to selection / input events for CCCD
+            cbcccd.SelectedIndexChanged += cbcccd_SelectedIndexChanged;
+            cbcccd.Leave += cbcccd_Leave;
+
             btnsua.Enabled = false;
 
 
@@ -154,7 +173,7 @@ namespace BTL_QLKhachSan.myForm
                 // 🔹 Hiển thị thông tin khách hàng
                 txttenkh.Text = dtKH.Rows[0]["HoTen"].ToString();
                 txtsodt.Text = dtKH.Rows[0]["SoDienThoai"].ToString();
-                txtccdd.Text = dtKH.Rows[0]["CMND"].ToString();
+                cbcccd.Text = dtKH.Rows[0]["CMND"].ToString();
                 txtdiachi.Text = dtKH.Rows[0]["DiaChi"].ToString();
                 cbloaiphong.Text = dtKH.Rows[0]["TenLoaiPhong"].ToString();
                 txtghichu.Text = dtKH.Rows[0]["GhiChu"].ToString();
@@ -167,6 +186,9 @@ namespace BTL_QLKhachSan.myForm
 
                 txtsonguoi.Text = dtKH.Rows[0]["SoNguoi"].ToString();
                 int idKH = Convert.ToInt32(dtKH.Rows[0]["IDKhachHang"]);
+
+                // set current customer id
+                currentIDKhachHang = idKH;
 
                 // 🔹 Truy vấn danh sách phiếu thuê của khách
                 string queryPhieu = @"
@@ -226,31 +248,70 @@ namespace BTL_QLKhachSan.myForm
                     return;
                 }
 
-                // ✅ Lấy ID khách hàng (nếu khách cũ)
-                string queryKH = "SELECT * FROM KHACHHANG WHERE SoDienThoai = @sdt";
-                List<SqlParameter> pKH = new List<SqlParameter> { new SqlParameter("@sdt", txtsodt.Text.Trim()) };
-                DataTable dtKH = db.GetData(queryKH, pKH);
+                // Determine customer ID: prefer currentIDKhachHang, then try by CMND, then by phone
+                int idKH = -1;
+                string cmndText = (cbcccd?.Text ?? string.Empty).Trim();
+                string phoneText = txtsodt.Text.Trim();
 
-                int idKH;
-                if (dtKH.Rows.Count > 0)
+                if (currentIDKhachHang != -1)
                 {
-                    idKH = Convert.ToInt32(dtKH.Rows[0]["IDKhachHang"]);
+                    idKH = currentIDKhachHang;
+                }
+                else if (!string.IsNullOrEmpty(cmndText))
+                {
+                    // try find by CMND
+                    string qByCccd = "SELECT IDKhachHang FROM KHACHHANG WHERE CMND = @cmnd";
+                    DataTable dtByCccd = db.GetData(qByCccd, new List<SqlParameter> { new SqlParameter("@cmnd", cmndText) });
+                    if (dtByCccd != null && dtByCccd.Rows.Count > 0)
+                        idKH = Convert.ToInt32(dtByCccd.Rows[0]["IDKhachHang"]);
+                }
+
+                if (idKH == -1)
+                {
+                    // fallback: try find by phone
+                    string qByPhone = "SELECT IDKhachHang FROM KHACHHANG WHERE SoDienThoai = @sdt";
+                    DataTable dtByPhone = db.GetData(qByPhone, new List<SqlParameter> { new SqlParameter("@sdt", phoneText) });
+                    if (dtByPhone != null && dtByPhone.Rows.Count > 0)
+                        idKH = Convert.ToInt32(dtByPhone.Rows[0]["IDKhachHang"]);
+                }
+
+                // If idKH found -> update customer details; otherwise insert new customer
+                if (idKH != -1)
+                {
+                    string updateKH = @"UPDATE KHACHHANG SET HoTen = @ten, CMND = @cccd, SoDienThoai = @sdt, DiaChi = @diachi WHERE IDKhachHang = @id";
+                    List<SqlParameter> pUpdate = new List<SqlParameter>
+                    {
+                        new SqlParameter("@ten", txttenkh.Text.Trim()),
+                        new SqlParameter("@cccd", cmndText),
+                        new SqlParameter("@sdt", phoneText),
+                        new SqlParameter("@diachi", txtdiachi.Text.Trim()),
+                        new SqlParameter("@id", idKH)
+                    };
+                    db.ExecuteNonQuery(updateKH, pUpdate);
                 }
                 else
                 {
-                    // ✅ Nếu khách mới thì thêm vào bảng KHACHHANG
+                    // Insert new customer
                     string insertKH = @"INSERT INTO KHACHHANG (HoTen, CMND, SoDienThoai, DiaChi)
                                 VALUES (@ten, @cccd, @sdt, @diachi);
                                 SELECT SCOPE_IDENTITY();";
                     List<SqlParameter> pNewKH = new List<SqlParameter>
-            {
-                new SqlParameter("@ten", txttenkh.Text),
-                new SqlParameter("@cccd", txtccdd.Text),
-                new SqlParameter("@sdt", txtsodt.Text),
-                new SqlParameter("@diachi", txtdiachi.Text)
-            };
+                    {
+                        new SqlParameter("@ten", txttenkh.Text.Trim()),
+                        new SqlParameter("@cccd", cmndText),
+                        new SqlParameter("@sdt", phoneText),
+                        new SqlParameter("@diachi", txtdiachi.Text.Trim())
+                    };
                     DataTable newKH = db.GetData(insertKH, pNewKH);
-                    idKH = Convert.ToInt32(newKH.Rows[0][0]);
+                    if (newKH != null && newKH.Rows.Count > 0)
+                        idKH = Convert.ToInt32(newKH.Rows[0][0]);
+                }
+
+                // ensure idKH available
+                if (idKH == -1)
+                {
+                    MessageBox.Show("Không thể tạo hoặc cập nhật thông tin khách hàng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
                 // ✅ Lấy phòng được chọn (ví dụ bạn có ComboBox cbphong)
@@ -269,6 +330,13 @@ namespace BTL_QLKhachSan.myForm
                 // ✅ Lấy thông tin chung
                 DateTime ngayNhan = dtpngaynhan.Value;
                 DateTime? ngayTra = dtpngaytra.Checked ? dtpngaytra.Value : (DateTime?)null;
+                if (ngayTra.HasValue && ngayTra.Value < ngayNhan)
+                {
+                    MessageBox.Show("Ngày trả không được nhỏ hơn ngày nhận!",
+                                    "Lỗi ngày tháng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 int soNguoi = int.TryParse(txtsonguoi.Text, out int n) ? n : 1;
                 decimal tienCoc = decimal.TryParse(txttiencoc.Text, out decimal c) ? c : 0;
                 string ghiChu = txtghichu.Text;
@@ -303,8 +371,9 @@ namespace BTL_QLKhachSan.myForm
 
                 MessageBox.Show("Đã thêm phiếu đặt phòng mới thành công!",
                                 "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadSoDienThoaiToComboBox(); // 🔄 Cập nhật lại danh sách SĐT
+                LoadCCCDs(); // refresh CCCD list (in case a new CMND was inserted)
 
-                // ✅ Tải lại danh sách booking sau khi thêm
             }
             catch (Exception ex)
             {
@@ -312,7 +381,6 @@ namespace BTL_QLKhachSan.myForm
             }
             ClearForm();
             btnsua.Enabled = false;
-
 
 
 
@@ -397,7 +465,14 @@ namespace BTL_QLKhachSan.myForm
         }
 
         private void btnsua_Click(object sender, EventArgs e)
+
         {
+            if (cbphong.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn phòng hợp lệ trước khi cập nhật!",
+                                "Thiếu dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (selectedPhieuThueID == -1)
             {
                 MessageBox.Show("Vui lòng chọn một phiếu thuê để sửa!",
@@ -411,6 +486,13 @@ namespace BTL_QLKhachSan.myForm
                 string idPhong = cbphong.SelectedValue?.ToString();
                 DateTime ngayNhan = dtpngaynhan.Value;
                 DateTime? ngayTra = dtpngaytra.Checked ? dtpngaytra.Value : (DateTime?)null;
+                if (ngayTra.HasValue && ngayTra.Value < ngayNhan)
+                {
+                    MessageBox.Show("Ngày trả không được nhỏ hơn ngày nhận!",
+                                    "Lỗi ngày tháng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 int soNguoi = int.TryParse(txtsonguoi.Text, out int n) ? n : 1;
                 decimal tienCoc = decimal.TryParse(txttiencoc.Text, out decimal c) ? c : 0;
                 string ghiChu = txtghichu.Text;
@@ -468,47 +550,173 @@ namespace BTL_QLKhachSan.myForm
                 return;
             }
 
-            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa phiếu thuê này không?",
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa phiếu thuê này không? (Hành động không thể hoàn tác)",
                                               "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dr == DialogResult.No) return;
 
             try
             {
-                // ✅ 1. Xóa phiếu thuê trong bảng PHIEUTHUE
-                string queryDelete = "DELETE FROM PHIEUTHUE WHERE IDPhieuThue = @id";
-                List<SqlParameter> param = new List<SqlParameter>
-        {
-            new SqlParameter("@id", selectedPhieuThueID)
-        };
-                db.ExecuteNonQuery(queryDelete, param);
+                // 1) Xóa chi tiết dịch vụ liên quan (nếu có)
+                string deleteCTDV = "DELETE FROM CHITIET_DICHVU WHERE IDPhieuThue = @id";
+                db.ExecuteNonQuery(deleteCTDV, new List<SqlParameter> { new SqlParameter("@id", selectedPhieuThueID) });
 
-                // ✅ 2. Cập nhật trạng thái phòng về "Trống"
+                // 2) Xóa hóa đơn liên quan (nếu có)
+                string deleteHD = "DELETE FROM HOADON WHERE IDPhieuThue = @id";
+                db.ExecuteNonQuery(deleteHD, new List<SqlParameter> { new SqlParameter("@id", selectedPhieuThueID) });
+
+                // 3) Xóa phiếu thuê
+                string queryDelete = "DELETE FROM PHIEUTHUE WHERE IDPhieuThue = @id";
+                db.ExecuteNonQuery(queryDelete, new List<SqlParameter> { new SqlParameter("@id", selectedPhieuThueID) });
+
+                // 4) Cập nhật trạng thái phòng về "Trống" (nếu biết phòng)
                 if (!string.IsNullOrEmpty(selectedPhongID))
                 {
                     string queryPhong = "UPDATE PHONG SET TrangThai = N'Trống' WHERE IDPhong = @p";
-                    List<SqlParameter> pPhong = new List<SqlParameter>
-            {
-                new SqlParameter("@p", selectedPhongID)
-            };
-                    db.ExecuteNonQuery(queryPhong, pPhong);
+                    db.ExecuteNonQuery(queryPhong, new List<SqlParameter> { new SqlParameter("@p", selectedPhongID) });
                 }
 
-                // ✅ 3. Tải lại danh sách
-                dgvbooking.DataSource = null;
-                // ✅ 4. Reset biến & form
+                // 5) Cập nhật UI: nếu dgvbooking được bind tới DataTable thì xóa hàng khỏi DataTable,
+                //    nếu dgv là unbound thì xóa trực tiếp hàng hiển thị.
+                if (dgvbooking.DataSource is DataTable dt)
+                {
+                    // Cột được đặt tên là "Mã phiếu" trong truy vấn; dùng Select với bracket
+                    DataRow[] rows = dt.Select($"[Mã phiếu] = {selectedPhieuThueID}");
+                    foreach (var r in rows)
+                    {
+                        r.Delete();
+                    }
+                    dt.AcceptChanges();
+                    dgvbooking.Refresh();
+                }
+                else
+                {
+                    // tìm và xóa hàng trong DataGridView (unbound mode)
+                    for (int i = dgvbooking.Rows.Count - 1; i >= 0; i--)
+                    {
+                        var cell = dgvbooking.Rows[i].Cells["Mã phiếu"];
+                        if (cell != null && cell.Value != null && Convert.ToInt32(cell.Value) == selectedPhieuThueID)
+                        {
+                            dgvbooking.Rows.RemoveAt(i);
+                            break;
+                        }
+                    }
+                }
+
+                // 6) Reset trạng thái form & biến
                 selectedPhieuThueID = -1;
                 selectedPhongID = null;
                 btnxoa.Enabled = false;
                 btnsua.Enabled = false;
+                ClearForm();
+                LoadSoDienThoaiToComboBox(); // cập nhật combobox số điện thoại nếu cần
 
                 MessageBox.Show("Đã xóa phiếu thuê thành công!",
                                 "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (SqlException sqlex)
+            {
+                // Nếu có ràng buộc khoá ngoại khác không lường trước được, thông báo rõ ràng
+                MessageBox.Show("Lỗi khi xóa phiếu thuê (SQL): " + sqlex.Message,
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi xóa phiếu thuê: " + ex.Message,
                                 "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadCCCDs()
+        {
+            try
+            {
+                // Load distinct CMND/CCCD values from KHACHHANG and populate the ComboBox
+                string sql = @"
+            SELECT DISTINCT CMND
+            FROM KHACHHANG
+            WHERE CMND IS NOT NULL AND CMND <> ''
+            ORDER BY CMND";
+
+                DataTable dt = db.GetData(sql);
+
+                cbcccd.Items.Clear();
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        cbcccd.Items.Add(r["CMND"].ToString());
+                    }
+
+                    // Enable AutoComplete to help user quickly find a value
+                    cbcccd.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    cbcccd.AutoCompleteSource = AutoCompleteSource.ListItems;
+                }
+                else
+                {
+                    cbcccd.Text = string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách CCCD/CMND: " + ex.Message,
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // When user selects a CCCD from dropdown
+        private void cbcccd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string cmnd = cbcccd.Text.Trim();
+            if (!string.IsNullOrEmpty(cmnd))
+                LoadCustomerByCCCD(cmnd);
+        }
+
+        // When user finishes typing CCCD and leaves field
+        private void cbcccd_Leave(object sender, EventArgs e)
+        {
+            string cmnd = cbcccd.Text.Trim();
+            if (string.IsNullOrEmpty(cmnd))
+            {
+                // If cleared, reset customer data
+                currentIDKhachHang = -1;
+                txttenkh.Text = string.Empty;
+                txtsodt.Text = string.Empty;
+                txtdiachi.Text = string.Empty;
+                return;
+            }
+
+            LoadCustomerByCCCD(cmnd);
+        }
+
+        // Load customer by CMND and populate form; set currentIDKhachHang = -1 if not found
+        private void LoadCustomerByCCCD(string cmnd)
+        {
+            try
+            {
+                string q = "SELECT * FROM KHACHHANG WHERE CMND = @cmnd";
+                DataTable dt = db.GetData(q, new List<SqlParameter> { new SqlParameter("@cmnd", cmnd) });
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    DataRow r = dt.Rows[0];
+                    currentIDKhachHang = Convert.ToInt32(r["IDKhachHang"]);
+                    txttenkh.Text = r["HoTen"].ToString();
+                    txtsodt.Text = r["SoDienThoai"].ToString();
+                    txtdiachi.Text = r["DiaChi"].ToString();
+                }
+                else
+                {
+                    // New CCCD: clear customer fields but keep CCCD text
+                    currentIDKhachHang = -1;
+                    txttenkh.Text = string.Empty;
+                    txtsodt.Text = string.Empty;
+                    txtdiachi.Text = string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải thông tin khách hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -64,11 +64,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnthem = new System.Windows.Forms.Button();
             this.btsua = new System.Windows.Forms.Button();
             this.btninhoadon = new System.Windows.Forms.Button();
             this.btntimkiem = new System.Windows.Forms.Button();
-            this.btnxoa = new System.Windows.Forms.Button();
             this.cbtimkiem = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -408,19 +406,9 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Tổng tiền phòng";
             // 
-            // btnthem
-            // 
-            this.btnthem.Location = new System.Drawing.Point(99, 723);
-            this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(128, 51);
-            this.btnthem.TabIndex = 6;
-            this.btnthem.Text = "Thêm";
-            this.btnthem.UseVisualStyleBackColor = true;
-            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
-            // 
             // btsua
             // 
-            this.btsua.Location = new System.Drawing.Point(324, 723);
+            this.btsua.Location = new System.Drawing.Point(187, 723);
             this.btsua.Name = "btsua";
             this.btsua.Size = new System.Drawing.Size(128, 51);
             this.btsua.TabIndex = 7;
@@ -430,7 +418,7 @@
             // 
             // btninhoadon
             // 
-            this.btninhoadon.Location = new System.Drawing.Point(781, 723);
+            this.btninhoadon.Location = new System.Drawing.Point(652, 723);
             this.btninhoadon.Name = "btninhoadon";
             this.btninhoadon.Size = new System.Drawing.Size(128, 51);
             this.btninhoadon.TabIndex = 8;
@@ -448,15 +436,6 @@
             this.btntimkiem.UseVisualStyleBackColor = true;
             this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click_1);
             // 
-            // btnxoa
-            // 
-            this.btnxoa.Location = new System.Drawing.Point(533, 723);
-            this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(139, 51);
-            this.btnxoa.TabIndex = 11;
-            this.btnxoa.Text = "Xóa";
-            this.btnxoa.UseVisualStyleBackColor = true;
-            // 
             // cbtimkiem
             // 
             this.cbtimkiem.FormattingEnabled = true;
@@ -470,11 +449,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.cbtimkiem);
-            this.Controls.Add(this.btnxoa);
             this.Controls.Add(this.btntimkiem);
             this.Controls.Add(this.btninhoadon);
             this.Controls.Add(this.btsua);
-            this.Controls.Add(this.btnthem);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dgvhoadonthanhtoan);
@@ -536,11 +513,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.Button btsua;
         private System.Windows.Forms.Button btninhoadon;
         private System.Windows.Forms.Button btntimkiem;
-        private System.Windows.Forms.Button btnxoa;
         private System.Windows.Forms.ComboBox cbtimkiem;
     }
 }

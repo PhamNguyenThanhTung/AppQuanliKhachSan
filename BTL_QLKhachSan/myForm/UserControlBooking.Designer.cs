@@ -44,7 +44,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtdiachi = new System.Windows.Forms.TextBox();
-            this.txtccdd = new System.Windows.Forms.TextBox();
             this.txttenkh = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbphong = new System.Windows.Forms.ComboBox();
@@ -60,6 +59,7 @@
             this.btntimkiem = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.cbtimkiem = new System.Windows.Forms.ComboBox();
+            this.cbcccd = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbooking)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -192,9 +192,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbcccd);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtdiachi);
-            this.groupBox1.Controls.Add(this.txtccdd);
             this.groupBox1.Controls.Add(this.txttenkh);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtsodt);
@@ -222,13 +222,6 @@
             this.txtdiachi.Name = "txtdiachi";
             this.txtdiachi.Size = new System.Drawing.Size(217, 26);
             this.txtdiachi.TabIndex = 17;
-            // 
-            // txtccdd
-            // 
-            this.txtccdd.Location = new System.Drawing.Point(163, 124);
-            this.txtccdd.Name = "txtccdd";
-            this.txtccdd.Size = new System.Drawing.Size(217, 26);
-            this.txtccdd.TabIndex = 16;
             // 
             // txttenkh
             // 
@@ -361,6 +354,14 @@
             this.cbtimkiem.Size = new System.Drawing.Size(121, 28);
             this.cbtimkiem.TabIndex = 19;
             // 
+            // cbcccd
+            // 
+            this.cbcccd.FormattingEnabled = true;
+            this.cbcccd.Location = new System.Drawing.Point(163, 124);
+            this.cbcccd.Name = "cbcccd";
+            this.cbcccd.Size = new System.Drawing.Size(217, 28);
+            this.cbcccd.TabIndex = 19;
+            // 
             // UserControlBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -406,7 +407,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtdiachi;
-        private System.Windows.Forms.TextBox txtccdd;
         private System.Windows.Forms.TextBox txttenkh;
         private System.Windows.Forms.TextBox txtsonguoi;
         private System.Windows.Forms.TextBox txttiencoc;
@@ -421,5 +421,6 @@
         private System.Windows.Forms.TextBox txtghichu;
         private System.Windows.Forms.ComboBox cbphong;
         private System.Windows.Forms.ComboBox cbtimkiem;
+        private System.Windows.Forms.ComboBox cbcccd;
     }
 }

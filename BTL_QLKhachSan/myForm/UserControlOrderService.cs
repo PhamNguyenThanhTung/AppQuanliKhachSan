@@ -154,21 +154,21 @@ namespace BTL_QLKhachSan.myForm
             try
             {
                 string sql = @"
-            SELECT 
-                kh.HoTen AS TenKhachHang,
-                p.TenPhong,
-                ctdv.ID,
-                ctdv.IDPhieuThue,
-                
-                dv.TenDichVu,
-                ctdv.SoLuong,
-                ctdv.ThanhTien
-            FROM CHITIET_DICHVU ctdv
-            JOIN DICHVU dv ON ctdv.IDDichVu = dv.IDDichVu
-            JOIN PHIEUTHUE pt ON ctdv.IDPhieuThue = pt.IDPhieuThue
-            JOIN KHACHHANG kh ON pt.IDKhachHang = kh.IDKhachHang
-            JOIN PHONG p ON pt.IDPhong = p.IDPhong
-            WHERE ctdv.IDPhieuThue = @IDPhieuThue";
+        SELECT 
+            kh.HoTen AS TenKhachHang,
+            kh.IDKhachHang,
+            p.TenPhong,
+            pt.IDPhieuThue,
+            ctdv.ID AS IDChiTiet,
+            dv.TenDichVu,
+            ctdv.SoLuong,
+            ctdv.ThanhTien
+        FROM PHIEUTHUE pt
+        JOIN KHACHHANG kh ON pt.IDKhachHang = kh.IDKhachHang
+        JOIN PHONG p ON pt.IDPhong = p.IDPhong
+        LEFT JOIN CHITIET_DICHVU ctdv ON ctdv.IDPhieuThue = pt.IDPhieuThue
+        LEFT JOIN DICHVU dv ON ctdv.IDDichVu = dv.IDDichVu
+        WHERE pt.IDPhieuThue = @IDPhieuThue";
 
                 var parameters = new List<SqlParameter>
         {
@@ -179,33 +179,45 @@ namespace BTL_QLKhachSan.myForm
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
-                    // 🧩 Hiển thị chi tiết dịch vụ
-                    dgvdichvu.AutoGenerateColumns = true;
-                    dgvdichvu.DataSource = dt;
-                    if (dgvdichvu.Columns.Contains("TenKhachHang"))
-                        dgvdichvu.Columns["TenKhachHang"].Visible = false;
-                    if (dgvdichvu.Columns.Contains("TenPhong"))
-                        dgvdichvu.Columns["TenPhong"].Visible = false;
-                    dgvdichvu.Columns["ThanhTien"].DefaultCellStyle.Format = "N0";
-                    dgvdichvu.Columns["ThanhTien"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    // 🧩 Gán thông tin khách hàng, phòng, phiếu thuê
+                    txtmakh.Text = dt.Rows[0]["IDKhachHang"].ToString(); // Giả sử mã khách hàng là tên khách hàng
                     txttenkh.Text = dt.Rows[0]["TenKhachHang"].ToString();
                     txtsophong.Text = dt.Rows[0]["TenPhong"].ToString();
-                    txtmaphieu.Text = idPhieuThue.ToString();
-                    txtmakh.Text = dt.Rows[0]["IDPhieuThue"].ToString();
-                    // 🧩 Gán thông tin khách hàng và phòng
+                    txtmaphieu.Text = dt.Rows[0]["IDPhieuThue"].ToString();
 
+                    // 🧩 Nếu có dịch vụ -> hiển thị lên DataGridView
+                    DataView dv = new DataView(dt);
+                    dv.RowFilter = "TenDichVu IS NOT NULL"; // chỉ lọc các dòng có dịch vụ
+
+                    if (dv.Count > 0)
+                    {
+                        dgvdichvu.AutoGenerateColumns = true;
+                        dgvdichvu.DataSource = dv;
+                        if (dgvdichvu.Columns.Contains("TenKhachHang"))
+                            dgvdichvu.Columns["TenKhachHang"].Visible = false;
+                        if (dgvdichvu.Columns.Contains("TenPhong"))
+                            dgvdichvu.Columns["TenPhong"].Visible = false;
+                        dgvdichvu.Columns["ThanhTien"].DefaultCellStyle.Format = "N0";
+                        dgvdichvu.Columns["ThanhTien"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    }
+                    else
+                    {
+                        // Không có dịch vụ -> khởi tạo bảng trống
+                        dgvdichvu.DataSource = null;
+                        KhoiTaoDGV();
+                        MessageBox.Show("Phiếu thuê này chưa có dịch vụ nào.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
-                    txtmakh.Clear();
+                    // Không có phiếu thuê
                     txttenkh.Clear();
                     txtsophong.Clear();
                     txtmaphieu.Clear();
                     dgvdichvu.DataSource = null;
                     KhoiTaoDGV();
 
-                    MessageBox.Show($"Phiếu thuê {idPhieuThue} chưa có dịch vụ nào hoặc không tồn tại!",
-                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Không tìm thấy phiếu thuê {idPhieuThue}!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -294,6 +306,7 @@ namespace BTL_QLKhachSan.myForm
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // ✅ Load lại danh sách dịch vụ
+                btntimkiem.PerformClick();
             }
             catch (Exception ex)
             {
@@ -387,18 +400,19 @@ namespace BTL_QLKhachSan.myForm
             if (MessageBox.Show($"Bạn có chắc muốn xóa dịch vụ '{tenDV}' khỏi phiếu thuê này không?",
                 "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                int idDichVu = Convert.ToInt32(dgvdichvu.CurrentRow.Cells["ID"].Value);
+                // ✅ Dùng đúng tên cột IDChiTiet (theo SQL truy vấn)
+                int idChiTiet = Convert.ToInt32(dgvdichvu.CurrentRow.Cells["IDChiTiet"].Value);
 
                 try
                 {
                     string sqlDelete = @"
                 DELETE FROM CHITIET_DICHVU
-                WHERE IDPhieuThue = @IDPhieuThue AND ID = @ID";
+                WHERE IDPhieuThue = @IDPhieuThue AND ID = @IDChiTiet";
 
                     var parameters = new List<SqlParameter>
             {
                 new SqlParameter("@IDPhieuThue", idPhieuThue),
-                new SqlParameter("@ID", idDichVu)
+                new SqlParameter("@IDChiTiet", idChiTiet)
             };
 
                     db.ExecuteNonQuery(sqlDelete, parameters);
@@ -406,6 +420,8 @@ namespace BTL_QLKhachSan.myForm
                     MessageBox.Show("Xóa dịch vụ thành công!",
                         "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    // ✅ Làm mới lại danh sách sau khi xóa
+                    btntimkiem.PerformClick();
                 }
                 catch (Exception ex)
                 {

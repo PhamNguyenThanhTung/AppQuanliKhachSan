@@ -622,40 +622,67 @@ namespace BTL_QLKhachSan.myForm
                     return;
                 }
 
-                // Cập nhật hóa đơn
-                string sqlUpdate = @"
-            UPDATE HOADON
-            SET NguoiLap = @NguoiLap,
-                PhuongThucThanhToan = @PhuongThuc,
-                TongTienPhong = @TongTienPhong,
-                TongTienDichVu = @TongTienDichVu,
-                GiamGiaTien = @GiamGia,
-                TongTien = @TongTien
-            WHERE IDPhieuThue = @IDPhieuThue";
+                // Tìm IDHoaDon tương ứng (nếu có) để cập nhật chính xác theo IDHoaDon thay vì IDPhieuThue
+                string sqlFindHoaDon = "SELECT IDHoaDon FROM HOADON WHERE IDPhieuThue = @IDPhieuThue";
+                var findParams = new List<SqlParameter> { new SqlParameter("@IDPhieuThue", currentIDPhieuThue) };
+                DataTable dtFind = db.GetData(sqlFindHoaDon, findParams);
 
+                bool haveHoaDon = (dtFind != null && dtFind.Rows.Count > 0);
+                int idHoaDon = haveHoaDon ? Convert.ToInt32(dtFind.Rows[0][0]) : 0;
+
+                string sqlUpdate;
                 var parameters = new List<SqlParameter>
-        {
-            new SqlParameter("@NguoiLap", nguoiLap),
-            new SqlParameter("@PhuongThuc", hinhThucTT),
-            new SqlParameter("@TongTienPhong", tienPhong),
-            new SqlParameter("@TongTienDichVu", tienDV),
-            new SqlParameter("@GiamGia", giamGia),
-            new SqlParameter("@TongTien", tongTien),
-            new SqlParameter("@IDPhieuThue", currentIDPhieuThue)
-        };
+                {
+                    new SqlParameter("@NguoiLap", nguoiLap),
+                    new SqlParameter("@PhuongThuc", hinhThucTT),
+                    new SqlParameter("@TongTienPhong", tienPhong),
+                    new SqlParameter("@TongTienDichVu", tienDV),
+                    new SqlParameter("@GiamGia", giamGia),
+                    new SqlParameter("@TongTien", tongTien)
+                };
+
+                if (haveHoaDon)
+                {
+                    // Cập nhật theo IDHoaDon (an toàn hơn nếu có nhiều bản ghi)
+                    sqlUpdate = @"
+                        UPDATE HOADON
+                        SET NguoiLap = @NguoiLap,
+                            PhuongThucThanhToan = @PhuongThuc,
+                            TongTienPhong = @TongTienPhong,
+                            TongTienDichVu = @TongTienDichVu,
+                            GiamGiaTien = @GiamGia,
+                            TongTien = @TongTien
+                        WHERE IDHoaDon = @IDHoaDon";
+                    parameters.Add(new SqlParameter("@IDHoaDon", idHoaDon));
+                }
+                else
+                {
+                    // Nếu chưa có hóa đơn (thường không xảy ra khi đã lập trước), cập nhật theo IDPhieuThue
+                    sqlUpdate = @"
+                        UPDATE HOADON
+                        SET NguoiLap = @NguoiLap,
+                            PhuongThucThanhToan = @PhuongThuc,
+                            TongTienPhong = @TongTienPhong,
+                            TongTienDichVu = @TongTienDichVu,
+                            GiamGiaTien = @GiamGia,
+                            TongTien = @TongTien
+                        WHERE IDPhieuThue = @IDPhieuThue";
+                    parameters.Add(new SqlParameter("@IDPhieuThue", currentIDPhieuThue));
+                }
 
                 db.ExecuteNonQuery(sqlUpdate, parameters);
 
                 MessageBox.Show("Cập nhật hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Nếu muốn, load lại danh sách hóa đơn
-                LoadPhieuThue(currentIDPhieuThue); // Load lại dữ liệu mới từ DB
-
+                // Reload dữ liệu lên form để hiển thị giá trị mới
+                LoadPhieuThue(currentIDPhieuThue);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi sửa hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+       
     }
 }
