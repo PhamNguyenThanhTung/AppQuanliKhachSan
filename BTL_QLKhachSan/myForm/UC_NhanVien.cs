@@ -39,6 +39,7 @@ namespace BTL_QLKhachSan.myForm
 
         private void UC_NhanVien_Load(object sender, EventArgs e)
         {
+
             try
             {
                 LoadLoaiTaiKhoan();

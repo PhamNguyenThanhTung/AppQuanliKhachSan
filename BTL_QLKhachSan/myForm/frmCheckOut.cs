@@ -32,7 +32,7 @@ namespace BTL_QLKhachSan.myForm
             lblPhong.Text = idPhong;
         }
 
-        private void frmCheckOut_Load(object sender, EventArgs e)
+       private void frmCheckOut_Load(object sender, EventArgs e)
         {
             Database db = new Database();
             try
@@ -43,12 +43,13 @@ namespace BTL_QLKhachSan.myForm
                     FROM PHIEUTHUE 
                     WHERE IDPhong = @IDPhong AND TrangThai = N'Đã check-in'";
 
-                List<SqlParameter> paramPT = new List<SqlParameter>
+                // TẠO LIST PARAMETER MỚI CHO TỪNG LẦN GỌI
+                List<SqlParameter> paramPT_GetData = new List<SqlParameter> // <-- Tạo mới
                 {
                     new SqlParameter("@IDPhong", this.idPhong)
                 };
 
-                DataTable dtPT = db.GetData(queryPT, paramPT);
+                DataTable dtPT = db.GetData(queryPT, paramPT_GetData); // Dùng paramPT_GetData
                 if (dtPT.Rows.Count == 0)
                 {
                     MessageBox.Show("Lỗi: Không tìm thấy phiếu thuê đang hoạt động của phòng này.");
@@ -68,7 +69,13 @@ namespace BTL_QLKhachSan.myForm
                     JOIN LOAIPHONG lp ON p.IDLoaiPhong = lp.IDLoaiPhong 
                     WHERE p.IDPhong = @IDPhong";
 
-                decimal donGiaNgay = Convert.ToDecimal(db.GetScalar(queryDonGia, paramPT)); // Dùng lại paramPT
+                // TẠO LIST PARAMETER MỚI CHO LẦN GỌI NÀY
+                List<SqlParameter> paramDonGia_GetScalar = new List<SqlParameter> // <-- Tạo mới
+                {
+                    new SqlParameter("@IDPhong", this.idPhong)
+                };
+
+                decimal donGiaNgay = Convert.ToDecimal(db.GetScalar(queryDonGia, paramDonGia_GetScalar)); // Dùng paramDonGia_GetScalar
 
                 // Tính số ngày ở (làm tròn lên)
                 TimeSpan duration = DateTime.Now.Subtract(ngayCheckIn);
@@ -86,16 +93,24 @@ namespace BTL_QLKhachSan.myForm
                     JOIN DICHVU d ON cd.IDDichVu = d.IDDichVu 
                     WHERE cd.IDPhieuThue = @IDPhieuThue";
 
-                List<SqlParameter> paramPhieu = new List<SqlParameter>
+                // TẠO LIST PARAMETER MỚI CHO LẦN GỌI NÀY
+                List<SqlParameter> paramDV_GetData = new List<SqlParameter> // <-- Tạo mới
                 {
                     new SqlParameter("@IDPhieuThue", this.idPhieuThue)
                 };
 
-                dgvDichVu.DataSource = db.GetData(queryDV, paramPhieu);
+                dgvDichVu.DataSource = db.GetData(queryDV, paramDV_GetData); // Dùng paramDV_GetData
 
                 // Tính tổng tiền dịch vụ
                 string querySumDV = "SELECT SUM(ThanhTien) FROM CHITIET_DICHVU WHERE IDPhieuThue = @IDPhieuThue";
-                object sum = db.GetScalar(querySumDV, paramPhieu);
+                
+                // TẠO LIST PARAMETER MỚI CHO LẦN GỌI NÀY
+                List<SqlParameter> paramSumDV_GetScalar = new List<SqlParameter> // <-- Tạo mới
+                {
+                    new SqlParameter("@IDPhieuThue", this.idPhieuThue)
+                };
+
+                object sum = db.GetScalar(querySumDV, paramSumDV_GetScalar); // Dùng paramSumDV_GetScalar
                 this.tienDichVu = (sum == DBNull.Value) ? 0 : Convert.ToDecimal(sum);
                 lblTienDichVu.Text = string.Format("{0:N0} VNĐ", this.tienDichVu);
 
@@ -138,21 +153,27 @@ namespace BTL_QLKhachSan.myForm
                     db.ExecuteNonQuery(queryHD, paramHD);
 
                     // 2. UPDATE PHIEUTHUE -> Đã check-out
-                    string queryPT = $@"
+                    string queryPT_Update = $@"
                         UPDATE PHIEUTHUE 
                         SET TrangThai = N'Đã check-out', NgayCheckOut = @NgayThanhToan
                         WHERE IDPhieuThue = @IDPhieuThue";
 
-                    List<SqlParameter> paramPT = new List<SqlParameter>
+                    List<SqlParameter> paramPT_Update = new List<SqlParameter>
                     {
                         new SqlParameter("@NgayThanhToan", ngayThanhToan),
                         new SqlParameter("@IDPhieuThue", this.idPhieuThue)
                     };
-                    db.ExecuteNonQuery(queryPT, paramPT);
+                    db.ExecuteNonQuery(queryPT_Update, paramPT_Update); // Dùng paramPT_Update
 
                     // 3. UPDATE PHONG -> Dọn dẹp
                     string queryPhong = $"UPDATE PHONG SET TrangThai = N'Dọn dẹp' WHERE IDPhong = @IDPhong";
-                    db.ExecuteNonQuery(queryPhong, new List<SqlParameter> { new SqlParameter("@IDPhong", this.idPhong) });
+
+                    // TẠO LIST PARAMETER MỚI CHO LẦN GỌI NÀY
+                    List<SqlParameter> paramPhong_Update = new List<SqlParameter>
+                    {
+                        new SqlParameter("@IDPhong", this.idPhong)
+                    };
+                    db.ExecuteNonQuery(queryPhong, paramPhong_Update); // Dùng paramPhong_Update
 
                     MessageBox.Show("Thanh toán thành công!");
                     this.DialogResult = DialogResult.OK; // Báo cho Sơ đồ phòng load lại

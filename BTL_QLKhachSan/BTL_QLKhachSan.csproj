@@ -92,6 +92,12 @@
     <Compile Include="myForm\UC_BookingManagemen.Designer.cs">
       <DependentUpon>UC_BookingManagemen.cs</DependentUpon>
     </Compile>
+    <Compile Include="myForm\UC_Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myForm\UC_Dashboard.Designer.cs">
+      <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="myForm\UC_KhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     <EmbeddedResource Include="myForm\UC_BaoCaoDoanhThu.resx">
       <DependentUpon>UC_BaoCaoDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="myForm\UC_Dashboard.resx">
+      <DependentUpon>UC_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="myForm\UC_KhachHang.resx">
       <DependentUpon>UC_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,8 +186,10 @@
     <Content Include="images\house2.png" />
     <Content Include="images\revenue.png" />
     <Content Include="images\room.png" />
+    <Content Include="images\roomManage.png" />
     <Content Include="images\staff.png" />
     <Content Include="images\The_Watterson_family.png" />
+    <Content Include="images\tray.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

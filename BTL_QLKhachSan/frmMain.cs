@@ -31,19 +31,15 @@ namespace BTL_QLKhachSan
         private void frmMain_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            uC_NhanVien1.SetLoginInfo(this.LoaiTk, this.username);
 
-            // === VÍ DỤ SỬ DỤNG THÔNG TIN ĐĂNG NHẬP ===
-
-            // 1. Hiển thị tên (Bạn cần tự thêm 1 Label, ví dụ lblWelcome)
-            // this.lblWelcome.Text = "Chào mừng: " + loggedInDisplayName;
-
-            // 2. Phân quyền (Dựa trên ảnh CSDL, 1=Admin, 2=Lễ tân)
-            // if (loggedInAccountType == 2) // Nếu là Lễ tân
-            // {
-            //     // Ẩn các nút quản lý (ví dụ: btnQuanLyNhanVien)
-            //     // this.btnQuanLyNhanVien.Visible = false;
-            //     // this.btnDoanhThu.Visible = false;
-            // }
+            
+            if (LoaiTk == 2) // Nếu là Lễ tân
+            {
+                 this.button_doanhthu.Enabled = false;
+                 this.button_nhanvien.Enabled = false;
+                
+            }
         }
 
         public void DrawGradient(Control control, Color color1, Color color2, LinearGradientMode mode)
@@ -95,6 +91,12 @@ namespace BTL_QLKhachSan
             movePanel(button_daskboard);
             uC_KhachHang1.Hide();
             uC_BaoCaoDoanhThu1.Hide();
+            uC_NhanVien1.Hide();
+            userControlBooking1.Hide();
+            uC_BookingManagemen1.Hide();
+            userControlBillManagement1.Hide();
+            userControlOrderService1.Hide();
+            uC_Dashboard1.Show();
 
         }
 
@@ -117,6 +119,7 @@ namespace BTL_QLKhachSan
             uC_BookingManagemen1.Hide();
             userControlBillManagement1.Hide();
             userControlOrderService1.Hide();
+            uC_Dashboard1.Hide();
 
         }
 
@@ -130,7 +133,7 @@ namespace BTL_QLKhachSan
             uC_BookingManagemen1.Hide();
             userControlOrderService1.Hide();
             userControlBillManagement1.Hide();
-
+            uC_Dashboard1.Hide();
 
 
 
@@ -148,7 +151,7 @@ namespace BTL_QLKhachSan
             uC_BookingManagemen1.Hide();
             userControlOrderService1.Hide();
             userControlBillManagement1.Show();
-
+            uC_Dashboard1.Hide();
         }
 
         private void button_doanhthu_Click(object sender, EventArgs e)
@@ -160,7 +163,7 @@ namespace BTL_QLKhachSan
             userControlBooking1.Hide();
             uC_BookingManagemen1.Hide();
             userControlBillManagement1.Hide();
-
+            uC_Dashboard1.Hide();   
             userControlOrderService1.Hide();
         }
 
@@ -174,6 +177,7 @@ namespace BTL_QLKhachSan
             userControlBooking1.Hide();
             userControlBillManagement1.Hide();
             userControlOrderService1.Hide();
+            uC_Dashboard1.Hide();
             userControlBillManagement1.Hide();
         }
 
@@ -187,6 +191,7 @@ namespace BTL_QLKhachSan
             userControlOrderService1.Hide();
             userControlBooking1.Show();
             userControlBillManagement1.Hide();
+            uC_Dashboard1.Hide();
 
         }
 
@@ -200,6 +205,7 @@ namespace BTL_QLKhachSan
             userControlBooking1.Hide();
             userControlOrderService1.Show();
             userControlBillManagement1.Hide();
+            uC_Dashboard1.Hide();
         }
     }
 }
