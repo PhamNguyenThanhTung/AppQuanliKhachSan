@@ -369,6 +369,8 @@ namespace BTL_QLKhachSan.myForm
 
                 MessageBox.Show("Cập nhật dịch vụ thành công!",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // ✅ Load lại danh sách dịch vụ
+                btntimkiem.PerformClick();
 
             }
             catch (Exception ex)
@@ -422,6 +424,7 @@ namespace BTL_QLKhachSan.myForm
 
                     // ✅ Làm mới lại danh sách sau khi xóa
                     btntimkiem.PerformClick();
+                    ResetForm();
                 }
                 catch (Exception ex)
                 {
