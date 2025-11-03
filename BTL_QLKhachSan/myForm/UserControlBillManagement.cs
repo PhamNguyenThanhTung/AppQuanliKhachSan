@@ -34,29 +34,31 @@ namespace BTL_QLKhachSan.myForm
             LoadPaymentMethods();
             LoadPhieuThueToComboBox();
         }
+        // Modified LoadPhieuThue and LoadDichVuForPhieuThue to correctly show invoice summary in dgvhoadonthanhtoan
         private void LoadPhieuThue(int idPhieuThue)
         {
             try
             {
                 string sqlQuery = @"
-        SELECT PT.IDPhieuThue, PT.NgayCheckIn, PT.NgayCheckOut, PT.NguoiTao,
-            KH.IDKhachHang, KH.HoTen, KH.SoDienThoai, KH.CMND,
-            P.IDPhong,
-            LP.DonGiaNgay,
-            ISNULL(SUM(CTDV.ThanhTien),0) AS TongTienDichVu,
-            ISNULL(HD.GiamGiaTien,0) AS GiamGia,
-            ISNULL(HD.TongTien,0) AS TongTien
-        FROM PHIEUTHUE PT
-        INNER JOIN KHACHHANG KH ON PT.IDKhachHang = KH.IDKhachHang
-        INNER JOIN PHONG P ON PT.IDPhong = P.IDPhong
-        INNER JOIN LOAIPHONG LP ON P.IDLoaiPhong = LP.IDLoaiPhong
-        LEFT JOIN CHITIET_DICHVU CTDV ON PT.IDPhieuThue = CTDV.IDPhieuThue
-        LEFT JOIN HOADON HD ON PT.IDPhieuThue = HD.IDPhieuThue
-        WHERE PT.IDPhieuThue = @IDPhieuThue
-            AND PT.TrangThai IN (N'Đã check-in', N'Đã check-out') 
-        GROUP BY PT.IDPhieuThue, PT.NgayCheckIn, PT.NgayCheckOut, PT.NguoiTao,
+            SELECT PT.IDPhieuThue, PT.NgayCheckIn, PT.NgayCheckOut, PT.NguoiTao,
                 KH.IDKhachHang, KH.HoTen, KH.SoDienThoai, KH.CMND,
-                P.IDPhong, LP.DonGiaNgay, HD.GiamGiaTien, HD.TongTien";
+                P.IDPhong,
+                LP.DonGiaNgay,
+                ISNULL(SUM(CTDV.ThanhTien),0) AS TongTienDichVu,
+                ISNULL(HD.GiamGiaTien,0) AS GiamGia,
+                ISNULL(HD.TongTien,0) AS TongTien,
+                HD.IDHoaDon
+            FROM PHIEUTHUE PT
+            INNER JOIN KHACHHANG KH ON PT.IDKhachHang = KH.IDKhachHang
+            INNER JOIN PHONG P ON PT.IDPhong = P.IDPhong
+            INNER JOIN LOAIPHONG LP ON P.IDLoaiPhong = LP.IDLoaiPhong
+            LEFT JOIN CHITIET_DICHVU CTDV ON PT.IDPhieuThue = CTDV.IDPhieuThue
+            LEFT JOIN HOADON HD ON PT.IDPhieuThue = HD.IDPhieuThue
+            WHERE PT.IDPhieuThue = @IDPhieuThue
+                AND PT.TrangThai IN (N'Đã check-in', N'Đã check-out') 
+            GROUP BY PT.IDPhieuThue, PT.NgayCheckIn, PT.NgayCheckOut, PT.NguoiTao,
+                    KH.IDKhachHang, KH.HoTen, KH.SoDienThoai, KH.CMND,
+                    P.IDPhong, LP.DonGiaNgay, HD.GiamGiaTien, HD.TongTien, HD.IDHoaDon";
 
                 var parameters = new List<SqlParameter> { new SqlParameter("@IDPhieuThue", idPhieuThue) };
                 DataTable dt = db.GetData(sqlQuery, parameters);
@@ -66,15 +68,23 @@ namespace BTL_QLKhachSan.myForm
                     DataRow row = dt.Rows[0];
                     ClearForm();
 
+                    // Fill customer / invoice fields
                     txtmakh.Text = row["IDKhachHang"].ToString();
                     txttenkh.Text = row["HoTen"].ToString();
                     txtsodt.Text = row["SoDienThoai"].ToString();
                     txtcccd.Text = row["CMND"].ToString();
                     txtnvlap.Text = row["NguoiTao"].ToString();
                     dtpngaylap.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-                    txttiendichvu.Text = ((decimal)row["TongTienDichVu"]).ToString("N0");
-                    txtgiamgia.Text = ((decimal)row["GiamGia"]).ToString("N0");
-                    txttongtien.Text = ((decimal)row["TongTien"]).ToString("N0");
+
+                    txttiendichvu.Text = Convert.ToDecimal(row["TongTienDichVu"]).ToString("N0");
+                    txtgiamgia.Text = Convert.ToDecimal(row["GiamGia"]).ToString("N0");
+                    txttongtien.Text = Convert.ToDecimal(row["TongTien"]).ToString("N0");
+
+                    // set invoice id (IDHoaDon) if exists, otherwise empty
+                    if (row.Table.Columns.Contains("IDHoaDon") && row["IDHoaDon"] != DBNull.Value)
+                        txtmahd.Text = row["IDHoaDon"].ToString();
+                    else
+                        txtmahd.Text = string.Empty;
 
                     // Tính tiền phòng
                     TinhTienPhong(row);
@@ -84,7 +94,22 @@ namespace BTL_QLKhachSan.myForm
                     for (int i = 0; i < checklistboxphong.Items.Count; i++)
                         checklistboxphong.SetItemChecked(i, checklistboxphong.Items[i].ToString() == idPhong);
 
-                    LoadDichVuForPhieuThue(idPhieuThue);
+                    // Populate invoice summary into dgvhoadonthanhtoan (single summary row)
+                    dgvhoadonthanhtoan.Rows.Clear();
+                    dgvhoadonthanhtoan.Rows.Add(
+                        txtmahd.Text,                      // IDHoaDon (may be empty)
+                        txttenkh.Text,                     // TenKhach
+                        idPhong,                           // IDPhong
+                        DateTime.Now.ToString("dd/MM/yyyy HH:mm"), // NgayThanhToan (display now)
+                        txttienphong.Text,                 // TongTienPhong
+                        txttiendichvu.Text,                // TongTienDichVu
+                        txtgiamgia.Text,                   // GiamGiaTien
+                        txttongtien.Text                   // TongTien
+                    );
+
+                    // Do not bind services to the same grid. Load services into an internal DataTable (for Excel or future detail grid).
+                    DataTable dtServices = LoadDichVuForPhieuThue(idPhieuThue);
+                    // If you have a dedicated detail grid (e.g., dgvchitietdichvu), bind dtServices to it here.
                 }
                 else
                 {
@@ -285,26 +310,41 @@ namespace BTL_QLKhachSan.myForm
         // =================== TÍNH TIỀN PHÒNG ===================
         private void TinhTienPhong(DataRow row)
         {
-            DateTime checkIn = (DateTime)row["NgayCheckIn"];
-            decimal donGiaNgay = (decimal)row["DonGiaNgay"];
-            // Sử dụng DateTime.Now nếu chưa có ngày CheckOut, đây là logic lập HĐ
-            DateTime checkOut = row["NgayCheckOut"] != DBNull.Value ? (DateTime)row["NgayCheckOut"] : DateTime.Now;
+            if (row == null) return;
 
-            TimeSpan thoiGian = checkOut - checkIn;
-            decimal tongTienPhong;
+            // Determine check-in/check-out column names used in query results
+            DateTime checkIn = DateTime.Now;
+            DateTime checkOut = DateTime.Now;
+            decimal donGiaNgay = 0m;
 
-            if (thoiGian.TotalDays < 1)
-            {
-                // Tính theo giờ (giả định 1 ngày = 24 giờ)
-                tongTienPhong = donGiaNgay * (decimal)thoiGian.TotalHours / 24;
-            }
-            else
-            {
-                // Tính theo số ngày làm tròn lên
-                tongTienPhong = donGiaNgay * (int)Math.Ceiling(thoiGian.TotalDays);
-            }
+            // Check several possible column names (safe against small schema/name differences)
+            if (row.Table.Columns.Contains("NgayCheckIn") && row["NgayCheckIn"] != DBNull.Value)
+                checkIn = Convert.ToDateTime(row["NgayCheckIn"]);
+            else if (row.Table.Columns.Contains("Ngay_CheckIn") && row["Ngay_CheckIn"] != DBNull.Value)
+                checkIn = Convert.ToDateTime(row["Ngay_CheckIn"]);
+
+            if (row.Table.Columns.Contains("NgayCheckOut") && row["NgayCheckOut"] != DBNull.Value)
+                checkOut = Convert.ToDateTime(row["NgayCheckOut"]);
+            else if (row.Table.Columns.Contains("Ngay_CheckOut") && row["Ngay_CheckOut"] != DBNull.Value)
+                checkOut = Convert.ToDateTime(row["Ngay_CheckOut"]);
+
+            // Daily rate column (try a few common names)
+            if (row.Table.Columns.Contains("DonGiaNgay") && row["DonGiaNgay"] != DBNull.Value)
+                donGiaNgay = Convert.ToDecimal(row["DonGiaNgay"]);
+            else if (row.Table.Columns.Contains("DonGia_Ngay") && row["DonGia_Ngay"] != DBNull.Value)
+                donGiaNgay = Convert.ToDecimal(row["DonGia_Ngay"]);
+            else if (row.Table.Columns.Contains("DonGia") && row["DonGia"] != DBNull.Value)
+                donGiaNgay = Convert.ToDecimal(row["DonGia"]);
+
+            // Nights calculation (hotel-style: difference of dates, minimum 1)
+            int nights = (checkOut.Date - checkIn.Date).Days;
+            if (nights <= 0) nights = 1;
+
+            decimal tongTienPhong = donGiaNgay * nights;
 
             txttienphong.Text = tongTienPhong.ToString("N0");
+
+            // Update total display
             TinhTongThanhToan(tongTienPhong);
         }
 
@@ -326,8 +366,8 @@ namespace BTL_QLKhachSan.myForm
             txttongtien.Text = tongThanhToan.ToString("N0");
         }
 
-        // =================== LOAD DỊCH VỤ (Đã FIX LỖI GHI ĐÈ) ===================
-        private void LoadDichVuForPhieuThue(int idPhieuThue)
+        // Return service details as DataTable — do NOT set dgvhoadonthanhtoan.DataSource here.
+        private DataTable LoadDichVuForPhieuThue(int idPhieuThue)
         {
             try
             {
@@ -340,15 +380,12 @@ namespace BTL_QLKhachSan.myForm
 
                 var parameters = new List<SqlParameter> { new SqlParameter("@IDPhieuThue", idPhieuThue) };
                 DataTable dt = db.GetData(sql, parameters);
-
-                // ⭐ FIX LỖI: Gán vào DataGridView Chi tiết (Giả sử tên là dgvchitietdichvu)
-                // (Nếu bạn không có DataGridView chi tiết, bạn có thể comment dòng này)
-                // dgvchitietdichvu.DataSource = dt; 
+                return dt ?? new DataTable();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tải danh sách dịch vụ: " + ex.Message);
-                // dgvchitietdichvu.DataSource = null;
+                return new DataTable();
             }
         }
 
@@ -584,10 +621,7 @@ namespace BTL_QLKhachSan.myForm
             // Không nên gọi Quit/Release Com Object ở đây nếu muốn Excel hiện lên
         }
 
-        private void btnthem_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void btsua_Click(object sender, EventArgs e)
         {
@@ -683,6 +717,191 @@ namespace BTL_QLKhachSan.myForm
             }
         }
 
-       
+        // Add this method inside the UserControlBillManagement class (near other methods)
+        public void ShowAndLoadPhieuThue(int idPhieuThue)
+        {
+            try
+            {
+                // store the id so other handlers know which phiếu đang hiển thị
+                this.currentIDPhieuThue = idPhieuThue;
+
+                Action work = () =>
+                {
+                    // If control is inside a TabPage, select that tab
+                    Control parent = this.Parent;
+                    while (parent != null)
+                    {
+                        if (parent is TabPage tabPage)
+                        {
+                            var tc = tabPage.Parent as TabControl;
+                            if (tc != null)
+                                tc.SelectedTab = tabPage;
+                            break;
+                        }
+                        parent = parent.Parent;
+                    }
+
+                    // ensure control visible and top-most inside its container
+                    this.Visible = true;
+                    this.BringToFront();
+
+                    // call existing loader
+                    LoadPhieuThue(idPhieuThue);
+                };
+
+                if (this.InvokeRequired)
+                    this.BeginInvoke(work);
+                else
+                    work();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi hiển thị hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadBills1()
+        {
+            // Ensure a clean state before adding the fixed set of columns
+            dgvhoadonthanhtoan.DataSource = null;
+            dgvhoadonthanhtoan.Columns.Clear();
+            dgvhoadonthanhtoan.AutoGenerateColumns = false;
+
+            dgvhoadonthanhtoan.Columns.Add("IDHoaDon", "Mã HĐ");
+            dgvhoadonthanhtoan.Columns.Add("TenKhach", "TênKhách");
+            dgvhoadonthanhtoan.Columns.Add("IDPhong", "Phòng");
+            dgvhoadonthanhtoan.Columns.Add("NgayThanhToan", "Ngày TT");
+            dgvhoadonthanhtoan.Columns.Add("TongTienPhong", "Tiền Phòng");
+            dgvhoadonthanhtoan.Columns.Add("TongTienDichVu", "Tiền DV");
+            dgvhoadonthanhtoan.Columns.Add("GiamGiaTien", "Giảm Giá");
+            dgvhoadonthanhtoan.Columns.Add("TongTien", "Tổng TT");
+
+            dgvhoadonthanhtoan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvhoadonthanhtoan.AllowUserToAddRows = false;
+        }
+        private void LoadPhieuThue1(int idPhieuThue)
+        {
+            try
+            {
+                // Ensure grid is in a known state (unbound, columns present)
+                if (dgvhoadonthanhtoan.InvokeRequired)
+                {
+                    dgvhoadonthanhtoan.BeginInvoke((Action)(() =>
+                    {
+                        dgvhoadonthanhtoan.DataSource = null;
+                        LoadBills1();
+                    }));
+                }
+                else
+                {
+                    dgvhoadonthanhtoan.DataSource = null;
+                    LoadBills1();
+                }
+
+                string sqlQuery = @"
+                    SELECT PT.IDPhieuThue, PT.NgayCheckIn, PT.NgayCheckOut, PT.NguoiTao,
+                        KH.IDKhachHang, KH.HoTen, KH.SoDienThoai, KH.CMND,
+                        P.IDPhong,
+                        LP.DonGiaNgay,
+                        ISNULL(SUM(CTDV.ThanhTien),0) AS TongTienDichVu,
+                        ISNULL(HD.GiamGiaTien,0) AS GiamGia,
+                        ISNULL(HD.TongTien,0) AS TongTien,
+                        HD.IDHoaDon
+                    FROM PHIEUTHUE PT
+                    INNER JOIN KHACHHANG KH ON PT.IDKhachHang = KH.IDKhachHang
+                    INNER JOIN PHONG P ON PT.IDPhong = P.IDPhong
+                    INNER JOIN LOAIPHONG LP ON P.IDLoaiPhong = LP.IDLoaiPhong
+                    LEFT JOIN CHITIET_DICHVU CTDV ON PT.IDPhieuThue = CTDV.IDPhieuThue
+                    LEFT JOIN HOADON HD ON PT.IDPhieuThue = HD.IDPhieuThue
+                    WHERE PT.IDPhieuThue = @IDPhieuThue
+                        AND PT.TrangThai IN (N'Đã check-in', N'Đã check-out') 
+                    GROUP BY PT.IDPhieuThue, PT.NgayCheckIn, PT.NgayCheckOut, PT.NguoiTao,
+                            KH.IDKhachHang, KH.HoTen, KH.SoDienThoai, KH.CMND,
+                            P.IDPhong, LP.DonGiaNgay, HD.GiamGiaTien, HD.TongTien, HD.IDHoaDon";
+
+                var parameters = new List<SqlParameter> { new SqlParameter("@IDPhieuThue", idPhieuThue) };
+                DataTable dt = db.GetData(sqlQuery, parameters);
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    DataRow row = dt.Rows[0];
+                    ClearForm();
+
+                    // Fill customer / invoice fields
+                    txtmakh.Text = row["IDKhachHang"].ToString();
+                    txttenkh.Text = row["HoTen"].ToString();
+                    txtsodt.Text = row["SoDienThoai"].ToString();
+                    txtcccd.Text = row["CMND"].ToString();
+                    txtnvlap.Text = row["NguoiTao"].ToString();
+                    dtpngaylap.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+
+                    txttiendichvu.Text = Convert.ToDecimal(row["TongTienDichVu"]).ToString("N0");
+                    txtgiamgia.Text = Convert.ToDecimal(row["GiamGia"]).ToString("N0");
+                    // Compute total from components to avoid stale values
+                    // TinhTienPhong will set txttienphong and TinhTongThanhToan will set txttongtien
+                    TinhTienPhong(row);
+                    // ensure txttiendichvu parsed as number when computing total
+                    TinhTongThanhToan(decimal.Parse(txttienphong.Text.Replace(",", "")));
+
+                    // set invoice id (IDHoaDon) if exists, otherwise empty
+                    if (row.Table.Columns.Contains("IDHoaDon") && row["IDHoaDon"] != DBNull.Value)
+                        txtmahd.Text = row["IDHoaDon"].ToString();
+                    else
+                        txtmahd.Text = string.Empty;
+
+                    // Check phòng đúng
+                    string idPhong = row["IDPhong"].ToString();
+                    for (int i = 0; i < checklistboxphong.Items.Count; i++)
+                        checklistboxphong.SetItemChecked(i, checklistboxphong.Items[i].ToString() == idPhong);
+
+                    // Populate invoice summary into dgvhoadonthanhtoan (single summary row)
+                    if (dgvhoadonthanhtoan.InvokeRequired)
+                    {
+                        dgvhoadonthanhtoan.BeginInvoke((Action)(() =>
+                        {
+                            dgvhoadonthanhtoan.Rows.Clear();
+                            dgvhoadonthanhtoan.Rows.Add(
+                                txtmahd.Text,
+                                txttenkh.Text,
+                                idPhong,
+                                DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
+                                txttienphong.Text,
+                                txttiendichvu.Text,
+                                txtgiamgia.Text,
+                                txttongtien.Text
+                            );
+                        }));
+                    }
+                    else
+                    {
+                        dgvhoadonthanhtoan.Rows.Clear();
+                        dgvhoadonthanhtoan.Rows.Add(
+                            txtmahd.Text,
+                            txttenkh.Text,
+                            idPhong,
+                            DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
+                            txttienphong.Text,
+                            txttiendichvu.Text,
+                            txtgiamgia.Text,
+                            txttongtien.Text
+                        );
+                    }
+
+                    // Keep service details separately (do not overwrite summary grid)
+                    DataTable dtServices = LoadDichVuForPhieuThue(idPhieuThue);
+                    // If you add a dedicated dgvchitietdichvu, bind here:
+                    // dgvchitietdichvu.DataSource = dtServices;
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy Phiếu Thuê hoặc Phiếu Thuê chưa thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearForm();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi truy vấn dữ liệu: " + ex.Message);
+            }
+        }
     }
 }

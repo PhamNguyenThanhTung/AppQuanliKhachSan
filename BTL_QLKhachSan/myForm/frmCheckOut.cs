@@ -78,9 +78,9 @@ namespace BTL_QLKhachSan.myForm
                 decimal donGiaNgay = Convert.ToDecimal(db.GetScalar(queryDonGia, paramDonGia_GetScalar)); // Dùng paramDonGia_GetScalar
 
                 // Tính số ngày ở (làm tròn lên)
-                TimeSpan duration = DateTime.Now.Subtract(ngayCheckIn);
-                int soNgay = (int)Math.Ceiling(duration.TotalDays);
-                if (soNgay == 0) soNgay = 1; // Ở trong ngày
+                TimeSpan duration = DateTime.Now.Date.Subtract(ngayCheckIn.Date);
+                int soNgay = (int)duration.TotalDays;
+                if (soNgay <= 0) soNgay = 1; // charge at least one night
 
                 this.tienPhong = soNgay * donGiaNgay;
                 lblTienPhong.Text = string.Format("{0:N0} VNĐ", this.tienPhong);
@@ -128,19 +128,60 @@ namespace BTL_QLKhachSan.myForm
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Xác nhận thanh toán hóa đơn này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Xác nhận thanh toán hóa đơn này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
+
+            Database db = new Database();
+            DateTime ngayThanhToan = DateTime.Now;
+
+            try
             {
-                Database db = new Database();
-                DateTime ngayThanhToan = DateTime.Now;
+                // 0) đảm bảo tongCong đã được tính (Load đã làm trước)
+                // 1) Kiểm tra xem HOADON đã tồn tại cho phiếu thuê này hay chưa
+                object existing = db.GetScalar(
+                    "SELECT IDHoaDon FROM HOADON WHERE IDPhieuThue = @IDPhieuThue",
+                    new List<SqlParameter> { new SqlParameter("@IDPhieuThue", this.idPhieuThue) }
+                );
 
-                try
+                int hoaDonId = 0;
+
+                if (existing != null && existing != DBNull.Value)
                 {
-                    // 1. INSERT vào HOADON
-                    string queryHD = $@"
-                        INSERT INTO HOADON (IDPhieuThue, NguoiLap, NgayThanhToan, TongTienPhong, TongTienDichVu, GiamGiaTien, PhuongThucThanhToan, TongTien) 
-                        VALUES (@IDPhieuThue, @NguoiLap, @NgayThanhToan, @TienPhong, @TienDV, 0, @PhuongThuc, @TongTien)";
+                    // Nếu đã có: UPDATE thay vì INSERT (tránh vi phạm UNIQUE)
+                    hoaDonId = Convert.ToInt32(existing);
+                    string updateHD = @"
+                        UPDATE HOADON
+                        SET NguoiLap = @NguoiLap,
+                            NgayThanhToan = @NgayThanhToan,
+                            TongTienPhong = @TienPhong,
+                            TongTienDichVu = @TienDV,
+                            GiamGiaTien = 0,
+                            PhuongThucThanhToan = @PhuongThuc,
+                            TongTien = @TongTien
+                        WHERE IDHoaDon = @IDHoaDon";
 
-                    List<SqlParameter> paramHD = new List<SqlParameter>
+                    var updParams = new List<SqlParameter>
+                    {
+                        new SqlParameter("@NguoiLap", this.nguoiLapHD),
+                        new SqlParameter("@NgayThanhToan", ngayThanhToan),
+                        new SqlParameter("@TienPhong", this.tienPhong),
+                        new SqlParameter("@TienDV", this.tienDichVu),
+                        new SqlParameter("@PhuongThuc", cbPhuongThuc.Text),
+                        new SqlParameter("@TongTien", this.tongCong),
+                        new SqlParameter("@IDHoaDon", hoaDonId)
+                    };
+
+                    db.ExecuteNonQuery(updateHD, updParams);
+                }
+                else
+                {
+                    // Nếu chưa có: chèn mới và lấy ID bằng SCOPE_IDENTITY()
+                    string insertHD = @"
+                        INSERT INTO HOADON (IDPhieuThue, NguoiLap, NgayThanhToan, TongTienPhong, TongTienDichVu, GiamGiaTien, PhuongThucThanhToan, TongTien)
+                        VALUES (@IDPhieuThue, @NguoiLap, @NgayThanhToan, @TienPhong, @TienDV, 0, @PhuongThuc, @TongTien);
+                        SELECT SCOPE_IDENTITY();";
+
+                    var insParams = new List<SqlParameter>
                     {
                         new SqlParameter("@IDPhieuThue", this.idPhieuThue),
                         new SqlParameter("@NguoiLap", this.nguoiLapHD),
@@ -150,39 +191,124 @@ namespace BTL_QLKhachSan.myForm
                         new SqlParameter("@PhuongThuc", cbPhuongThuc.Text),
                         new SqlParameter("@TongTien", this.tongCong)
                     };
-                    db.ExecuteNonQuery(queryHD, paramHD);
 
-                    // 2. UPDATE PHIEUTHUE -> Đã check-out
-                    string queryPT_Update = $@"
-                        UPDATE PHIEUTHUE 
-                        SET TrangThai = N'Đã check-out', NgayCheckOut = @NgayThanhToan
-                        WHERE IDPhieuThue = @IDPhieuThue";
-
-                    List<SqlParameter> paramPT_Update = new List<SqlParameter>
-                    {
-                        new SqlParameter("@NgayThanhToan", ngayThanhToan),
-                        new SqlParameter("@IDPhieuThue", this.idPhieuThue)
-                    };
-                    db.ExecuteNonQuery(queryPT_Update, paramPT_Update); // Dùng paramPT_Update
-
-                    // 3. UPDATE PHONG -> Dọn dẹp
-                    string queryPhong = $"UPDATE PHONG SET TrangThai = N'Dọn dẹp' WHERE IDPhong = @IDPhong";
-
-                    // TẠO LIST PARAMETER MỚI CHO LẦN GỌI NÀY
-                    List<SqlParameter> paramPhong_Update = new List<SqlParameter>
-                    {
-                        new SqlParameter("@IDPhong", this.idPhong)
-                    };
-                    db.ExecuteNonQuery(queryPhong, paramPhong_Update); // Dùng paramPhong_Update
-
-                    MessageBox.Show("Thanh toán thành công!");
-                    this.DialogResult = DialogResult.OK; // Báo cho Sơ đồ phòng load lại
-                    this.Close();
+                    object inserted = db.GetScalar(insertHD, insParams);
+                    if (inserted == null || inserted == DBNull.Value)
+                        throw new Exception("Không lấy được ID hóa đơn sau khi Insert.");
+                    hoaDonId = Convert.ToInt32(Math.Round(Convert.ToDecimal(inserted)));
                 }
-                catch (Exception ex)
+
+                // 2) UPDATE PHIEUTHUE -> Đã check-out
+                string queryPT_Update = @"
+                    UPDATE PHIEUTHUE
+                    SET TrangThai = N'Đã check-out', NgayCheckOut = @NgayThanhToan
+                    WHERE IDPhieuThue = @IDPhieuThue";
+
+                List<SqlParameter> paramPT_Update = new List<SqlParameter>
                 {
-                    MessageBox.Show("Lỗi khi lưu hóa đơn: " + ex.Message, "Lỗi");
+                    new SqlParameter("@NgayThanhToan", ngayThanhToan),
+                    new SqlParameter("@IDPhieuThue", this.idPhieuThue)
+                };
+                db.ExecuteNonQuery(queryPT_Update, paramPT_Update);
+
+                // 3) UPDATE PHONG -> Dọn dẹp
+                string queryPhong = "UPDATE PHONG SET TrangThai = N'Dọn dẹp' WHERE IDPhong = @IDPhong";
+                List<SqlParameter> paramPhong_Update = new List<SqlParameter>
+                {
+                    new SqlParameter("@IDPhong", this.idPhong)
+                };
+                db.ExecuteNonQuery(queryPhong, paramPhong_Update);
+
+                MessageBox.Show("Thanh toán thành công!");
+
+                // 4) Chuyển sang UcBill và nạp phiếu vừa thanh toán
+                NavigateToBillControl();
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (SqlException sqlex)
+            {
+                MessageBox.Show("Lỗi khi lưu hóa đơn (SQL): " + sqlex.Message, "Lỗi");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu hóa đơn: " + ex.Message, "Lỗi");
+            }
+        }
+
+        // Recursive enumerator to search controls
+        private IEnumerable<Control> GetAllControls(Control parent)
+        {
+            foreach (Control c in parent.Controls)
+            {
+                yield return c;
+                foreach (var child in GetAllControls(c))
+                    yield return child;
+            }
+        }
+
+        // Find the UserControlBillManagement instance and instruct it to show & load the bill
+        private void NavigateToBillControl()
+        {
+            try
+            {
+                foreach (Form f in Application.OpenForms)
+                {
+                    // ensure the host form is visible/activated
+                    if (!f.Visible) f.Show();
+                    f.BringToFront();
+                    f.Activate();
+
+                    // search recursively under each open form
+                    foreach (Control c in GetAllControls(f))
+                    {
+                        if (c is BTL_QLKhachSan.myForm.UserControlBillManagement uc)
+                        {
+                            // If UC is inside a TabPage, select its TabPage on the form's UI thread
+                            Action selectTabAndShow = () =>
+                            {
+                                Control parent = uc.Parent;
+                                while (parent != null)
+                                {
+                                    if (parent is TabPage tabPage)
+                                    {
+                                        var tc = tabPage.Parent as TabControl;
+                                        if (tc != null)
+                                            tc.SelectedTab = tabPage;
+                                        break;
+                                    }
+                                    parent = parent.Parent;
+                                }
+
+                                // ensure UC visible and bring to front
+                                uc.Visible = true;
+                                uc.BringToFront();
+
+                                // call the public loader with the just-paid IDPhieuThue
+                                uc.ShowAndLoadPhieuThue(this.idPhieuThue);
+                            };
+
+                            if (f.InvokeRequired)
+                                f.BeginInvoke((Action)(() => selectTabAndShow()));
+                            else
+                                selectTabAndShow();
+
+                            // Activate the host form
+                            f.BringToFront();
+                            f.Activate();
+
+                            return;
+                        }
+                    }
                 }
+
+                // If we reach here, control wasn't found
+                MessageBox.Show("Không tìm thấy màn hình Hóa Đơn (UserControlBillManagement).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi chuyển sang màn hình Hóa Đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
